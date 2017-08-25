@@ -6,16 +6,19 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 
-import { GetNodetestComponent } from './get-nodetest/get-nodetest.component';
+import { GetNodetestComponent } from './nodetest/get-nodetest.component';
+
+import {NodetestService} from './nodetest.service';
+
 //definendo rutas
 const ROUTES = [
   {
-    path: 'nodetest',
-    redirectTo: '',
+    path: '',
+    redirectTo: 'nodetest_',
     pathMatch: 'full'
   },
   {
-    path: 'nodetest',
+    path: 'nodetest_',
     component: GetNodetestComponent
   }
 ];
@@ -31,7 +34,7 @@ const ROUTES = [
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [NodetestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
