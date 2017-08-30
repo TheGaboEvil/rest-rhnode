@@ -62,13 +62,8 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-<<<<<<< HEAD
-    con.execute("UPDATE departamento  SET codsucursal=:in_codsucursal,nombredepartamento=:in_nombredepartamento,numplazas=:in_numplazas WHERE codsucursal=:id1 AND coddepartamento=:id2 ",
-    [req.body.in_nombre,req.body.in_apellido,req.body.in_fechanacimiento,req.body.in_salario,req.params.id1,req.params.id2],
-=======
     con.execute("UPDATE departamento  SET :in_codsucursal,:in_nombredepartamento,:in_numplazas WHERE coddepartamento=:id",
     [req.body.in_nombre,req.body.in_apellido,req.body.in_fechanacimiento,req.body.in_salario,req.params.id],
->>>>>>> 028bde28743e605721f70fff24f9553ae39214cf
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
@@ -87,11 +82,7 @@ exports.actualizar_registro = function(req,res){
 };
 exports.borrar_registro = function(req,res){
   ora.then(function(con){
-<<<<<<< HEAD
     con.execute("DELETE FROM departamento WHERE codsucursal=:id1 AND coddepartamento=:id2",
-=======
-    con.execute("DELETE FROM departamento WHERE coddepartamento=:id",
->>>>>>> 028bde28743e605721f70fff24f9553ae39214cf
     [req.params.id],
     function(err,result){
       if(err){
