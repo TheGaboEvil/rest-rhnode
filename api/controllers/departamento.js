@@ -5,16 +5,16 @@ var ora = require('../models/ora');
 exports.enlistar_todo = function(req,res){
 
   ora.then(function(con){
-    con.execute('select * from adelantosempleado',function(err,result){
+    con.execute('select * from departamento',function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo de adelanto empleado " + err.message
+          message: "Error al obtener todo departamento " + err.message
         }));
       }else{
-        console.log("nodetesr respondio :" + result.rows);
+        console.log("departamento respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rows));
       }
@@ -24,18 +24,18 @@ exports.enlistar_todo = function(req,res){
 
 exports.crear_registro = function(req,res){
   ora.then(function(con){
-    con.execute("INSERT INTO adelantosempleado VALUES(:in_codadelanto,:in_codempleado,TO_DATE(:in_fechaadelanto,'YYYY/MM/DD'),:in_montoadelanto,:in_estadoadelanto)",
-    [req.body.in_codadelanto,req.body.in_codempleado,req.body.in_fechaadelanto,req.body.in_montoadelanto,req.body.in_estadoadelanto],
+    con.execute("INSERT INTO departamento VALUES(:in_coddepartamento,:in_codsucursal,:in_nombredepartamento,:in_numplazas)",
+    [req.body.in_coddepartamento,req.body.in_codsucursal,req.body.in_nombredepartamento,req.body.in_numplazas],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al crear un registro adelantosempleado " + err.message
+          message: "Error al crear un registro departamento" + err.message
         }));
       }else{
-        console.log("adelantosempleado respondio :" + result.rows);
+        console.log("departamento respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
@@ -44,16 +44,16 @@ exports.crear_registro = function(req,res){
 };
 exports.obtener_registro = function(req,res){
   ora.then(function(con){
-    con.execute('select * from adelantosempleado where codadelanto = :id',[req.params.id],function(err,result){
+    con.execute('select * from departamento where coddepartamento = :id',[req.params.id],function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo nodetest " + err.message
+          message: "Error al obtener todo departamento" + err.message
         }));
       }else{
-        console.log("nodetesr respondio :" + result.rows);
+        console.log("departamento respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rows));
       }
@@ -62,7 +62,7 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE adelantosempleado  SET codempleado= :in_codempleado,fechaadelanto= TO_DATE(:in_fechaadelanto,'YYYY/MM/DD'),montoadelanto= :in_montoadelanto,estadoadelanto= :in_estadoadelanto WHERE codadelanto= :id",
+    con.execute("UPDATE departamento  SET :in_codsucursal,:in_nombredepartamento,:in_numplazas WHERE coddepartamento=:id",
     [req.body.in_nombre,req.body.in_apellido,req.body.in_fechanacimiento,req.body.in_salario,req.params.id],
     function(err,result){
       if(err){
@@ -70,10 +70,10 @@ exports.actualizar_registro = function(req,res){
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo nodetest " + err.message
+          message: "Error al obtener todo departamento " + err.message
         }));
       }else{
-        console.log("nodetesr actualizo :" + result.rowsAffected);
+        console.log("departamento actualizo :" + result.rowsAffected);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
@@ -82,7 +82,7 @@ exports.actualizar_registro = function(req,res){
 };
 exports.borrar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("DELETE FROM adelantosempleado WHERE codadelanto=:id",
+    con.execute("DELETE FROM departamento WHERE codsucursal=:id1 AND coddepartamento=:id2",
     [req.params.id],
     function(err,result){
       if(err){
@@ -90,10 +90,10 @@ exports.borrar_registro = function(req,res){
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo adelantosempleado " + err.message
+          message: "Error al obtener todo departamento " + err.message
         }));
       }else{
-        console.log("adelantosempleado borro :" + result.rowsAffected);
+        console.log("departamento borro :" + result.rowsAffected);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
