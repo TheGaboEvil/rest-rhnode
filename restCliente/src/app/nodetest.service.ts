@@ -12,8 +12,4 @@ export class NodetestService {
     return this.http.get('/nodetest')
       .map(res => res.json());
   }
-  getUnNodetest() {
-    return this.http.get('/nodetest/1')
-      .map(res => res.json());
-  }
 }
