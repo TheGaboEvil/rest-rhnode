@@ -32,17 +32,10 @@ exports.crear_registro = function(req,res){
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-<<<<<<< HEAD
           message: "Error al crear un registro empleados " + err.message
         }));
       }else{
         console.log("empleados respondio :" + result.rows);
-=======
-          message: "Error al crear un registro nodetest " + err.message
-        }));
-      }else{
-        console.log("nodetesr respondio :" + result.rows);
->>>>>>> 028bde28743e605721f70fff24f9553ae39214cf
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
@@ -51,21 +44,13 @@ exports.crear_registro = function(req,res){
 };
 exports.obtener_registro = function(req,res){
   ora.then(function(con){
-<<<<<<< HEAD
     con.execute('select * from empleados where codempleado = :id',[req.params.id],function(err,result){
-=======
-    con.execute('select * from nodetest where id = :id',[req.params.id],function(err,result){
->>>>>>> 028bde28743e605721f70fff24f9553ae39214cf
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-<<<<<<< HEAD
           message: "Error al obtener todo empleados " + err.message
-=======
-          message: "Error al obtener todo nodetest " + err.message
->>>>>>> 028bde28743e605721f70fff24f9553ae39214cf
         }));
       }else{
         console.log("nodetesr respondio :" + result.rows);
@@ -77,11 +62,7 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-<<<<<<< HEAD
     con.execute("UPDATE nodetest SET codjefe = :in_codjefe,coddepartamento= :in_coddepartamento,codsucursal=:in_codsucursal,nombre1= :in_nombre1,nombre2=:in_nombre2,apellido1=:in_apellido1,apellido2=:in_apellido2,tituloempleado=:in_tituloempleado,fechadenacimiento=TO_DATE(:in_fechanacimiento,'YYYY/MM/DD'),generoempleado=:in_generoempleado,estadocivil=:in_estadocivil,documentoidentidad=:in_documentoidentidad,tipodocumentoident=:in_tipodocumentoident,nitempleado=:nitempleado,in_isssempleado=:in_isssempleado,nupempleado=:in_nupempleado,nombreafp=:in_nombreafp,numerocuentabanco=:in_numerocuentabanco,nombrebanco=:in_nombrebanco,puesto=:in_puesto,tiempotrabajo=:in_tiempotrabajo'  WHERE codempleado=:id",
-=======
-    con.execute("UPDATE nodetest SET nombre=:in_nombre, apellido=:in_apellido, fechanacimiento=TO_DATE(:in_fechanacimiento,'YYYY/MM/DD'), salario=:in_salario WHERE id=:id",
->>>>>>> 028bde28743e605721f70fff24f9553ae39214cf
     [req.body.in_nombre,req.body.in_apellido,req.body.in_fechanacimiento,req.body.in_salario,req.params.id],
     function(err,result){
       if(err){
@@ -89,11 +70,7 @@ exports.actualizar_registro = function(req,res){
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-<<<<<<< HEAD
           message: "Error al obtener todo empleados " + err.message
-=======
-          message: "Error al obtener todo nodetest " + err.message
->>>>>>> 028bde28743e605721f70fff24f9553ae39214cf
         }));
       }else{
         console.log("nodetesr actualizo :" + result.rowsAffected);
@@ -105,11 +82,7 @@ exports.actualizar_registro = function(req,res){
 };
 exports.borrar_registro = function(req,res){
   ora.then(function(con){
-<<<<<<< HEAD
     con.execute("DELETE FROM empleados WHERE codempleado=:id",
-=======
-    con.execute("DELETE FROM nodetest WHERE id=:id",
->>>>>>> 028bde28743e605721f70fff24f9553ae39214cf
     [req.params.id],
     function(err,result){
       if(err){
@@ -120,11 +93,7 @@ exports.borrar_registro = function(req,res){
           message: "Error al obtener todo nodetest " + err.message
         }));
       }else{
-<<<<<<< HEAD
         console.log("empleados borro :" + result.rowsAffected);
-=======
-        console.log("nodetesr borro :" + result.rowsAffected);
->>>>>>> 028bde28743e605721f70fff24f9553ae39214cf
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }

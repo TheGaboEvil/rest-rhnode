@@ -5,16 +5,16 @@ var ora = require('../models/ora');
 exports.enlistar_todo = function(req,res){
 
   ora.then(function(con){
-    con.execute('select * from departamento',function(err,result){
+    con.execute('select * from planilla',function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo departamento " + err.message
+          message: "Error al obtener todo planilla " + err.message
         }));
       }else{
-        console.log("departamento respondio :" + result.rows);
+        console.log("planilla respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rows));
       }
@@ -24,18 +24,18 @@ exports.enlistar_todo = function(req,res){
 
 exports.crear_registro = function(req,res){
   ora.then(function(con){
-    con.execute("INSERT INTO departamento VALUES(:in_coddepartamento,:in_codsucursal,:in_nombredepartamento,:in_numplazas)",
-    [req.body.in_coddepartamento,req.body.in_codsucursal,req.body.in_nombredepartamento,req.body.in_numplazas],
+    con.execute("INSERT INTO planilla VALUES(:in_codplanilla,:in_coddepartamento,:in_codsucursal,TO_DATE(:in_fechaini,'YYYY/MM/DD'),TO_DATE(:in_fechafin,'YYYY/MM/DD'),:in_tipoplanilla)",
+    [req.body.in_codplanilla,req.body.in_coddepartamento,req.body.in_codsucursal,req.body.in_fechaini,req.body.in_fechafin,req.body.in_tipoplanilla],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al crear un registro departamento" + err.message
+          message: "Error al crear un registro nodetest " + err.message
         }));
       }else{
-        console.log("departamento respondio :" + result.rows);
+        console.log("planilla respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
@@ -44,16 +44,16 @@ exports.crear_registro = function(req,res){
 };
 exports.obtener_registro = function(req,res){
   ora.then(function(con){
-    con.execute('select * from departamento where coddepartamento = :id',[req.params.id],function(err,result){
+    con.execute('select * from planilla where codplanilla = :id',[req.params.id],function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo departamento" + err.message
+          message: "Error al obtener todo planilla " + err.message
         }));
       }else{
-        console.log("departamento respondio :" + result.rows);
+        console.log("planilla respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rows));
       }
@@ -62,7 +62,7 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE departamento  SET :in_codsucursal,:in_nombredepartamento,:in_numplazas WHERE coddepartamento=:id",
+    con.execute("UPDATE planilla SET nombre=:in_nombre, apellido=:in_apellido, fechanacimiento=TO_DATE(:in_fechanacimiento,'YYYY/MM/DD'), salario=:in_salario WHERE id=:id",
     [req.body.in_nombre,req.body.in_apellido,req.body.in_fechanacimiento,req.body.in_salario,req.params.id],
     function(err,result){
       if(err){
@@ -70,10 +70,10 @@ exports.actualizar_registro = function(req,res){
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo departamento " + err.message
+          message: "Error al obtener todo nodetest " + err.message
         }));
       }else{
-        console.log("departamento actualizo :" + result.rowsAffected);
+        console.log("planilla actualizo :" + result.rowsAffected);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
@@ -82,7 +82,7 @@ exports.actualizar_registro = function(req,res){
 };
 exports.borrar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("DELETE FROM departamento WHERE codsucursal=:id1 AND coddepartamento=:id2",
+    con.execute("DELETE FROM planilla WHERE codplanilla=:id",
     [req.params.id],
     function(err,result){
       if(err){
@@ -90,10 +90,10 @@ exports.borrar_registro = function(req,res){
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo departamento " + err.message
+          message: "Error al obtener todo planilla " + err.message
         }));
       }else{
-        console.log("departamento borro :" + result.rowsAffected);
+        console.log("nodetesr borro :" + result.rowsAffected);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
