@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { Http } from '@angular/http';
+import { Component } from '@angular/core';
 
 
 //lista de material
@@ -11,7 +13,7 @@ import {MdMenuModule} from '@angular/material';
 import {MdIconModule} from '@angular/material';
 import {MdButtonModule} from '@angular/material';
 import {MdToolbarModule} from '@angular/material';
-
+import {MdGridListModule} from '@angular/material';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -44,7 +46,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MdMenuModule,
     MdIconModule,
     MdButtonModule,
-    MdToolbarModule
+    MdToolbarModule,
+    MdGridListModule,
+    Http,
+    Component
   ],
   providers: [],
   bootstrap: [AppComponent]
