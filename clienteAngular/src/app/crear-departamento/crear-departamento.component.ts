@@ -11,5 +11,5 @@ export class CrearDepartamentoComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  
 }

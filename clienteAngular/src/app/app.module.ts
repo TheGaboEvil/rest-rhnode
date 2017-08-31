@@ -38,6 +38,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     MdInputModule,
     MdCardModule,
     MdMenuModule,
