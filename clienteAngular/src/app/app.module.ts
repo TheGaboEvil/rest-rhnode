@@ -18,6 +18,7 @@ import {MdToolbarModule} from '@angular/material';
 import {MdGridListModule} from '@angular/material';
 import {MdSidenavModule} from '@angular/material';
 
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 
 import { CrearSucursalComponent } from './crear-sucursal/crear-sucursal.component';
@@ -52,7 +53,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MdToolbarModule,
     MdGridListModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
