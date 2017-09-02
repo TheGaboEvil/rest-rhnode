@@ -1,9 +1,15 @@
 
 
 <app-menu></app-menu>
-<br>
-<app-crear-sucursal></app-crear-sucursal>
-<br>
-<app-crear-departamento></app-crear-departamento>
-<br>
-<app-crear-empleado></app-crear-empleado>
+<md-sidenav-container>
+    <md-sidenav #sidenav mode="side" opened="true">
+        <app-dashboard></app-dashboard>
+    </md-sidenav>
+    <div>
+        <app-crear-sucursal></app-crear-sucursal>
+        <br>
+        <app-crear-departamento></app-crear-departamento>
+        <br>
+        <app-crear-empleado></app-crear-empleado>
+    </div>
+</md-sidenav-container>

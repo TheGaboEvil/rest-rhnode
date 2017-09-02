@@ -27,8 +27,9 @@ import { ListaDepartamentoComponent } from './lista-departamento/lista-departame
 import { ListaSucursalComponent } from './lista-sucursal/lista-sucursal.component';
 import { ListaEmpleadoComponent } from './lista-empleado/lista-empleado.component';
 import { CrearEmpleadoComponent } from './crear-empleado/crear-empleado.component';
-import { MenuComponent } from './menu/menu.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MenuComponent } from './menu/menu.component';
+
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MdButtonModule,
     MdToolbarModule,
     MdGridListModule,
+    MdSidenavModule,
     FormsModule,
     HttpClientModule,
     FlexLayoutModule
