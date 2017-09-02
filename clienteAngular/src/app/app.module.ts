@@ -1,8 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { FormsModule }   from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 //lista de material
 import {MdInputModule} from '@angular/material';
@@ -11,9 +15,11 @@ import {MdMenuModule} from '@angular/material';
 import {MdIconModule} from '@angular/material';
 import {MdButtonModule} from '@angular/material';
 import {MdToolbarModule} from '@angular/material';
+import {MdGridListModule} from '@angular/material';
+import {MdSidenavModule} from '@angular/material';
 
+import {FlexLayoutModule} from "@angular/flex-layout";
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { CrearSucursalComponent } from './crear-sucursal/crear-sucursal.component';
 import { CrearDepartamentoComponent } from './crear-departamento/crear-departamento.component';
@@ -44,7 +50,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MdMenuModule,
     MdIconModule,
     MdButtonModule,
-    MdToolbarModule
+    MdToolbarModule,
+    MdGridListModule,
+    FormsModule,
+    HttpClientModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
