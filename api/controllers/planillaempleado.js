@@ -63,7 +63,7 @@ exports.obtener_registro = function(req,res){
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
     con.execute("UPDATE planillaempleado SET coddcatplanilla = :in_codcatplanilla,vofplanilla= :in_codplanilla,coddepartamento= :in_coddepartamento,monto= :in_monto,:in_observacion WHERE codempledo=:id",
-    [req.body.in_codcatplanilla,req.body.coddepartanebto,req.body.in_monto,req.body.in_observavion req.params.id],
+    [req.body.in_codcatplanilla,req.body.coddepartanebto,req.body.in_monto,req.body.in_observavion, req.params.id],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
