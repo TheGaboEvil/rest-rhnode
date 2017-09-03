@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function(app){
-  var nodetest = require('../controllers/planilla');
+  var planilla  = require('../controllers/planilla');
   app.route('/planilla')
     .get(planilla.enlistar_todo)
     .post(planilla.crear_registro);

@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function(app){
-  var planillaempledo = require('../controllers/planillaempledo');
+  var planillaempledo = require('../controllers/planillaempleado');
   app.route('/planillaempledo')
     .get(planillaempledo.enlistar_todo)
     .post(planillaempledo.crear_registro);
