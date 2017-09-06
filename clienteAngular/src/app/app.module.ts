@@ -18,6 +18,8 @@ import {MdToolbarModule} from '@angular/material';
 import {MdGridListModule} from '@angular/material';
 import {MdSidenavModule} from '@angular/material';
 
+import 'hammerjs';
+
 import {FlexLayoutModule} from "@angular/flex-layout";
 
 
