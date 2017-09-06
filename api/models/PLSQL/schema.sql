@@ -1,80 +1,3 @@
-CREATE TABLE PERFILPLAZA(
-    codPerfilPlaza      varchar2(30),
-    nombrePlaza         varchar2(25),
-    descripcionPlaza    varchar(100),
-    PRIMARY KEY(codPerfilPlaza)
-);
-
-CREATE TABLE REQUERIMIENTOSPLAZA(
-    codRequerimientoPlaza varchar2(30),
-    codPerfilPlaza      varchar2(30),
-    nombreRequerimiento varchar2(100),
-    descripcionRequerimiento varchar2(225),
-    PRIMARY KEY(codRequerimientoPlaza, codPerfilPlaza),
-    CONSTRAINT fkPerfilPlazaReq FOREIGN KEY(codPerfilPlaza) REFERENCES PERFILPLAZA(codPerfilPlaza)
-);
-
-CREATE TABLE FUNCIONESPLAZA(
-    codFuncionesPlaza varchar2(30),
-    codPerfilPlaza      varchar2(30),
-    nombreFunciones varchar2(100),
-    descripcionFunciones varchar2(200),
-    PRIMARY KEY(codFuncionesPlaza,codPerfilPlaza),
-    CONSTRAINT fkperfilPlazaFunc FOREIGN KEY(codPerfilPlaza) REFERENCES PERFILPLAZA(codPerfilPlaza)
-);
-
-CREATE TABLE DEPARTAMENTOPERFILPLAZA(
-    codPerfilPlaza varchar2(30),
-    codDepartamento varchar2(30),
-    codSucursal     varchar2(30),
-    cantidadPlazas smallint,
-    plazasActivas smallint,
-    observaciones varchar2(150),
-    CONSTRAINT pkPerfilPlazaDepartamento PRIMARY KEY (codPerfilPlaza,codDepartamento,codSucursal),
-    CONSTRAINT fkDepartamentoPerfilPlaza FOREIGN KEY (codDepartamento, codSucursal) REFERENCES DEPARTAMENTO(codDepartamento, codSucursal)
- );
-
-
-CREATE TABLE CANDIDATOS(
-  codCandidato varchar2(30),
-  codPerfilPlaza varchar2(30),
-  codSucursal varchar2(30),
-  codDepartamento varchar2(30),
-  nombreCompleto varchar2(250),
-  documentoIdentidad varchar2(25),
-  tipoDocumento varchar2(25),
-  tituloCandidato varchar2(25),
-  telefonoCandidato varchar2(43),
-  correoElectronicoCandidato varchar2(250),
-  fechaSolicitud date,
-  estadoCandidato varchar2(25),
-  PRIMARY KEY(codCandidato),
-  CONSTRAINT fkDeptoPerPlz FOREIGN KEY (codPerfilPlaza,codDepartamento,codSucursal) REFERENCES DEPARTAMENTOPERFILPLAZA(codPerfilPlaza,codDepartamento,codSucursal)
-);
-
-CREATE TABLE EVALUACIONESCANDIDATOS(
-  codEvaluacion varchar2(30),
-  nombreEvaluacion varchar2(100),
-  estadoEvaluacion varchar2(100),
-  descripcionEvaluacion varchar2(200),
-  puntuacionRequerida number(4,2),
-  puntuacionMaxima number(4,2),
-  PRIMARY KEY (codEvaluacion)
-);
-
-
-CREATE TABLE CANDIDATOSEVALUACIONES(
-  codCandidato varchar2(30),
-  codEvaluacion varchar2(30),
-  fechaEvaluacion date,
-  puntajeEvaluacion number(4,2),
-  observaciones varchar2(150),
-  documentoEvaluacion BLOB,
-  CONSTRAINT pkCandidatosEvaluacion PRIMARY KEY(codCandidato,codEvaluacion),
-  CONSTRAINT fkCandidatoCandEva FOREIGN KEY(codCandidato) REFERENCES CANDIDATOS(codCandidato),
-  CONSTRAINT fkEvaluacionCandEva FOREIGN KEY(codEvaluacion) REFERENCES EVALUACIONESCANDIDATOS(codEvaluacion)
-);
-
 
 /*
 DE AQUI PARA ABAJO SON LAS TABLAS QUE YA FUNCONAN EN EL PRIMER MODULO.
@@ -225,4 +148,85 @@ CREATE TABLE USUARIOS(
   PASS varchar2(254),
   ESTADO varchar2(50),
   NIVELACCESO number(38,0)
+);
+
+/*
+* DESDE AQUI VAN LAS TABLAS PARA EL MODULO DOS....
+*/
+
+CREATE TABLE PERFILPLAZA(
+    codPerfilPlaza      varchar2(30),
+    nombrePlaza         varchar2(25),
+    descripcionPlaza    varchar(100),
+    PRIMARY KEY(codPerfilPlaza)
+);
+
+CREATE TABLE REQUERIMIENTOSPLAZA(
+    codRequerimientoPlaza varchar2(30),
+    codPerfilPlaza      varchar2(30),
+    nombreRequerimiento varchar2(100),
+    descripcionRequerimiento varchar2(225),
+    PRIMARY KEY(codRequerimientoPlaza, codPerfilPlaza),
+    CONSTRAINT fkPerfilPlazaReq FOREIGN KEY(codPerfilPlaza) REFERENCES PERFILPLAZA(codPerfilPlaza)
+);
+
+CREATE TABLE FUNCIONESPLAZA(
+    codFuncionesPlaza varchar2(30),
+    codPerfilPlaza      varchar2(30),
+    nombreFunciones varchar2(100),
+    descripcionFunciones varchar2(200),
+    PRIMARY KEY(codFuncionesPlaza,codPerfilPlaza),
+    CONSTRAINT fkperfilPlazaFunc FOREIGN KEY(codPerfilPlaza) REFERENCES PERFILPLAZA(codPerfilPlaza)
+);
+
+CREATE TABLE DEPARTAMENTOPERFILPLAZA(
+    codPerfilPlaza varchar2(30),
+    codDepartamento varchar2(30),
+    codSucursal     varchar2(30),
+    cantidadPlazas smallint,
+    plazasActivas smallint,
+    observaciones varchar2(150),
+    CONSTRAINT pkPerfilPlazaDepartamento PRIMARY KEY (codPerfilPlaza,codDepartamento,codSucursal),
+    CONSTRAINT fkDepartamentoPerfilPlaza FOREIGN KEY (codDepartamento, codSucursal) REFERENCES DEPARTAMENTO(codDepartamento, codSucursal)
+ );
+
+
+CREATE TABLE CANDIDATOS(
+  codCandidato varchar2(30),
+  codPerfilPlaza varchar2(30),
+  codSucursal varchar2(30),
+  codDepartamento varchar2(30),
+  nombreCompleto varchar2(250),
+  documentoIdentidad varchar2(25),
+  tipoDocumento varchar2(25),
+  tituloCandidato varchar2(25),
+  telefonoCandidato varchar2(43),
+  correoElectronicoCandidato varchar2(250),
+  fechaSolicitud date,
+  estadoCandidato varchar2(25),
+  PRIMARY KEY(codCandidato),
+  CONSTRAINT fkDeptoPerPlz FOREIGN KEY (codPerfilPlaza,codDepartamento,codSucursal) REFERENCES DEPARTAMENTOPERFILPLAZA(codPerfilPlaza,codDepartamento,codSucursal)
+);
+
+CREATE TABLE EVALUACIONESCANDIDATOS(
+  codEvaluacion varchar2(30),
+  nombreEvaluacion varchar2(100),
+  estadoEvaluacion varchar2(100),
+  descripcionEvaluacion varchar2(200),
+  puntuacionRequerida number(4,2),
+  puntuacionMaxima number(4,2),
+  PRIMARY KEY (codEvaluacion)
+);
+
+
+CREATE TABLE CANDIDATOSEVALUACIONES(
+  codCandidato varchar2(30),
+  codEvaluacion varchar2(30),
+  fechaEvaluacion date,
+  puntajeEvaluacion number(4,2),
+  observaciones varchar2(150),
+  documentoEvaluacion BLOB,
+  CONSTRAINT pkCandidatosEvaluacion PRIMARY KEY(codCandidato,codEvaluacion),
+  CONSTRAINT fkCandidatoCandEva FOREIGN KEY(codCandidato) REFERENCES CANDIDATOS(codCandidato),
+  CONSTRAINT fkEvaluacionCandEva FOREIGN KEY(codEvaluacion) REFERENCES EVALUACIONESCANDIDATOS(codEvaluacion)
 );
