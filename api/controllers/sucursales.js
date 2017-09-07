@@ -62,7 +62,7 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE sucursal SET :in_direccion,:in_ciudad,:in_departamento,:in_pais,:in_codigopostal,:in_telefono,:in_coordenadasWHERE id=::in_codsucursal",
+    con.execute("UPDATE sucursal SET codSucursal:in_direccion,direccion:in_ciudad,departamento:in_departamento,pais:in_pais,codigoPostal:in_codigopostal,telefono:in_telefono,coordenadas:in_coordenadasWHERE codSucursal=:id",
     [req.body.in_nombre,req.body.in_apellido,req.body.in_fechanacimiento,req.body.in_salario,req.params.id],
     function(err,result){
       if(err){
@@ -70,7 +70,7 @@ exports.actualizar_registro = function(req,res){
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo sucursal " + err.message
+          message: "Error al actualizar sucursal " + err.message
         }));
       }else{
         console.log("nodetesr actualizo :" + result.rowsAffected);

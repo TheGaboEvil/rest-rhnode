@@ -1,11 +1,11 @@
 {
-  "name": "rest-rhnode",
+  "name": "rest-node",
   "version": "1.0.0",
-  "description": "",
+  "description": "Bienvenidos a RHNODE (REST-API VERSION)\r ===================",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"nodemon server.js"
+    "start": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,5 +16,13 @@
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ejchicas/rest-rhnode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ejchicas/rest-rhnode/issues"
+  },
+  "homepage": "https://github.com/ejchicas/rest-rhnode#readme"
 }

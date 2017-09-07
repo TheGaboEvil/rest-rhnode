@@ -5,16 +5,16 @@ var ora = require('../models/ora');
 exports.enlistar_todo = function(req,res){
 
   ora.then(function(con){
-    con.execute('select * from adelantosempleado',function(err,result){
+    con.execute('select * from PERFILPLAZA',function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener de adelantos empleado " + err.message
+          message: "Error al obtener todo perfilplaza  " + err.message
         }));
       }else{
-        console.log("Adelantosempleado respondio: " + result.rows);
+        console.log("perfilplaza respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rows));
       }
@@ -24,18 +24,18 @@ exports.enlistar_todo = function(req,res){
 
 exports.crear_registro = function(req,res){
   ora.then(function(con){
-    con.execute("INSERT INTO adelantosempleado VALUES(:in_codadelanto,:in_codempleado,TO_DATE(:in_fechaadelanto,'YYYY/MM/DD'),:in_montoadelanto,:in_estadoadelanto)",
-    [req.body.in_codadelanto,req.body.in_codempleado,req.body.in_fechaadelanto,req.body.in_montoadelanto,req.body.in_estadoadelanto],
+    con.execute("INSERT INTO perfilplaza VALUES(:in_codperfilplaza,:in_nombreplaza,:in_descripcionplaza)",
+    [req.body.in_codperfilplaza,req.body.in_nombreplaza,req.body.in_descripcionplaza],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al crear registro de adelantos empleado " + err.message
+          message: "Error al crear un registro perfilplaza" + err.message
         }));
       }else{
-        console.log("Adelantoempleado respondio :" + result.rows);
+        console.log("perfilplaza respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
@@ -44,17 +44,16 @@ exports.crear_registro = function(req,res){
 };
 exports.obtener_registro = function(req,res){
   ora.then(function(con){
-    con.execute('SELECT * from adelantosempleado WHERE codAdelanto=:id1 AND codEmpleado=id2',
-    [req.params.id1,req.params.id2],function(err,result){
+    con.execute('select * from perfilplaza where codPerfilPlaza= :id',[req.params.id],function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener adelanto de empleado " + err.message
+          message: "Error al obtener todo perfilplaza" + err.message
         }));
       }else{
-        console.log("Adelantoempleado respondio :" + result.rows);
+        console.log("perfilplaza respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rows));
       }
@@ -63,18 +62,18 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE adelantosempleado SET fechaAdelanto=TO_DATE(:in_fechaadelanto,'YYYY/MM/DD'),montoAdelanto=:in_montoadelanto,estadoAdelanto=:in_estadoAdelanto WHERE codAdelanto=:id1 AND codEmpleado=:id2",
-    [req.body.in_fechaadelanto,req.body.in_montoadelanto,req.body.in_estadoadelanto,req.params.id1,req.params.id2],
+    con.execute("UPDATE perfilplaza SET nombrePlaza=:in_nombreplaza, descripcionPlaza=:in_descripcionplaza WHERE codPerfilPlaza=:id",
+    [req.body.in_nombre_plaza,req.body.in_descripcion_plaza,req.params.id],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al actualizar adelantos empleado " + err.message
+          message: "Error al actualizar perfilplaza " + err.message
         }));
       }else{
-        console.log("Adelantoempleado actualizo :" + result.rowsAffected);
+        console.log("perfilplaza actualizo :" + result.rowsAffected);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
@@ -83,18 +82,18 @@ exports.actualizar_registro = function(req,res){
 };
 exports.borrar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("DELETE FROM adelantosempleado WHERE codAdelanto=:id1 AND codAdelanto=:id2",
-    [req.params.id1,req.params.id2],
+    con.execute("DELETE FROM perfilplaza WHERE codPerfilPlaza=:id",
+    [req.params.id],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al eliminar adelanto empleado " + err.message
+          message: "Error al eliminar perfilplaza " + err.message
         }));
       }else{
-        console.log("Adelanto empleado borrado :" + result.rowsAffected);
+        console.log("perfilplaza borro :" + result.rowsAffected);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }

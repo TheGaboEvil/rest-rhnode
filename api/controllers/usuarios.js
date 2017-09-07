@@ -62,15 +62,15 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE usuarios SET nick=:in_nick, pass=:in_pass, estado=:in_estado, nivel_acceso=:in_nivel_acceso WHERE id_usuario=:id",
-    [req.body.in_nombre_usuario,req.body.in_pass_usuario,req.body.in_estado,req.body.in_nivel_acceso,req.params.id_usuario],
+    con.execute("UPDATE usuarios SET nick=:in_nick, pass=:in_pass, estado=:in_estado, nivelacceso=:in_nivel_acceso WHERE codusuario=:id",
+    [req.body.in_nick,req.body.in_pass,req.body.in_estado,req.body.in_nivel_acceso,req.params.id],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo usuario " + err.message
+          message: "Error al actualizar usuario " + err.message
         }));
       }else{
         console.log("usuario actualizo :" + result.rowsAffected);
@@ -90,7 +90,7 @@ exports.borrar_registro = function(req,res){
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo usuario " + err.message
+          message: "Error al eliminar usuario " + err.message
         }));
       }else{
         console.log("usuario borro :" + result.rowsAffected);

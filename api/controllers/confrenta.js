@@ -5,16 +5,16 @@ var ora = require('../models/ora');
 exports.enlistar_todo = function(req,res){
 
   ora.then(function(con){
-    con.execute('select * from confrenta',function(err,result){
+    con.execute('SELECT * FROM confrenta',function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo confrenta " + err.message
+          message: "Error al obtener configuracion de renta " + err.message
         }));
       }else{
-        console.log("confrenta respondio :" + result.rows);
+        console.log("Confrenta respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rows));
       }
@@ -24,7 +24,7 @@ exports.enlistar_todo = function(req,res){
 
 exports.crear_registro = function(req,res){
   ora.then(function(con){
-    con.execute("INSERT INTO confrenta VALUES(:in_codrenta,:in_montodesde,:in_montohasta,in:porcentaplicar,:in_sobreexcedentede,:in_mascuotafijada,:in_tipoperiodo)",
+    con.execute("INSERT INTO confrenta VALUES(:in_codrenta,:in_montodesde,:in_montohasta,in:porcentaplicar,:in_sobreexcedentede,:in_mascuotafijade,:in_tipoperiodo)",
     [req.body.in_codrenta,req.body.in_montodesde,req.body.in_montohasta,req.body.in_porcentapliar,req.body.in_sobreexcedentede,req.body.in_mascuotafijada,req.body.in_tipoperiodo],
     function(err,result){
       if(err){
@@ -32,10 +32,10 @@ exports.crear_registro = function(req,res){
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al crear un registro confrenta " + err.message
+          message: "Error al crear configuracion de renta " + err.message
         }));
       }else{
-        console.log("confrenta respondio :" + result.rows);
+        console.log("Confrenta respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
@@ -44,16 +44,16 @@ exports.crear_registro = function(req,res){
 };
 exports.obtener_registro = function(req,res){
   ora.then(function(con){
-    con.execute('select * from confrenta where codrenta = :id',[req.params.id],function(err,result){
+    con.execute('select * FROM confrenta WHERE codRenta=:id',[req.params.id],function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo confrenta " + err.message
+          message: "Error al obtener configuracion de renta " + err.message
         }));
       }else{
-        console.log("confrenta respondio :" + result.rows);
+        console.log("Confrenta respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rows));
       }
@@ -62,18 +62,18 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE nodetest SET :in_montodesde,:in_montohasta,in:porcentaplicar,:in_sobreexcedentede,:in_mascuotafijada,:in_tipoperiodo WHERE in_codrenta=:id",
-    [req.body.in_nombre,req.body.in_apellido,req.body.in_fechanacimiento,req.body.in_salario,req.params.id],
+    con.execute("UPDATE confrenta SET montoDesde=:in_montodesde,montoHasta=:in_montohasta,porcentaplicar=:in_porcentaplicar,sobreExcedenteDe=:in_sobreexcedentede,masCuotaFijaDe=:in_mascuotafijada,tipoPeriodo=:in_tipoperiodo WHERE codRenta=:id",
+    [req.body.in_montodesde,req.body.in_montohasta,req.body.in_porcentaplicar,req.body.in_sobreexcedentede,req.body.in_mascuotafijade,req.body.in_tipoperiodo,req.params.id],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo nodetest " + err.message
+          message: "Error al actualizar configuracion de renta " + err.message
         }));
       }else{
-        console.log("confrenta actualizo :" + result.rowsAffected);
+        console.log("Confrenta actualizo :" + result.rowsAffected);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
@@ -82,7 +82,7 @@ exports.actualizar_registro = function(req,res){
 };
 exports.borrar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("DELETE FROM confrenta WHERE codrenta=:id",
+    con.execute("DELETE FROM confrenta WHERE codRenta=:id",
     [req.params.id],
     function(err,result){
       if(err){
@@ -90,10 +90,10 @@ exports.borrar_registro = function(req,res){
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo nodetest " + err.message
+          message: "Error al eliminar configuracion de renta " + err.message
         }));
       }else{
-        console.log("confrenta borro :" + result.rowsAffected);
+        console.log("Confrenta borrada :" + result.rowsAffected);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }

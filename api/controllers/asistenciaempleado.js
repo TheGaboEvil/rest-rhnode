@@ -5,16 +5,16 @@ var ora = require('../models/ora');
 exports.enlistar_todo = function(req,res){
 
   ora.then(function(con){
-    con.execute('select * from asistenciaempleado',function(err,result){
+    con.execute('SELECT * FROM asistenciaempleado',function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo asistenciaempleado " + err.message
+          message: "Error al obtener asistencias de empleado " + err.message
         }));
       }else{
-        console.log("asistenciaempleado respondio :" + result.rows);
+        console.log("Asistencia empleado respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rows));
       }
@@ -32,10 +32,10 @@ exports.crear_registro = function(req,res){
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al crear un registro asistenciaempleado " + err.message
+          message: "Error al crear asistencia de empleado " + err.message
         }));
       }else{
-        console.log("asistenciaempleado respondio :" + result.rows);
+        console.log("Asistencia empleado respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
@@ -44,7 +44,8 @@ exports.crear_registro = function(req,res){
 };
 exports.obtener_registro = function(req,res){
   ora.then(function(con){
-    con.execute('select * from asistenciaempleado where codempleado= :id',[req.params.id],function(err,result){
+    con.execute('SELECT * FROM asistenciaempleado WHERE codempleado=:id1 AND fechaHoraReg=:id2',
+    [req.params.id1,req.params.id2],function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
@@ -53,7 +54,7 @@ exports.obtener_registro = function(req,res){
           message: "Error al obtener todo asistenciaempleado " + err.message
         }));
       }else{
-        console.log("asistenciaempleado respondio :" + result.rows);
+        console.log("Asistencia empleado respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rows));
       }
@@ -62,18 +63,18 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE asistenciaempleado SET TO_DATE(:in_fechahorareg,'YYYY/MM/DD'),:in_tiporegistro,:in_observacion WHERE codempleado =:id",
-    [req.body.in_nombre,req.body.in_apellido,req.body.in_fechanacimiento,req.body.in_salario,req.params.id],
+    con.execute("UPDATE asistenciaempleado SET fechaHoraReg=TO_DATE(:in_fechahorareg,'YYYY/MM/DD'),tipoRegistro=:in_tiporegistro,observacion=:in_observacion WHERE codempleado=:id1 AND fechaHoraReg=:id2",
+    [req.body.in_fechahorareg,req.body.in_tiporegistro,req.body.in_observacion,req.params.id1,req.params.id2],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo asistenciaempleado" + err.message
+          message: "Error al obtener asistencia de empleado" + err.message
         }));
       }else{
-        console.log("nodetesr actualizo :" + result.rowsAffected);
+        console.log("Asistencia empleado actualizo :" + result.rowsAffected);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
@@ -82,18 +83,18 @@ exports.actualizar_registro = function(req,res){
 };
 exports.borrar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("DELETE FROM asistenciaempleado WHERE codempleado=:id",
-    [req.params.id],
+    con.execute("DELETE FROM asistenciaempleado WHERE codEmpleado=:id1 AND fechaHoraReg=:id2",
+    [req.params.id1,req.params.id2],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo nodetest " + err.message
+          message: "Error al eliminar asistencia de empledo " + err.message
         }));
       }else{
-        console.log("asistenciaempledo borro :" + result.rowsAffected);
+        console.log("Asistencia empledo borrado :" + result.rowsAffected);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }

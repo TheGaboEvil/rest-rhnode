@@ -6,7 +6,7 @@ module.exports = function(app){
     .get(adelantosempleado.enlistar_todo)
     .post(adelantosempleado.crear_registro);
 
-  app.route('/adelantosempleado/:id')
+  app.route('/adelantosempleado/:id1/id2')
   .get(adelantosempleado.obtener_registro)
   .put(adelantosempleado.actualizar_registro)
   .delete(adelantosempleado.borrar_registro);

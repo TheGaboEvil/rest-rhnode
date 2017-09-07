@@ -6,7 +6,7 @@ module.exports = function(app){
     .get(asistenciaempleado.enlistar_todo)
     .post(asistenciaempleado.crear_registro);
 
-  app.route('/asistenciaempleado/:id')
+  app.route('/asistenciaempleado/:id1/:id2')
   .get(asistenciaempleado.obtener_registro)
   .put(asistenciaempleado.actualizar_registro)
   .delete(asistenciaempleado.borrar_registro);

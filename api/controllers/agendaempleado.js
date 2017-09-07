@@ -5,16 +5,16 @@ var ora = require('../models/ora');
 exports.enlistar_todo = function(req,res){
 
   ora.then(function(con){
-    con.execute('select * from agendaempleado',function(err,result){
+    con.execute('SELECT * FROM agendaempleado',function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo agendaempleado " + err.message
+          message: "Error al obtener agenda empleado " + err.message
         }));
       }else{
-        console.log("agendaempleado respondio :" + result.rows);
+        console.log("Agenda empleado respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rows));
       }
@@ -32,10 +32,10 @@ exports.crear_registro = function(req,res){
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al crear un registro agendaempleado " + err.message
+          message: "Error al crear registro de agenda empleado " + err.message
         }));
       }else{
-        console.log("agendaempleado respondio :" + result.rows);
+        console.log("Agenda empleado respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
@@ -44,16 +44,17 @@ exports.crear_registro = function(req,res){
 };
 exports.obtener_registro = function(req,res){
   ora.then(function(con){
-    con.execute('select * from agendaempleado where codempleado = :id',[req.params.id],function(err,result){
+    con.execute('SELECT * FROM agendaempleado WHERE codEmpleado=:id AND fechaHoraEntrada=:id2 AND fechaHoraSalida=:id3',
+    [req.params.id1,req.params.id2,req.params.id3],function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo nodetest " + err.message
+          message: "Error al obtener agenda empleado " + err.message
         }));
       }else{
-        console.log("agendaempleado respondio :" + result.rows);
+        console.log("Agenda empleado respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rows));
       }
@@ -62,8 +63,8 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE nodetest SET :in_tiporegistro,TO_DATE(:in_fechahoraentrada,'YYYY/MM/DD'),TO_DATE(:in_fechahorasalida,'YYYY/MM/DD'),:in_observacion WHERE  :in_codempleadoid=:id",
-    [req.body.in_nombre,req.body.in_apellido,req.body.in_fechanacimiento,req.body.in_salario,req.params.id],
+    con.execute("UPDATE agendaempleado SET tipoRegistro:in_tiporegistro,fechaHoraEntrada=TO_DATE(:in_fechahoraentrada,'YYYY/MM/DD'),fechaHoraSalida=TO_DATE(:in_fechahorasalida,'YYYY/MM/DD'),:in_observacion WHERE codEmpleado=:id1 AND fechaHoraEntrada=:id2 AND fechaHoraSalida=:id3",
+    [req.body.in_tiporegistro,req.body.in_fechahoraentrada,req.body.in_fechahorasalida,req.body.in_observacion,req.params.id1,req.params.id2,req.params.id3],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
@@ -73,7 +74,7 @@ exports.actualizar_registro = function(req,res){
           message: "Error al obtener todo agendaempleado " + err.message
         }));
       }else{
-        console.log("nodetesr actualizo :" + result.rowsAffected);
+        console.log("Agenda empleado actualizo :" + result.rowsAffected);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
@@ -82,18 +83,18 @@ exports.actualizar_registro = function(req,res){
 };
 exports.borrar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("DELETE FROM agendaempleado WHERE codempleado=:id",
-    [req.params.id],
+    con.execute("DELETE FROM agendaempleado WHERE codempleado=:id1 AND fechaHoraEntrada=:id2 AND fechaHoraSalida=:id3",
+    [req.params.id1,req.params.id2,req.params.id3],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo agendaempleado " + err.message
+          message: "Error al eliminar agenda de empleado " + err.message
         }));
       }else{
-        console.log("agendaempleado borro :" + result.rowsAffected);
+        console.log("Agenda empleado borrada :" + result.rowsAffected);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }

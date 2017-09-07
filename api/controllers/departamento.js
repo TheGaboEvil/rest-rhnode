@@ -5,16 +5,16 @@ var ora = require('../models/ora');
 exports.enlistar_todo = function(req,res){
 
   ora.then(function(con){
-    con.execute('select * from departamento',function(err,result){
+    con.execute('SELECT * FROM departamento',function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo departamento " + err.message
+          message: "Error al obtener departamentos " + err.message
         }));
       }else{
-        console.log("departamento respondio :" + result.rows);
+        console.log("Departamento respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rows));
       }
@@ -32,10 +32,10 @@ exports.crear_registro = function(req,res){
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al crear un registro departamento" + err.message
+          message: "Error al crear departamento" + err.message
         }));
       }else{
-        console.log("departamento respondio :" + result.rows);
+        console.log("Departamento respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
@@ -44,16 +44,17 @@ exports.crear_registro = function(req,res){
 };
 exports.obtener_registro = function(req,res){
   ora.then(function(con){
-    con.execute('select * from departamento where coddepartamento = :id',[req.params.id],function(err,result){
+    con.execute('SELECT * FROM departamento WHERE codDepartamento=:id1 AND codSucursal=:id2',
+    [req.params.id1,req.params.id2],function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo departamento" + err.message
+          message: "Error al obtener departamento" + err.message
         }));
       }else{
-        console.log("departamento respondio :" + result.rows);
+        console.log("Departamento respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rows));
       }
@@ -62,18 +63,18 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE departamento  SET :in_codsucursal,:in_nombredepartamento,:in_numplazas WHERE coddepartamento=:id",
-    [req.body.in_nombre,req.body.in_apellido,req.body.in_fechanacimiento,req.body.in_salario,req.params.id],
+    con.execute("UPDATE departamento SET nombreDepartamento=:in_nombredepartamento,numPlazas=:in_numplazas WHERE codDepartamento=:id1 AND codSucursal=:id2",
+    [req.body.in_nombredepartamento,req.body.in_numplazas,req.params.id1,req.params.id2],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo departamento " + err.message
+          message: "Error al actualizar departamento " + err.message
         }));
       }else{
-        console.log("departamento actualizo :" + result.rowsAffected);
+        console.log("Departamento actualizo :" + result.rowsAffected);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
@@ -82,18 +83,18 @@ exports.actualizar_registro = function(req,res){
 };
 exports.borrar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("DELETE FROM departamento WHERE codsucursal=:id1 AND coddepartamento=:id2",
-    [req.params.id],
+    con.execute("DELETE FROM departamento WHERE codDepartamento=:id1 AND codSucursal=:id2",
+    [req.params.id1,req.params.id2],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo departamento " + err.message
+          message: "Error al eliminar departamento " + err.message
         }));
       }else{
-        console.log("departamento borro :" + result.rowsAffected);
+        console.log("Departamentos borrado :" + result.rowsAffected);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
