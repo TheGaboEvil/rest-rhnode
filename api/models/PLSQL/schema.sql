@@ -190,7 +190,6 @@ CREATE TABLE DEPARTAMENTOPERFILPLAZA(
     CONSTRAINT fkDepartamentoPerfilPlaza FOREIGN KEY (codDepartamento, codSucursal) REFERENCES DEPARTAMENTO(codDepartamento, codSucursal)
  );
 
-
 CREATE TABLE CANDIDATOS(
   codCandidato varchar2(30),
   codPerfilPlaza varchar2(30),
@@ -217,7 +216,6 @@ CREATE TABLE EVALUACIONESCANDIDATOS(
   puntuacionMaxima number(4,2),
   PRIMARY KEY (codEvaluacion)
 );
-
 
 CREATE TABLE CANDIDATOSEVALUACIONES(
   codCandidato varchar2(30),
