@@ -9,9 +9,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static('restCliente/dist/'));
 
-var routes_nodetest = require('./api/routes/nodetest');
-routes_nodetest(app);
-
 var routes_adelantosempleado = require('./api/routes/adelantosempleado');
 routes_adelantosempleado(app);
 var routes_agendaempleado = require('./api/routes/agendaempleado');
