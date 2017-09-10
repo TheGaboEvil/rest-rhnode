@@ -6,16 +6,16 @@ var ora = require('../models/ora');
 exports.enlistar_todo = function(req,res){
 
   ora.then(function(con){
-    con.execute('select * from PERFILPLAZA',function(err,result){
+    con.execute('SELECT * FROM perfilplaza',function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo perfilplaza  " + err.message
+          message: "Error al obtener perfiles de plaza  " + err.message
         }));
       }else{
-        console.log("perfilplaza respondio :" + result.rows);
+        console.log("Perfil de plaza respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rows));
       }
@@ -33,10 +33,10 @@ exports.crear_registro = function(req,res){
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al crear un registro perfilplaza" + err.message
+          message: "Error al crear perfil de plaza" + err.message
         }));
       }else{
-        console.log("perfilplaza respondio :" + result.rows);
+        console.log("Perfil de plaza respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
@@ -45,16 +45,16 @@ exports.crear_registro = function(req,res){
 };
 exports.obtener_registro = function(req,res){
   ora.then(function(con){
-    con.execute('select * from perfilplaza where codPerfilPlaza= :id',[req.params.id],function(err,result){
+    con.execute('SELECT * FROM perfilplaza WHERE codPerfilPlaza= :id',[req.params.id],function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo perfilplaza" + err.message
+          message: "Error al obtener perfil de plaza" + err.message
         }));
       }else{
-        console.log("perfilplaza respondio :" + result.rows);
+        console.log("Perfil de plaza respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rows));
       }
@@ -71,10 +71,10 @@ exports.actualizar_registro = function(req,res){
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al actualizar perfilplaza " + err.message
+          message: "Error al actualizar perfil de plaza " + err.message
         }));
       }else{
-        console.log("perfilplaza actualizo :" + result.rowsAffected);
+        console.log("Perfil de plaza actualizo :" + result.rowsAffected);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
@@ -91,10 +91,10 @@ exports.borrar_registro = function(req,res){
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al eliminar perfilplaza " + err.message
+          message: "Error al eliminar perfil de plaza " + err.message
         }));
       }else{
-        console.log("perfilplaza borro :" + result.rowsAffected);
+        console.log("Perfil de plaza borro :" + result.rowsAffected);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
