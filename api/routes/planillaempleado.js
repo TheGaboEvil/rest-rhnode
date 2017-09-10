@@ -6,7 +6,7 @@ module.exports = function(app){
     .get(planillaempledo.enlistar_todo)
     .post(planillaempledo.crear_registro);
 
-  app.route('/planillaempledo/:id')
+  app.route('/planillaempledo/:id1/:id2/:id3')
   .get(planillaempledo.obtener_registro)
   .put(planillaempledo.actualizar_registro)
   .delete(planillaempledo.borrar_registro);
