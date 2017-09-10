@@ -147,7 +147,9 @@ CREATE TABLE USUARIOS(
   NICK varchar2(50),
   PASS varchar2(254),
   ESTADO varchar2(50),
-  NIVELACCESO number(38,0)
+  NIVELACCESO number(38,0),
+  codEmpleado varchar2(30),
+  CONSTRAINT fkUsuarioEmpleado FOREIGN KEY(codEmpleado) REFERENCES EMPLEADOS(codEmpleado)
 );
 
 /*
