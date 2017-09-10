@@ -5,16 +5,16 @@ var ora = require('../models/ora');
 exports.enlistar_todo = function(req,res){
 
   ora.then(function(con){
-    con.execute('select * from sucursal',function(err,result){
+    con.execute('SELECT * FROM sucursal',function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo sucursal " + err.message
+          message: "Error al obtener sucursales " + err.message
         }));
       }else{
-        console.log("nodetesr respondio :" + result.rows);
+        console.log("Sucursales respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rows));
       }
@@ -32,10 +32,10 @@ exports.crear_registro = function(req,res){
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al crear un registro sucursal " + err.message
+          message: "Error al crear sucursal " + err.message
         }));
       }else{
-        console.log("nodetesr respondio :" + result.rows);
+        console.log("Sucursal respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
@@ -44,16 +44,16 @@ exports.crear_registro = function(req,res){
 };
 exports.obtener_registro = function(req,res){
   ora.then(function(con){
-    con.execute('select * from sucursal where codsucursal = :id',[req.params.id],function(err,result){
+    con.execute('SELECT * FROM sucursal WHERE codSucursal = :id',[req.params.id],function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo sucursal " + err.message
+          message: "Error al obtener sucursales " + err.message
         }));
       }else{
-        console.log("sucursal respondio :" + result.rows);
+        console.log("Sucursal respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rows));
       }
@@ -62,8 +62,8 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE sucursal SET codSucursal:in_direccion,direccion:in_ciudad,departamento:in_departamento,pais:in_pais,codigoPostal:in_codigopostal,telefono:in_telefono,coordenadas:in_coordenadasWHERE codSucursal=:id",
-    [req.body.in_nombre,req.body.in_apellido,req.body.in_fechanacimiento,req.body.in_salario,req.params.id],
+    con.execute("UPDATE sucursal SET codSucursal=:in_codsucursal,direccion=:in_direccion,ciudad=:in_ciudad,departamento=:in_departamento,pais=:in_pais,codigoPostal=:in_codigopostal,telefono=:in_telefono,coordenadas=:in_coordenadas WHERE codSucursal=:id",
+    [req.body.in_codsucursal,req.body.in_direccion,req.body.in_ciudad,req.body.in_departamento,req.body.in_pais,req.body.in_codigopostal,req.body.in_coordenadas,req.params.id],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
@@ -73,7 +73,7 @@ exports.actualizar_registro = function(req,res){
           message: "Error al actualizar sucursal " + err.message
         }));
       }else{
-        console.log("nodetesr actualizo :" + result.rowsAffected);
+        console.log("Sucursal actualizo :" + result.rowsAffected);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
@@ -82,7 +82,7 @@ exports.actualizar_registro = function(req,res){
 };
 exports.borrar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("DELETE FROM sucursal WHERE codsucursal=:in_codsucursal",
+    con.execute("DELETE FROM sucursal WHERE codsucursal=:id",
     [req.params.id],
     function(err,result){
       if(err){
@@ -90,10 +90,10 @@ exports.borrar_registro = function(req,res){
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo sucursal " + err.message
+          message: "Error al eliminar sucursal " + err.message
         }));
       }else{
-        console.log("nodetesr borro :" + result.rowsAffected);
+        console.log("Sucursal borro :" + result.rowsAffected);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }

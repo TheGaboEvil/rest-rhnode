@@ -5,7 +5,7 @@ var ora = require('../models/ora');
 exports.enlistar_todo = function(req,res){
 
   ora.then(function(con){
-    con.execute('select * from usuarios',function(err,result){
+    con.execute('SELECT * FROM usuarios',function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
@@ -14,7 +14,7 @@ exports.enlistar_todo = function(req,res){
           message: "Error al obtener todo usuarios  " + err.message
         }));
       }else{
-        console.log("usuarios respondio :" + result.rows);
+        console.log("Usuarios respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rows));
       }
@@ -35,7 +35,7 @@ exports.crear_registro = function(req,res){
           message: "Error al crear un registro usuarios" + err.message
         }));
       }else{
-        console.log("usuarios respondio :" + result.rows);
+        console.log("Usuarios respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
@@ -44,16 +44,16 @@ exports.crear_registro = function(req,res){
 };
 exports.obtener_registro = function(req,res){
   ora.then(function(con){
-    con.execute('select * from usurios where codusuario= :id',[req.params.id],function(err,result){
+    con.execute('SELECT * FROM usuarios WHERE codusuario= :id',[req.params.id],function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo usuario" + err.message
+          message: "Error al obtener el usuario" + err.message
         }));
       }else{
-        console.log("usuario respondio :" + result.rows);
+        console.log("Usuario respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rows));
       }
@@ -73,7 +73,7 @@ exports.actualizar_registro = function(req,res){
           message: "Error al actualizar usuario " + err.message
         }));
       }else{
-        console.log("usuario actualizo :" + result.rowsAffected);
+        console.log("Usuario actualizo :" + result.rowsAffected);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
@@ -93,7 +93,7 @@ exports.borrar_registro = function(req,res){
           message: "Error al eliminar usuario " + err.message
         }));
       }else{
-        console.log("usuario borro :" + result.rowsAffected);
+        console.log("Usuario borro :" + result.rowsAffected);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }

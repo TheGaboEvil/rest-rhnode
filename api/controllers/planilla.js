@@ -70,7 +70,7 @@ exports.actualizar_registro = function(req,res){
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener planilla " + err.message
+          message: "Error al actualizar planilla " + err.message
         }));
       }else{
         console.log("Planilla actualizo :" + result.rowsAffected);
