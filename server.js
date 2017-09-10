@@ -7,7 +7,7 @@ var express = require('express'),
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(express.static('restCliente/dist/'));
+app.use(express.static('clienteAngular/dist/'));
 
 var routes_adelantosempleado = require('./api/routes/adelantosempleado');
 routes_adelantosempleado(app);

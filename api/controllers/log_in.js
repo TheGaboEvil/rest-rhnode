@@ -13,7 +13,7 @@ exports.crear_registro = function(req,res){
           res.writeHead(500,{'Content-Type':'aplication/json'});
           res.end(JSON.stringify({
             status:500,
-            message: "Error al obtener todo usuario" + err.message
+            message: "Error al obtener USUARIOS" + err.message
           }));
         }else{
           console.log("usuario respondio :" + result.rows);
