@@ -5,16 +5,16 @@ var ora = require('../models/ora');
 exports.enlistar_todo = function(req,res){
 
   ora.then(function(con){
-    con.execute('select * from funcionesplaza',function(err,result){
+    con.execute('SELECT * FROM funcionesplaza',function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener de funciones plaza" + err.message
+          message: "Error al obtener funciones de plaza" + err.message
         }));
       }else{
-        console.log("funcionesplaza respondio: " + result.rows);
+        console.log("Funciones de plaza respondio: " + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rows));
       }
@@ -32,10 +32,10 @@ exports.crear_registro = function(req,res){
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al crear registro de funciones plaza " + err.message
+          message: "Error al crear registro de funciones de plaza " + err.message
         }));
       }else{
-        console.log("funcionesplaza respondio :" + result.rows);
+        console.log("Funciones de plaza respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
@@ -44,17 +44,17 @@ exports.crear_registro = function(req,res){
 };
 exports.obtener_registro = function(req,res){
   ora.then(function(con){
-    con.execute('SELECT * from funcionesplaza WHERE codfuncionesplaza=:id1 AND codperfilplaza=id2',
+    con.execute('SELECT * FROM funcionesplaza WHERE codfuncionesplaza=:id1 AND codperfilplaza=id2',
     [req.params.id1,req.params.id2],function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener funcionesplaza" + err.message
+          message: "Error al obtener funciones de plaza" + err.message
         }));
       }else{
-        console.log("funcionesplaza respondio :" + result.rows);
+        console.log("Funcionesplaza respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rows));
       }
@@ -74,7 +74,7 @@ exports.actualizar_registro = function(req,res){
           message: "Error al actualizar funcionesplaza " + err.message
         }));
       }else{
-        console.log("funcionesplaza actualizo :" + result.rowsAffected);
+        console.log("Funciones plaza actualizo :" + result.rowsAffected);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
@@ -91,10 +91,10 @@ exports.borrar_registro = function(req,res){
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al eliminar funcionesplaza " + err.message
+          message: "Error al eliminar funciones de plaza " + err.message
         }));
       }else{
-        console.log("funcionesplaza borrado :" + result.rowsAffected);
+        console.log("Funcionesplaza borrado :" + result.rowsAffected);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
