@@ -71,7 +71,7 @@ exports.actualizar_registro = function(req,res){
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener todo planillaempleado" + err.message
+          message: "Error al actualizar planilla de empleado" + err.message
         }));
       }else{
         console.log("nodetesr actualizo :" + result.rowsAffected);
