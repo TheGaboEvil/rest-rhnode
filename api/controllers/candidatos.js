@@ -73,7 +73,7 @@ exports.actualizar_registro = function(req,res){
           message: "Error al actualizar configuracion de renta " + err.message
         }));
       }else{
-        console.log("Confrenta actualizo :" + result.rowsAffected);
+        console.log("Candidatos actualizo :" + result.rowsAffected);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
