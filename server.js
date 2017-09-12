@@ -45,7 +45,7 @@ var routes_usuarios = require('./api/routes/usuarios');
 routes_usuarios(app);
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'restCliente/dist/index.html'));
+  res.sendFile(path.join(__dirname, 'clienteAngular/dist/index.html'));
 });
 
 app.listen(port);
