@@ -1,6 +1,8 @@
 
 # Created by https://www.gitignore.io/api/git,node,eclipse,netbeans,sublimetext,visualstudio,visualstudiocode
 
+./api/models/dbarg.js
+
 ### Eclipse ###
 
 .metadata

@@ -5,7 +5,7 @@ var ora = require('../models/ora');
 exports.crear_registro = function(req,res){
 
   ora.then(function(con){
-    con.execute('select * from usurios where NICK= :in_nick AND PASS = : in_pass',
+    con.execute('select * from usuarios where NICK= :in_nick AND PASS = : in_pass',
     [req.body.in_nick,req.body.in_pass],
     function(err,result){
         if(err){
@@ -13,7 +13,7 @@ exports.crear_registro = function(req,res){
           res.writeHead(500,{'Content-Type':'aplication/json'});
           res.end(JSON.stringify({
             status:500,
-            message: "Error al obtener USUARIOS" + err.message
+            message: "Error al obtener USUARIOS " + err.message
           }));
         }else{
           console.log("usuario respondio :" + result.rows);

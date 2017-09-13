@@ -2,13 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-//lista de material
+// lista de material
 import {MdInputModule} from '@angular/material';
 import {MdCardModule} from '@angular/material';
 import {MdMenuModule} from '@angular/material';
@@ -20,7 +19,7 @@ import {MdSidenavModule} from '@angular/material';
 
 import 'hammerjs';
 
-import {FlexLayoutModule} from "@angular/flex-layout";
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 
 import { CrearSucursalComponent } from './crear-sucursal/crear-sucursal.component';
