@@ -84,7 +84,7 @@ exports.actualizar_registro = function(req,res){
 exports.borrar_registro = function(req,res){
   ora.then(function(con){
     con.execute("DELETE FROM candidatosevaluaciones WHERE codcandidato=:id1 and codevaluacion=:id2",
-    [req.params.id1,req.params.id2|],
+    [req.params.id1,req.params.id2],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
