@@ -24,7 +24,7 @@ exports.enlistar_todo = function(req,res){
 
 exports.crear_registro = function(req,res){
   ora.then(function(con){
-    con.execute("INSERT INTO empleados VALUES(:in_codempleado,:in_codjefe,:in_coddepartamento,:in_codsucursal,:in_nombre1,:in_nombre2,:in_apellido1,:in_apellido2,:in_tituloempleado,TO_DATE(:in_fechanacimiento,'YYYY/MM/DD'),:in_generoempleado,:in_estadocivil,:in_documentoidentidad,:in_tipodocumentoident,:nitempleado,:in_isssempleado,:in_nupempleado,:in_nombreafp,:in_numerocuentabanco,:in_nombrebanco,:in_puesto,:in_tiempotrabajo,:in_sueldobase,:in_tiempopago)",
+    con.execute("INSERT INTO empleados VALUES (:in_codempleado,:in_codjefe,:in_coddepartamento,:in_codsucursal,:in_nombre1,:in_nombre2,:in_apellido1,:in_apellido2,:in_tituloempleado,TO_DATE(:in_fechanacimiento,'YYYY/MM/DD'),:in_generoempleado,:in_estadocivil,:in_documentoidentidad,:in_tipodocumentoident,:nitempleado,:in_isssempleado,:in_nupempleado,:in_nombreafp,:in_numerocuentabanco,:in_nombrebanco,:in_puesto,:in_tiempotrabajo,:in_sueldobase,:in_tiempopago)",
     [req.body.in_codempleado,req.body.in_codjefe,req.body.in_coddepartamento,req.body.in_codsucursal,req.body.in_nombre1,req.body.in_nombre2,req.body.in_apellido1,req.body.in_apellido2,req.body.in_tituloempleado,req.body.in_fechanacimiento,req.body.in_generoempleado,req.body.in_estadocivil,req.body.in_documentoidentidad,req.body.in_tipodocumentoident,req.body.in_nitempleado,req.body.in_isssempleado,req.body.in_nupempleado,req.body.in_nombreafp,req.body.in_numerocuentabanco,req.body.in_nombrebanco,req.body.in_puesto,req.body.in_tiempotrabajo,req.body.in_sueldobase,,req.body.in_tiempopago],
     function(err,result){
       if(err){
