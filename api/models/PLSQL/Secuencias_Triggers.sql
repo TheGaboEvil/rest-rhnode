@@ -1,27 +1,27 @@
 /* SECUENCIAS */
 
-/* Secuencia para código de empleado */
+/* Secuencia para cï¿½digo de empleado */
 create sequence sec_codEmpl
 start with 100001
 increment by 1
 maxvalue 999999
 minvalue 1;
-
+/*
 select sec_codEmpl.Nextval from dual;
 
 insert into prueba values ('E'|| sec_codEmpl.Nextval);
 create table prueba(
     cod varchar2(10)
 );
-select * from prueba;
-/* Secuencia para código de sucursal */
+select * from prueba;*/
+/* Secuencia para cï¿½digo de sucursal */
 create sequence sec_codSuc
 start with 1001
 increment by 1
 maxvalue 9999
 minvalue 1;
 
-/* Secuencia para código de departamento */
+/* Secuencia para cï¿½digo de departamento */
 create sequence sec_codDepto
 start with 101
 increment by 1
@@ -51,35 +51,35 @@ SELECT * FROM DEPARTAMENTO;
 
 INSERT INTO DEPARTAMENTO VALUES ('D1001','S101','ADMINISTRADOR',1);
 */
-/* Secuencia para código de planilla */
+/* Secuencia para cï¿½digo de planilla */
 create sequence sec_codPlan
 start with 10001
 increment by 1
 maxvalue 99999
 minvalue 1;
 
-/* Secuencia para código de catálogo planilla */
+/* Secuencia para cï¿½digo de catï¿½logo planilla */
 create sequence sec_codCatPlan
 start with 10001
 increment by 1
 maxvalue 99999
 minvalue 1;
 
-/* Secuencia para código de descuento automáticos */
+/* Secuencia para cï¿½digo de descuento automï¿½ticos */
 create sequence sec_codDescAut
 start with 1000001
 increment by 1
 maxvalue 9999999
 minvalue 1;
 
-/* Secuencia para código de adelanto empleado */
+/* Secuencia para cï¿½digo de adelanto empleado */
 create sequence sec_codAdeEmpl
 start with 10001
 increment by 1
 maxvalue 99999
 minvalue 1;
 
-/* Secuencia para código de configuración de renta */
+/* Secuencia para cï¿½digo de configuraciï¿½n de renta */
 create sequence sec_codConfRent
 start with 1001
 increment by 1
@@ -114,7 +114,7 @@ BEGIN
     END IF;
     EXCEPTION
         WHEN OTHERS THEN
-            raise_application_error(-20000,'OCURRIÓ UN ERROR, POR FAVOR CONTACTE AL ADMINISTRADOR');
+            raise_application_error(-20000,'OCURRIï¿½ UN ERROR, POR FAVOR CONTACTE AL ADMINISTRADOR');
 END tr_empleados;
 
 /* Trigger para tabla departamento */
@@ -131,7 +131,7 @@ BEGIN
     END IF;
     EXCEPTION
         WHEN OTHERS THEN
-            raise_application_error(-20000,'OCURRIÓ UN ERROR, POR FAVOR CONTACTE AL ADMINISTRADOR');
+            raise_application_error(-20000,'OCURRIï¿½ UN ERROR, POR FAVOR CONTACTE AL ADMINISTRADOR');
 END tr_depto;
 
 /* Trigger para tabla sucursal */
@@ -148,10 +148,10 @@ BEGIN
     END IF;
     EXCEPTION
         WHEN OTHERS THEN
-            raise_application_error(-20000,'OCURRIÓ UN ERROR, POR FAVOR CONTACTE AL ADMINISTRADOR');
+            raise_application_error(-20000,'OCURRIï¿½ UN ERROR, POR FAVOR CONTACTE AL ADMINISTRADOR');
 END tr_depto;
 
-/* Trigger para tabla catálogo planilla  */
+/* Trigger para tabla catï¿½logo planilla  */
 CREATE OR REPLACE TRIGGER tr_cat_plailla
 AFTER DELETE OR INSERT OR UPDATE ON CATALOGOPLANILLA
 FOR EACH ROW
@@ -165,6 +165,5 @@ BEGIN
     END IF;
     EXCEPTION
         WHEN OTHERS THEN
-            raise_application_error(-20000,'OCURRIÓ UN ERROR, POR FAVOR CONTACTE AL ADMINISTRADOR');
+            raise_application_error(-20000,'OCURRIï¿½ UN ERROR, POR FAVOR CONTACTE AL ADMINISTRADOR');
 END tr_depto;
-
