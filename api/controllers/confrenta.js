@@ -25,7 +25,7 @@ exports.enlistar_todo = function(req,res){
 exports.crear_registro = function(req,res){
   ora.then(function(con){
     con.execute("INSERT INTO confrenta VALUES(:in_codrenta,:in_montodesde,:in_montohasta,in_porcentaplicar,:in_sobreexcedentede,:in_mascuotafijade,:in_tipoperiodo)",
-    [req.body.in_codrenta,req.body.in_montodesde,req.body.in_montohasta,req.body.in_porcentapliar,req.body.in_sobreexcedentede,req.body.in_mascuotafijade,req.body.in_tipoperiodo],
+    [req.body.in_codrenta,req.body.in_montodesde,req.body.in_montohasta,req.body.in_porcentaplicar,req.body.in_sobreexcedentede,req.body.in_mascuotafijade,req.body.in_tipoperiodo],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
