@@ -22,27 +22,10 @@ import 'hammerjs';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
 
-import { CrearSucursalComponent } from './crear-sucursal/crear-sucursal.component';
-import { CrearDepartamentoComponent } from './crear-departamento/crear-departamento.component';
-import { ListaDepartamentoComponent } from './lista-departamento/lista-departamento.component';
-import { ListaSucursalComponent } from './lista-sucursal/lista-sucursal.component';
-import { ListaEmpleadoComponent } from './lista-empleado/lista-empleado.component';
-import { CrearEmpleadoComponent } from './crear-empleado/crear-empleado.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { MenuComponent } from './menu/menu.component';
-
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CrearSucursalComponent,
-    CrearDepartamentoComponent,
-    ListaDepartamentoComponent,
-    ListaSucursalComponent,
-    ListaEmpleadoComponent,
-    CrearEmpleadoComponent,
-    MenuComponent,
-    DashboardComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
