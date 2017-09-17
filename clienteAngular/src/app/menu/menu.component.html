@@ -1,9 +1,9 @@
 <div>
-  <nav>
-    <a routerLink="sucursales/crear" routerLinkActive="active">Nueva Sucursal</a>
-    <a routerLink="sucursales/listar" routerLinkActive="active">Nueva Sucursal</a>
-    <a routerLink="departamentos/crear" routerLinkActive="active">Nueva Sucursal</a>
-    <a routerLink="departamentos/listar" routerLinkActive="active">Nueva Sucursal</a>
-
-  </nav>
+  <button md-button [mdMenuTriggerFor]="menu"><md-icon>menu</md-icon></button>
+  <md-menu #menu="mdMenu">
+    <button md-menu-item routerLink="sucursales/crear" >Nueva Sucursal</button>
+    <button md-menu-item routerLink="sucursales/listar" >Nueva Sucursal</button>
+    <button md-menu-item routerLink="departamentos/crear" >Nueva Sucursal</button>
+    <button md-menu-item routerLink="departamentos/listar" >Nueva Sucursal</button>
+  </md-menu>
 </div>

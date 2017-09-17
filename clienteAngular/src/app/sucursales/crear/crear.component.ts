@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Sucursal } from '../sucursal';
 
 @Component({
   selector: 'app-crear',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearComponent implements OnInit {
 
-  constructor() { }
+  public sucursal: Sucursal;
+
+  constructor() {
+    this.sucursal = new  Sucursal('', '', '', '', '', '', '', '')
+   }
 
   ngOnInit() {
   }
-
 }

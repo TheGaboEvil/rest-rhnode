@@ -17,7 +17,7 @@ exports.crear_registro = function(req,res){
         }else{
           console.log("usuario respondio :" + result.rows);
           res.writeHead(200,{'Content-Type':'application/json'});
-          res.end(JSON.stringify(result.rows));
+          res.end(JSON.stringify(result.rows[0]));
         }
       });
   }); //fin del ora.then()
