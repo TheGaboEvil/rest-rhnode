@@ -25,7 +25,7 @@ exports.enlistar_todo = function(req,res){
 exports.crear_registro = function(req,res){
   ora.then(function(con){
     con.execute("INSERT INTO candidatos VALUES(:in_codcandidato,:in_codperfilplaza,:in_codsucursal,:in_coddepartamento,:in_nombrecompleto,:in_documentoidentidad,:in_tipodocumento,:in_telefonocandidato,:in_titulocandidato,:in_correoelectronicocandidato,TO_DATE(:in_fechasolicitud,'YYYY/MM/DD'),:in_estadocandidato)",
-    [req.body.in_codcandidato,req.body.in_codperfilplaza,req.body.in_codsucursal,req.body.in_coddepartamento,req.body.in_nombrecompleto,req.body.in_documentoidentidad,req.body.in_tipodocumento,req.body.in_titulocandidato,req.body.in_telefonocandidato,req.body.in_correoelectronicocandidato,req.body.in_fechasolicitud,req.body.in_estadocandidato],
+    [req.body.in_codcandidato,req.body.in_codperfilplaza,req.body.in_codsucursal,req.body.in_coddepartamento,req.body.in_nombrecompleto,req.body.in_documentoidentidad,req.body.in_tipodocumento,req.body.in_telefonocandidato,req.body.in_titulocandidato,req.body.in_correoelectronicocandidato,req.body.in_fechasolicitud,req.body.in_estadocandidato],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
