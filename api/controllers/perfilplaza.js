@@ -33,7 +33,7 @@ exports.crear_registro = function(req,res){
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al crear perfil de plaza" + err.message
+          message: "Error al crear perfil de plaza " + err.message
         }));
       }else{
         console.log("Perfil de plaza respondio :" + result.rows);
