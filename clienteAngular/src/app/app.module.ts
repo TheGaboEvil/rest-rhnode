@@ -1,95 +1,63 @@
-import { NgModule, Component } from '@angular/core';
+import { RequerimientosplazaModule } from './requerimientosplaza/requerimientosplaza.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
-
-
+import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
 
+/* librerias para material */
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MaterialModule } from '@angular/material';
 
-// lista de material
-import {
-  MdAutocompleteModule,
-  MdButtonModule,
-  MdButtonToggleModule,
-  MdCardModule,
-  MdCheckboxModule,
-  MdChipsModule,
-  MdCoreModule,
-  MdDatepickerModule,
-  MdDialogModule,
-  MdExpansionModule,
-  MdGridListModule,
-  MdIconModule,
-  MdInputModule,
-  MdListModule,
-  MdMenuModule,
-  MdNativeDateModule,
-  MdPaginatorModule,
-  MdProgressBarModule,
-  MdProgressSpinnerModule,
-  MdRadioModule,
-  MdRippleModule,
-  MdSelectModule,
-  MdSidenavModule,
-  MdSliderModule,
-  MdSlideToggleModule,
-  MdSnackBarModule,
-  MdSortModule,
-  MdTableModule,
-  MdTabsModule,
-  MdToolbarModule,
-  MdTooltipModule,
-  } from '@angular/material';
-
-import 'hammerjs';
-
-import {FlexLayoutModule} from '@angular/flex-layout';
-
-import {SucursalesModule} from './sucursales/sucursales.module';
-import {DepartamentosModule} from './departamentos/departamentos.module';
-
-import { MenuComponent } from './menu/menu.component';
-import { OpcionActualComponent } from './opcion-actual/opcion-actual.component';
-
-import { CrearComponent as CrearSucursal } from './sucursales/crear/crear.component';
-import { ListarComponent as ListarSucursal} from './sucursales/listar/listar.component';
-import { CrearComponent as CrearDepartamento } from './departamentos/crear/crear.component';
-import { ListarComponent as ListarDepartamento} from './departamentos/listar/listar.component';
-
-const appRoutes: Routes = [
-  {path: 'sucursales/crear', component: CrearSucursal},
-  {path: 'sucursales/listar', component: ListarSucursal},
-  {path: 'departamentos/crear', component: CrearDepartamento},
-  {path: 'departamentos/listar', component: ListarDepartamento}
-];
+/* nuestros modulos */
+import { AdelantosempleadosModule } from './adelantosempleados/adelantosempleados.module';
+import { AgendaempleadoModule } from './agendaempleado/agendaempleado.module';
+import { AsistenciaempleadoModule } from './asistenciaempleado/asistenciaempleado.module';
+import { CandidatosModule } from './candidatos/candidatos.module';
+import { CandidatosevaluacionesModule } from './candidatosevaluaciones/candidatosevaluaciones.module';
+import { ConfrentaModule } from './confrenta/confrenta.module';
+import { DepartamentosModule } from './departamentos/departamentos.module';
+import { DescuentosautomaticosModule } from './descuentosautomaticos/descuentosautomaticos.module';
+import { CatalogoplanillaModule } from './catalogoplanilla/catalogoplanilla.module';
+import { EmpleadosModule } from './empleados/empleados.module';
+import { EvaluacionescandidatosModule } from './evaluacionescandidatos/evaluacionescandidatos.module';
+import { FuncionesplazaModule } from './funcionesplaza/funcionesplaza.module';
+import { LoginModule } from './login/login.module';
+import { PerfilplazaModule } from './perfilplaza/perfilplaza.module';
+import { PlanillaModule } from './planilla/planilla.module';
+import { PlanillaempleadoModule } from './planillaempleado/planillaempleado.module';
+import { SucursalesModule } from './sucursales/sucursales.module';
+import { UsuariosModule } from './usuarios/usuarios.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MenuComponent,
-    OpcionActualComponent
+    AppComponent
+
   ],
   imports: [
     BrowserModule,
+    // material.io
     BrowserAnimationsModule,
-    MdInputModule,
-    MdCardModule,
-    MdMenuModule,
-    MdIconModule,
-    MdButtonModule,
-    MdToolbarModule,
-    MdGridListModule,
-    MdSidenavModule,
-    FormsModule,
-    HttpClientModule,
-    FlexLayoutModule,
-    SucursalesModule,
+    MaterialModule,
+    // nuestros modulos
+    AdelantosempleadosModule,
+    AgendaempleadoModule,
+    AsistenciaempleadoModule,
+    CandidatosModule,
+    CandidatosevaluacionesModule,
+    CatalogoplanillaModule,
+    ConfrentaModule,
     DepartamentosModule,
-    RouterModule.forRoot(appRoutes)
+    DescuentosautomaticosModule,
+    EmpleadosModule,
+    EvaluacionescandidatosModule,
+    FuncionesplazaModule,
+    LoginModule,
+    PerfilplazaModule,
+    PlanillaModule,
+    PlanillaempleadoModule,
+    RequerimientosplazaModule,
+    SucursalesModule,
+    UsuariosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
