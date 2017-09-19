@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CrearComponent } from './crear/crear.component';
-import { ListarComponent } from './listar/listar.component';
+import { AgregarComponent } from './agregar/agregar.component';
+import { BuscarComponent } from './buscar/buscar.component';
+import { ModificarComponent } from './modificar/modificar.component';
+import { EliminarComponent } from './eliminar/eliminar.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [CrearComponent, ListarComponent]
+  declarations: [AgregarComponent, BuscarComponent, ModificarComponent, EliminarComponent]
 })
 export class SucursalesModule { }
