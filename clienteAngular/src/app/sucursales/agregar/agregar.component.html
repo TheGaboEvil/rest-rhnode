@@ -1,36 +1,72 @@
 <form class="form">
   <md-form-field class="full-width">
-    <input mdInput placeholder="Company (disabled)" disabled value="Google">
+    <input mdInput placeholder="" disabled value="Nueva Sucursal">
   </md-form-field>
 
-  <table class="full-width" cellspacing="0"><tr>
-    <td><md-form-field class="full-width">
-      <input mdInput placeholder="First name">
-    </md-form-field></td>
-    <td><md-form-field class="full-width">
-      <input mdInput placeholder="Long Last Name That Will Be Truncated">
-    </md-form-field></td>
-  </tr></table>
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="sucursal.in_codsucursal" name="in_codsucursal" #in_codsucursal="ngModel" placeholder="Codigo Sucursal (TODO: usar las Secuencias)">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
 
   <p>
     <md-form-field class="full-width">
-      <textarea mdInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
-    </md-form-field>
-    <md-form-field class="full-width">
-      <textarea mdInput placeholder="Address 2"></textarea>
+      <input mdInput required [(ngModel)]="sucursal.in_direccion" name="in_direccion" #in_direccion="ngModel" placeholder="Direccion"/>
     </md-form-field>
   </p>
 
-  <table class="full-width" cellspacing="0"><tr>
-    <td><md-form-field class="full-width">
-      <input mdInput placeholder="City">
-    </md-form-field></td>
-    <td><md-form-field class="full-width">
-      <input mdInput placeholder="State">
-    </md-form-field></td>
-    <td><md-form-field class="full-width">
-      <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
-      <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
-    </md-form-field></td>
-  </tr></table>
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="sucursal.in_ciudad" name="in_ciudad" #in_ciudad="ngModel" placeholder="Ciudad">
+        </md-form-field>
+      </td>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="sucursal.in_departamento" name="in_departamento" #in_departamento="ngModel" placeholder="Departamento">
+        </md-form-field>
+      </td>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="sucursal.in_coordenadas" name="in_pais" #in_pais="ngModel" placeholder="Pais">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="full-width" cellspacing="0">
+      <tr>
+        <td>
+          <md-form-field class="full-width">
+            <input mdInput required [(ngModel)]="sucursal.in_codigopostal" name="in_codigopostal" #in_codigopostal="ngModel" placeholder="Codigo Postal">
+          </md-form-field>
+        </td>
+        <td>
+          <md-form-field class="full-width">
+            <input mdInput required [(ngModel)]="sucursal.in_telefono" name="in_telefono" #in_telefono="ngModel" placeholder="Telefono">
+          </md-form-field>
+        </td>
+        <td>
+          <md-form-field class="full-width">
+            <input mdInput required [(ngModel)]="sucursal.in_coordenadas" name="in_coordenadas" #in_coordenadas="ngModel" placeholder="Coordenadas">
+          </md-form-field>
+        </td>
+      </tr>
+    </table>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <button md-button> <md-icon>save</md-icon>Guardar</button>
+      </td>
+      <td>
+        <button md-button><md-icon>clear</md-icon>Borrar</button>
+      </td>
+    </tr>
+  </table>
 </form>
