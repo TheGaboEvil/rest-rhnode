@@ -25,7 +25,8 @@ exports.enlistar_todo = function(req,res){
 
 exports.crear_registro = function(req,res){
   ora.then(function(con){
-    con.execute("INSERT INTO perfilplaza VALUES(:in_codperfilplaza,:in_nombreplaza,:in_descripcionplaza)",
+    console.log(req.body);
+    con.execute('INSERT INTO "GRUPO1UGB"."PERFILPLAZA" (CODPERFILPLAZA, NOMBREPLAZA, DESCRIPCIONPLAZA) VALUES(:in_codperfilplaza,:in_nombreplaza,:in_descripcionplaza)',
     [req.body.in_codperfilplaza,req.body.in_nombreplaza,req.body.in_descripcionplaza],
     function(err,result){
       if(err){

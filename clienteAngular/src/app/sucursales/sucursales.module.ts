@@ -5,9 +5,12 @@ import { BuscarComponent } from './buscar/buscar.component';
 import { ModificarComponent } from './modificar/modificar.component';
 import { EliminarComponent } from './eliminar/eliminar.component';
 
+import {MdInputModule} from '@angular/material';
+
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    MdInputModule
   ],
   declarations: [AgregarComponent, BuscarComponent, ModificarComponent, EliminarComponent]
 })
