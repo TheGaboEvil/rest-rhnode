@@ -5,16 +5,16 @@ var ora = require('../models/ora');
 exports.enlistar_todo = function(req,res){
 
   ora.then(function(con){
-    con.execute('SELECT * FROM evaluacionescandidatos',function(err,result){
+    con.execute('SELECT * FROM descuentosautomaticos',function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener evaluacionescandidatos " + err.message
+          message: "Error al obtener descuentosautomaticos " + err.message
         }));
       }else{
-        console.log("evaluacionescandidatos respondio :" + result.rows);
+        console.log("descuentosautomaticos respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rows));
       }
@@ -24,18 +24,19 @@ exports.enlistar_todo = function(req,res){
 
 exports.crear_registro = function(req,res){
   ora.then(function(con){
-    con.execute("INSERT INTO evaluacionescandidatos VALUES(:in_codevaluacion,:in_nombreevaluacion,:in_estadoevaluacion,:in_descripcionevaluacion,:in_puntuacionrequerida,:in_puntuacionmaxima)",
-    [req.body.in_codevaluacion,req.body.in_nombreevaluacion,req.body.in_estadoevaluacion,req.body.in_descripcionevaluacion,req.body.in_puntuacionrequerida,req.body.in_puntuacionmaxima],
+    
+    con.execute("INSERT INTO descuentosautomaticos VALUES(:in_numprestamo,:in_codempleado,:in_tipoprestamo,:in_entidadprestamo,:in_numcuenta,:in_montoprestamo,:in_cuotaprestamo,:in_fechapago,:in_mododescuento,:in_estadoprestamo)",
+    [req.body.in_numprestamo,req.body.in_codempleado,req.body.in_tipoprestamo,req.body.in_entidadprestamo,req.body.in_numcuenta,req.body.in_montoprestamo,req.body.in_cuotaprestamo,req.body.in_fechapago,req.body.in_mododescuento,req.body.in_estadoprestamo],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al crear evaluacionescandidatos " + err.message
+          message: "Error al crear descuentosautomaticos" + err.message
         }));
       }else{
-        console.log("evaluacionescandidatos respondio :" + result.rows);
+        console.log("descuentosautomaticos respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
@@ -44,16 +45,17 @@ exports.crear_registro = function(req,res){
 };
 exports.obtener_registro = function(req,res){
   ora.then(function(con){
-    con.execute('select * FROM evaluacionescandidatos WHERE codevaluacion=:id',[req.params.id],function(err,result){
+    con.execute('SELECT * FROM descuentosautomaticos WHERE in_numprestamo=:id1',
+    [req.params.id1],function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al obtener evaluacionescandidatos" + err.message
+          message: "Error al obtener descuentosautomaticos" + err.message
         }));
       }else{
-        console.log("evaluacionescandidatos respondio :" + result.rows);
+        console.log("descuentosautomaticos respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rows));
       }
@@ -62,18 +64,18 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE evaluacionescandidatos SET nombreevalacion=:in_nombreevaluacion,estadoEvaluacion=:in_estadoevaluacion,descripcionevaliacion=:in_descripcionevaluacion,puntuacionrequerida=:in_puntuacionrequerida,puntuacionMaxima=:in_puin_puntuacionmaxima WHERE codevaluacion=:id",
-    [req.body.in_nombreevaluacion,req.body.in_estadoevaluacion,req.body.in_estadoevaluacion,req.body.inin_descripcionevaluacion,req.body.in_puntuacionrequerida,req.body.in_puntuacionmaxima,req.params.id],
+    con.execute("UPDATE descuentosautomaticos SET cuotaprestamo=:in_cuotaprestamo,fechapago=:in_fechapago,mododescuento=:in_mododescuento,estadoprestamo=:in_estadoprestamo WHERE numprestamo=:id1",
+    [req.body.in_cuotaprestamo,req.body.in_fechapago,req.body.in_mododescuento,req.body.in_estadoprestamo,req.params.id1],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al actualizar evaluacionescandidatos" + err.message
+          message: "Error al actualizar descuentosautomaticos " + err.message
         }));
       }else{
-        console.log("evaluacionescandidatos actualizo :" + result.rowsAffected);
+        console.log("descuentosautomaticos actualizo :" + result.rowsAffected);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }
@@ -82,18 +84,18 @@ exports.actualizar_registro = function(req,res){
 };
 exports.borrar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("DELETE FROM evaluacionescandidatos WHERE codevaluacion=:id",
-    [req.params.id],
+    con.execute("DELETE FROM descuentosautomaticos WHERE in_numprestamo=:id1",
+    [req.params.id1],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
-          message: "Error al eliminar evaluacionescandidatos" + err.message
+          message: "Error al eliminar descuentosautomaticos " + err.message
         }));
       }else{
-        console.log("evaluacionescandidatos borrada :" + result.rowsAffected);
+        console.log("descuentosautomaticos borrado :" + result.rowsAffected);
         res.writeHead(200,{'Content-Type':'application/json'});
         res.end(JSON.stringify(result.rowsAffected));
       }

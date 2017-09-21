@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Confrenta } from '../confrenta';
 
 @Component({
   selector: 'app-agregar',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgregarComponent implements OnInit {
 
+  public confrenta: Confrenta;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  crearConfRenta() {
+    // todo
+  }
+
+  limpiarConfRenta() {
+    // todo
+  }
 }

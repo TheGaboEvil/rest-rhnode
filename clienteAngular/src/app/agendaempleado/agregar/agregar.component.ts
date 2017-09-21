@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Agendaempleado } from '../agendaempleado';
+
 @Component({
   selector: 'app-agregar',
   templateUrl: './agregar.component.html',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgregarComponent implements OnInit {
 
-  constructor() { }
+  public agendaempleado: Agendaempleado;
+
+  constructor() {
+    this.agendaempleado = new Agendaempleado(' ', ' ', ' ', ' ', ' ');
+   }
 
   ngOnInit() {
+  }
+
+  crearAgendaEmpleado() {
+    // todo
+  }
+
+  limpiarAgendaEmpleado() {
+    // todo
   }
 
 }
