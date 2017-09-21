@@ -1,3 +1,53 @@
-<p>
-  agregar works!
-</p>
+<form class="form">
+  <md-form-field class="full-width">
+    <input mdInput placeholder="" disabled value="Nuevo Registro Agenda">
+  </md-form-field>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="agendaempleado.in_codempleado" name="in_codempleado" #in_codempleado="ngModel" placeholder="Codigo empleado (TODO: usar las Secuencias)">
+        </md-form-field>
+      </td>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="agendaempleado.in_tiporegistro" name="in_tiporegistro" #in_tiporegistro="ngModel" placeholder="Tipo de Registro">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="agendaempleado.in_fechahoraentrada" name="in_fechahoraentrada" #in_fechahoraentrada="ngModel" placeholder="fecha hora entrada">
+        </md-form-field>
+      </td>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="agendaempleado.in_fechahorasalida" name="in_fechahorasalida" #in_fechahorasalida="ngModel" placeholder="fecha hora salida">
+        </md-form-field>
+      </td>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput  [(ngModel)]="agendaempleado.in_observaciones" name="in_observaciones" #in_observaciones="ngModel" placeholder="observaciones">
+        </md-form-field>
+      </td>
+
+    </tr>
+  </table>
+
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <button md-button (click)="crearAgendaEmpleado(agendaempleado)"> <md-icon>save</md-icon>Guardar</button>
+      </td>
+      <td>
+        <button md-button (click)="limpiarAgendaEmpleado()" ><md-icon>clear</md-icon>Borrar</button>
+      </td>
+    </tr>
+  </table>
+</form>

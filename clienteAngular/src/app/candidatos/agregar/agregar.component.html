@@ -1,3 +1,52 @@
-<p>
-  agregar works!
-</p>
+<form class="form">
+  <md-form-field class="full-width">
+    <input mdInput placeholder="" disabled value="Nuevo Candidato">
+  </md-form-field>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="candidato.in_codcandidato" name="in_codcandidato" #in_codcandidato="ngModel" placeholder="Codigo empleado (TODO: usar las Secuencias)">
+        </md-form-field>
+      </td>
+
+    </tr>
+  </table>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="candidato.in_tiporegistro" name="in_tiporegistro" #in_tiporegistro="ngModel" placeholder="tipoRegistro">
+        </md-form-field>
+      </td>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="candidato.in_fechahorareg" name="in_fechahorareg" #in_fechahorareg="ngModel" placeholder="Fecha hora registro">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput  [(ngModel)]="candidato.in_observacion" name="in_observacion" #in_observacion="ngModel" placeholder="Codigo empleado (TODO: usar las Secuencias)">
+        </md-form-field>
+      </td>
+
+    </tr>
+  </table>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <button md-button (click)="crearAsistenciaEmpleado(candidato)"> <md-icon>save</md-icon>Guardar</button>
+      </td>
+      <td>
+        <button md-button (click)="limpiarAsistenciaEmpleadoS()" ><md-icon>clear</md-icon>Borrar</button>
+      </td>
+    </tr>
+  </table>
+</form>
