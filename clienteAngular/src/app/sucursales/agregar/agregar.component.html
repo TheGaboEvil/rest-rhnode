@@ -43,17 +43,17 @@
       <tr>
         <td>
           <md-form-field class="full-width">
-            <input mdInput required [(ngModel)]="sucursal.in_codigopostal" name="in_codigopostal" #in_codigopostal="ngModel" placeholder="Codigo Postal">
+            <input mdInput [(ngModel)]="sucursal.in_codigopostal" name="in_codigopostal" #in_codigopostal="ngModel" placeholder="Codigo Postal">
           </md-form-field>
         </td>
         <td>
           <md-form-field class="full-width">
-            <input mdInput required [(ngModel)]="sucursal.in_telefono" name="in_telefono" #in_telefono="ngModel" placeholder="Telefono">
+            <input mdInput [(ngModel)]="sucursal.in_telefono" name="in_telefono" #in_telefono="ngModel" placeholder="Telefono">
           </md-form-field>
         </td>
         <td>
           <md-form-field class="full-width">
-            <input mdInput required [(ngModel)]="sucursal.in_coordenadas" name="in_coordenadas" #in_coordenadas="ngModel" placeholder="Coordenadas">
+            <input mdInput [(ngModel)]="sucursal.in_coordenadas" name="in_coordenadas" #in_coordenadas="ngModel" placeholder="Coordenadas">
           </md-form-field>
         </td>
       </tr>
@@ -62,7 +62,7 @@
   <table class="full-width" cellspacing="0">
     <tr>
       <td>
-        <button md-button> <md-icon>save</md-icon>Guardar</button>
+        <button md-button (click)="crearSucursal(sucursal)"> <md-icon>save</md-icon>Guardar</button>
       </td>
       <td>
         <button md-button><md-icon>clear</md-icon>Borrar</button>

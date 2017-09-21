@@ -18,5 +18,7 @@ export class AgregarComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  crearSucursal() {
+    console.log('se trato de crear');
+  }
 }
