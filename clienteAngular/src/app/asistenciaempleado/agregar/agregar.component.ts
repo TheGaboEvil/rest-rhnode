@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Asistenciaempleado } from '../asistenciaempleado';
 
 @Component({
   selector: 'app-agregar',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgregarComponent implements OnInit {
 
-  constructor() { }
+  public asistenciaempleado: Asistenciaempleado;
+
+  constructor() {
+    this.asistenciaempleado = new Asistenciaempleado(' ', ' ', ' ', ' ');
+   }
 
   ngOnInit() {
+  }
+
+  crearAsistenciaEmpleado() {
+    // todo
+  }
+
+  limpiarAsistenciaEmpleado() {
+    // todo
   }
 
 }

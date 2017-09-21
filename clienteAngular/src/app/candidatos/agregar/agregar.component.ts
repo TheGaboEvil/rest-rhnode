@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Candidato } from '../candidato';
 
 @Component({
   selector: 'app-agregar',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgregarComponent implements OnInit {
 
-  constructor() { }
+  public candidato: Candidato;
+  constructor() {
+    this.candidato = new Candidato(' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+   }
 
   ngOnInit() {
+  }
+
+  crearCandidato() {
+    // todo
+  }
+
+  limpiarCandidato() {
+    // todo
   }
 
 }

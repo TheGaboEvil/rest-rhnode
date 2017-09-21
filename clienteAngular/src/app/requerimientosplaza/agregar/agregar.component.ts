@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Requerimientosplaza } from '../requerimientosplaza';
 
 @Component({
   selector: 'app-agregar',
