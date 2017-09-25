@@ -1,3 +1,56 @@
-<p>
-  agregar works!
-</p>
+<form class="form">
+  <md-form-field class="full-width">
+    <input mdInput placeholder="" disabled value="Nuevo Catalogo Planilla">
+  </md-form-field>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="catalogoplanilla.in_codcatplanilla" name="in_codcatplanilla" #in_codcatplanilla="ngModel" placeholder="Codigo catalogo planilla (TODO: usar las Secuencias)">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="catalogoplanilla.in_nomcatplanilla" name="in_nomcatplanilla" #in_nomcatplanilla="ngModel" placeholder="Nombre Catalogo Planilla">
+        </md-form-field>
+      </td>
+
+    </tr>
+  </table>
+
+  <table class="full-width" cellspacing="0">
+      <tr>
+        <td>
+          <md-form-field class="full-width">
+            <input mdInput [(ngModel)]="catalogoplanilla.in_tipocatplanilla" name="in_tipocatplanilla" #in_tipocatplanilla="ngModel" placeholder="Tipo Catalogo Planilla">
+          </md-form-field>
+        </td>
+      </tr>
+    </table>
+    <table class="full-width" cellspacing="0">
+        <tr>
+          <td>
+            <md-form-field class="full-width">
+              <input mdInput [(ngModel)]="catalogoplanilla.in_dtllecatplanilla" name="in_dtllecatplanilla" #in_dtllecatplanilla="ngModel" placeholder="Detalle planilla">
+            </md-form-field>
+          </td>
+        </tr>
+      </table>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <button md-button (click)="crearCatalogoPlanilla(catalogoplanilla)"> <md-icon>save</md-icon>Guardar</button>
+      </td>
+      <td>
+        <button md-button (click)="limpiarCatalogoPlanilla()" ><md-icon>clear</md-icon>Borrar</button>
+      </td>
+    </tr>
+  </table>
+</form>
