@@ -1,3 +1,11 @@
-<p>
-  buscar works!
-</p>
+<div *ngIf='sucursal'>
+  <md-card style='width: 30%'>
+    <md-card-header>
+      <md-card-title>{{sucursal.in_codsucursal}} </md-card-title>
+    </md-card-header>
+    <md-card-content>
+        <div><label>Direccion: </label>{{sucursal.in_direccion}}, {{sucursal.in_ciudad}}, {{sucursal.in_departamento}}, {{sucursal.in_pais}} </div>
+        <div><label>Telefono: </label>{{sucursal.in_telefono}}</div>
+      </md-card-content>
+  </md-card>
+</div>

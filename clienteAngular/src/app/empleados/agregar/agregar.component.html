@@ -22,7 +22,8 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="empleado.in_coddepartamento" name="in_coddepartamento" #in_coddepartamento="ngModel" placeholder="Codigo departamento">
+          <input mdInput required [(ngModel)]="empleado.in_coddepartamento" name="in_coddepartamento" #in_coddepartamento="ngModel"
+            placeholder="Codigo departamento">
         </md-form-field>
       </td>
       <td>
@@ -33,7 +34,7 @@
     </tr>
   </table>
 
-<table class="full-width" cellspacing="0">
+  <table class="full-width" cellspacing="0">
     <tr>
       <td>
         <md-form-field class="full-width">
@@ -67,12 +68,14 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="empleado.in_tipodocumentoident" name="in_tipodocumentoident" #in_tipodocumentoident="ngModel" placeholder="tipodocumentoident">
+          <input mdInput required [(ngModel)]="empleado.in_tipodocumentoident" name="in_tipodocumentoident" #in_tipodocumentoident="ngModel"
+            placeholder="tipodocumentoident">
         </md-form-field>
       </td>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="empleado.in_documentoidentidad" name="in_documentoidentidad" #in_documentoidentidad="ngModel" placeholder="Documeto Identidad">
+          <input mdInput required [(ngModel)]="empleado.in_documentoidentidad" name="in_documentoidentidad" #in_documentoidentidad="ngModel"
+            placeholder="Documeto Identidad">
         </md-form-field>
       </td>
       <td>
@@ -81,7 +84,6 @@
         </md-form-field>
       </td>
     </tr>
-  </tr>
   </table>
 
   <table class="full-width" cellspacing="0">
@@ -107,12 +109,12 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput  [(ngModel)]="empleado.in_numerocuentabanco" name="in_numerocuentabanco" #in_numerocuentabanco="ngModel" placeholder="N de cuenta banco">
+          <input mdInput [(ngModel)]="empleado.in_numerocuentabanco" name="in_numerocuentabanco" #in_numerocuentabanco="ngModel" placeholder="N de cuenta banco">
         </md-form-field>
       </td>
       <td>
         <md-form-field class="full-width">
-          <input mdInput  [(ngModel)]="empleado.in_nombrebanco" name="in_nombrebanco" #in_nombrebanco="ngModel" placeholder="Nombre de Banco">
+          <input mdInput [(ngModel)]="empleado.in_nombrebanco" name="in_nombrebanco" #in_nombrebanco="ngModel" placeholder="Nombre de Banco">
         </md-form-field>
       </td>
     </tr>
@@ -121,22 +123,22 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput  [(ngModel)]="empleado.in_puesto" name="in_puesto" #in_puesto="ngModel" placeholder="Puesto">
+          <input mdInput [(ngModel)]="empleado.in_puesto" name="in_puesto" #in_puesto="ngModel" placeholder="Puesto">
         </md-form-field>
       </td>
       <td>
         <md-form-field class="full-width">
-          <input mdInput  [(ngModel)]="empleado.in_tiempotrabajo" name="in_tiempotrabajo" #in_tiempotrabajo="ngModel" placeholder="Tiempo de trabajo">
+          <input mdInput [(ngModel)]="empleado.in_tiempotrabajo" name="in_tiempotrabajo" #in_tiempotrabajo="ngModel" placeholder="Tiempo de trabajo">
         </md-form-field>
       </td>
       <td>
         <md-form-field class="full-width">
-          <input mdInput  [(ngModel)]="empleado.in_sueldobase" name="in_sueldobase" #in_sueldobase="ngModel" placeholder="Tiempo de trabajo">
+          <input mdInput [(ngModel)]="empleado.in_sueldobase" name="in_sueldobase" #in_sueldobase="ngModel" placeholder="Tiempo de trabajo">
         </md-form-field>
       </td>
       <td>
         <md-form-field class="full-width">
-          <input mdInput  [(ngModel)]="empleado.in_tiempopago" name="in_tiempopago" #in_tiempopago="ngModel" placeholder="Tiempo de trabajo">
+          <input mdInput [(ngModel)]="empleado.in_tiempopago" name="in_tiempopago" #in_tiempopago="ngModel" placeholder="Tiempo de trabajo">
         </md-form-field>
       </td>
     </tr>
@@ -147,8 +149,9 @@
         <button md-button (click)="crearEmpleado(empleado)"> <md-icon>save</md-icon>Guardar</button>
       </td>
       <td>
-        <button md-button (click)="limpiarEmpleado()" ><md-icon>clear</md-icon>Borrar</button>
+        <button md-button (click)="limpiarEmpleado()"><md-icon>clear</md-icon>Borrar</button>
       </td>
     </tr>
   </table>
 </form>
+
