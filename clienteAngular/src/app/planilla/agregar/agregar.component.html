@@ -1,3 +1,72 @@
-<p>
-  agregar works!
-</p>
+<form class="form">
+  <md-form-field class="full-width">
+    <input mdInput placeholder="" disabled value="Agregar planilla">
+  </md-form-field>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="planilla.in_codplanilla" name="in_codplanilla" #in_codplanilla="ngModel" placeholder="Código planilla (TODO: usar las Secuencias)">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <p>
+    <md-form-field class="full-width">
+      <input mdInput required [(ngModel)]="planilla.in_coddepartamento" name="in_coddepartamento" #in_coddepartamento="ngModel" placeholder="Código departamento"/>
+    </md-form-field>
+  </p>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="planilla.in_codsucursal" name="in_codsucursal" #in_codsucursal="ngModel" placeholder="Código sucursal">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="planilla.in_fechaini" name="in_fechaini" #in_fechaini="ngModel" placeholder="Fecha inicio">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="planilla.in_fechafin" name="in_fechafin" #in_fechafin="ngModel" placeholder="Fecha fin">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="planilla.in_tipoplanilla" name="in_tipoplanilla" #in_tipoplanilla="ngModel" placeholder="Tipo planilla">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <button md-button (click)="crearplanilla(planilla)"> <md-icon>save</md-icon>Guardar</button>
+      </td>
+      <td>
+        <button md-button (click)="limpiarplanilla()" ><md-icon>clear</md-icon>Borrar</button>
+      </td>
+    </tr>
+  </table>
+</form>
