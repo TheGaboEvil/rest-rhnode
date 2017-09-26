@@ -1,3 +1,52 @@
-<p>
-  agregar works!
-</p>
+<form class="form">
+  <md-form-field class="full-width">
+    <input mdInput placeholder="" disabled value="Agregar requerimiento plaza">
+  </md-form-field>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="requerimientosplaza.in_codrequerimientoplaza" name="in_codrequerimientoplaza" #in_codrequerimientoplaza="ngModel" placeholder="Código requerimiento plaza (TODO: usar las Secuencias)">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <p>
+    <md-form-field class="full-width">
+      <input mdInput required [(ngModel)]="requerimientosplaza.in_codperfilplaza" name="in_codperfilplaza" #in_codperfilplaza="ngModel" placeholder="Código perfil plaza"/>
+    </md-form-field>
+  </p>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="requerimientosplaza.in_nombrerequerimiento" name="in_nombrerequerimiento" #in_nombrerequerimiento="ngModel" placeholder="Nombre requerimiento">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput [(ngModel)]="requerimientosplaza.in_descripcionrequerimiento" name="in_descripcionrequerimiento" #in_descripcionrequerimiento="ngModel" placeholder="Descripción requerimiento">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <button md-button (click)="crearrequerimientoplaza(requerimientosplaza)"> <md-icon>save</md-icon>Guardar</button>
+      </td>
+      <td>
+        <button md-button (click)="limpiarrequerimientoplaza()" ><md-icon>clear</md-icon>Borrar</button>
+      </td>
+    </tr>
+  </table>
+</form>
