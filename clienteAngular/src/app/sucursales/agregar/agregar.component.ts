@@ -21,4 +21,7 @@ export class AgregarComponent implements OnInit {
   crearSucursal() {
     console.log('se trato de crear');
   }
+  limpiarSucursal() {
+
+  }
 }

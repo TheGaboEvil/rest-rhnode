@@ -1,3 +1,102 @@
-<p>
-  agregar works!
-</p>
+<form class="form">
+  <md-form-field class="full-width">
+    <input mdInput placeholder="" disabled value="Nuevo Candidato">
+  </md-form-field>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="candidato.in_codcandidato" name="in_codcandidato" #in_codcandidato="ngModel" placeholder="Codigo candidato (TODO: usar las Secuencias)">
+        </md-form-field>
+      </td>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="candidato.in_codperfilplaza" name="in_codperfilplaza" #in_codperfilplaza="ngModel" placeholder="Codigo Perfil Plaza (TODO: usar las Secuencias)">
+        </md-form-field>
+      </td>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="candidato.in_codsucursal" name="in_codsucursal" #in_codsucursal="ngModel" placeholder="Codigo codsucursal (TODO: usar las Secuencias)">
+        </md-form-field>
+      </td>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="candidato.in_coddepartamento" name="in_coddepartamento" #in_coddepartamento="ngModel" placeholder="Codigo departamento (TODO: usar las Secuencias)">
+        </md-form-field>
+      </td>
+
+    </tr>
+  </table>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="candidato.in_nombrecompleto" name="in_nombrecompleto" #in_nombrecompleto="ngModel" placeholder="Nombre Completo">
+        </md-form-field>
+      </td>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="candidato.in_documentoidentidad" name="in_documentoidentidad" #in_documentoidentidad="ngModel" placeholder="Documento identidad">
+        </md-form-field>
+      </td>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="candidato.in_tipodocumento" name="in_tipodocumento" #in_tipodocumento="ngModel" placeholder="Tipo de documento">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="candidato.in_telefonocandidato" name="in_telefonocandidato" #in_telefonocandidato="ngModel" placeholder="Telefono candidato">
+        </md-form-field>
+      </td>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput  [(ngModel)]="candidato.in_titulocandidato" name="in_titulocandidato" #in_titulocandidato="ngModel" placeholder="Titulo Candidato">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput  [(ngModel)]="candidato.in_correoelectronico" name="in_correoelectronico" #in_correoelectronico="ngModel" placeholder="Correo Electronico">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput  [(ngModel)]="candidato.in_fechadesolicitud" name="in_fechadesolicitud" #in_fechadesolicitud="ngModel" placeholder="fecha de solicitud">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput  [(ngModel)]="candidato.in_estadocandidato" name="in_estadocandidato" #in_estadocandidato="ngModel" placeholder="Estado Candidato">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <button md-button (click)="crearCandidato(candidato)"> <md-icon>save</md-icon>Guardar</button>
+      </td>
+      <td>
+        <button md-button (click)="limpiarCandidato()" ><md-icon>clear</md-icon>Borrar</button>
+      </td>
+    </tr>
+  </table>
+</form>

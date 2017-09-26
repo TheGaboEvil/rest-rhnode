@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Planillaempleado } from '../planillaempleado';
 
 @Component({
   selector: 'app-agregar',

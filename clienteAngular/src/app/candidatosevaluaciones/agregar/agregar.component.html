@@ -1,3 +1,64 @@
-<p>
-  agregar works!
-</p>
+<form class="form">
+  <md-form-field class="full-width">
+    <input mdInput placeholder="" disabled value="Nuevo Evaluacion Candidato">
+  </md-form-field>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="candidatoevaluacion.in_codcandidato" name="in_codcandidato" #in_codcandidato="ngModel" placeholder="Codigo Candidato (TODO: usar las Secuencias)">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="candidatoevaluacion.in_fehcaevaluacion" name="in_fehcaevaluacion" #in_fehcaevaluacion="ngModel" placeholder="fecha evaluacion">
+        </md-form-field>
+      </td>
+
+    </tr>
+  </table>
+
+  <table class="full-width" cellspacing="0">
+      <tr>
+        <td>
+          <md-form-field class="full-width">
+            <input mdInput [(ngModel)]="candidatoevaluacion.in_puntajeevaluacion" name="in_puntajeevaluacion" #in_puntajeevaluacion="ngModel" placeholder="Monto adelanto">
+          </md-form-field>
+        </td>
+      </tr>
+    </table>
+    <table class="full-width" cellspacing="0">
+        <tr>
+          <td>
+            <md-form-field class="full-width">
+              <input mdInput [(ngModel)]="candidatoevaluacion.in_observaciones" name="in_observaciones" #in_observaciones="ngModel" placeholder="Estado adelanto">
+            </md-form-field>
+          </td>
+        </tr>
+      </table>
+      <table class="full-width" cellspacing="0">
+          <tr>
+            <td>
+              <md-form-field class="full-width">
+                <input mdInput [(ngModel)]="candidatoevaluacion.in_documentoevaluaion" name="in_documentoevaluaion" #in_documentoevaluaion="ngModel" placeholder="Estado adelanto">
+              </md-form-field>
+            </td>
+          </tr>
+        </table>
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <button md-button (click)="crearCandidatoEvaluacion(candidatoevaluacion)"> <md-icon>save</md-icon>Guardar</button>
+      </td>
+      <td>
+        <button md-button (click)="limpiarCandidatoEvaluacion()" ><md-icon>clear</md-icon>Borrar</button>
+      </td>
+    </tr> 
+  </table>
+</form>
