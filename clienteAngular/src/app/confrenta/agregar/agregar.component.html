@@ -1,3 +1,82 @@
-<p>
-  agregar works!
-</p>
+<form class="form">
+  <md-form-field class="full-width">
+    <input mdInput placeholder="" disabled value="Agregar configuración de RENTA">
+  </md-form-field>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="confrenta.in_codrenta" name="in_codrenta" #in_codrenta="ngModel" placeholder="Código conf renta (TODO: usar las Secuencias)">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <p>
+    <md-form-field class="full-width">
+      <input mdInput required [(ngModel)]="confrenta.in_montodesde" name="in_montodesde" #in_montodesde="ngModel" placeholder="Desde"/>
+    </md-form-field>
+  </p>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="confrenta.in_montohasta" name="in_montohasta" #in_montohasta="ngModel" placeholder="Hasta">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="confrenta.in_porcentajeaplicar" name="in_porcenteaplicar" #in_porcentajeaplicar="ngModel" placeholder="Porcentaje a aplicar">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="confrenta.in_sobreexcendetede" name="in_sobreexcedentede" #in_sobreexcedentede="ngModel" placeholder="Sobre excendete de">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="confrenta.mascuotafijade" name="in_mascuotafijade" #in_mascuotafijade="ngModel" placeholder="Más cuota fija de">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="confrenta.tipoperiodo" name="in_tipoperiodo" #in_montohasta="ngModel" placeholder="Tipo de periodo">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <button md-button (click)="crearconfRenta(confrenta)"> <md-icon>save</md-icon>Guardar</button>
+      </td>
+      <td>
+        <button md-button (click)="limpiarconfRenta()" ><md-icon>clear</md-icon>Borrar</button>
+      </td>
+    </tr>
+  </table>
+</form>

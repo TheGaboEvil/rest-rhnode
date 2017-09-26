@@ -1,3 +1,102 @@
-<p>
-  agregar works!
-</p>
+<form class="form">
+  <md-form-field class="full-width">
+    <input mdInput placeholder="" disabled value="Nuevo Descuento Automatico">
+  </md-form-field>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="descuentoautomatico.in_numprestamo" name="in_numprestamo" #in_numprestamo="ngModel" placeholder="Numero de prestamo">
+        </md-form-field>
+      </td>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="descuentoautomatico.in_codempleado" name="in_codempleado" #in_codempleado="ngModel" placeholder="Codigo empleado">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="descuentoautomatico.in_tipoprestamo" name="in_tipoprestamo" #in_tipoprestamo="ngModel" placeholder="Nombre Catalogo Planilla">
+        </md-form-field>
+      </td>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="descuentoautomatico.in_numcuenta" name="in_numcuenta" #in_numcuenta="ngModel" placeholder="Nombre Catalogo Planilla">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="full-width" cellspacing="0">
+      <tr>
+        <td>
+          <md-form-field class="full-width">
+            <input mdInput [(ngModel)]="descuentoautomatico.in_montoprestamo" name="in_montoprestamo" #in_montoprestamo="ngModel" placeholder="Monto de prestamo">
+          </md-form-field>
+        </td>
+      </tr>
+    </table>
+    <table class="full-width" cellspacing="0">
+        <tr>
+          <td>
+            <md-form-field class="full-width">
+              <input mdInput [(ngModel)]="descuentoautomatico.in_cuotaprestamo" name="in_cuotaprestamo" #in_cuotaprestamo="ngModel" placeholder="Cuota de prestamo">
+            </md-form-field>
+          </td>
+          <td>
+            <md-form-field class="full-width">
+              <input mdInput [(ngModel)]="descuentoautomatico.in_fechapago" name="in_fechapago" #in_fechapago="ngModel" placeholder="Cuota de prestamo">
+            </md-form-field>
+          </td>
+        </tr>
+      </table>
+      <table class="full-width" cellspacing="0">
+          <tr>
+            <td>
+              <md-form-field class="full-width">
+                <input mdInput [(ngModel)]="descuentoautomatico.in_montoprestamo" name="in_montoprestamo" #in_montoprestamo="ngModel" placeholder="Monto de prestamo">
+              </md-form-field>
+            </td>
+          </tr>
+        </table>
+        <table class="full-width" cellspacing="0">
+            <tr>
+              <td>
+                <md-form-field class="full-width">
+                  <input mdInput [(ngModel)]="descuentoautomatico.in_cuotaprestamo" name="in_cuotaprestamo" #in_cuotaprestamo="ngModel" placeholder="Cuota de prestamo">
+                </md-form-field>
+              </td>
+              <td>
+                <md-form-field class="full-width">
+                  <input mdInput [(ngModel)]="descuentoautomatico.in_mododescuento" name="in_mododescuento" #in_mododescuento="ngModel" placeholder="Cuota de prestamo">
+                </md-form-field>
+              </td>
+            </tr>
+          </table>
+    <table class="full-width" cellspacing="0">
+        <tr>
+          <td>
+            <md-form-field class="full-width">
+              <input mdInput [(ngModel)]="descuentoautomatico.in_estadoprestamo" name="in_estadoprestamo" #in_estadoprestamo="ngModel" placeholder="Detalle planilla">
+            </md-form-field>
+          </td>
+        </tr>
+      </table>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <button md-button (click)="crearDescuentoAutomatico(descuentoautomatico)"> <md-icon>save</md-icon>Guardar</button>
+      </td>
+      <td>
+        <button md-button (click)="limpiarDescuentoAutomatico()" ><md-icon>clear</md-icon>Borrar</button>
+      </td>
+    </tr>
+  </table>
+</form>

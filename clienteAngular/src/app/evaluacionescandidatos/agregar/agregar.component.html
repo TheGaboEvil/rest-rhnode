@@ -1,3 +1,92 @@
-<p>
-  agregar works!
-</p>
+<form class="form">
+  <md-form-field class="full-width">
+    <input mdInput placeholder="" disabled value="Nueva Evaluacion Candidato">
+  </md-form-field>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="evaluacioncandidato.in_codevaluacion" name="in_codevaluacion" #in_codevaluacion="ngModel" placeholder="Codigo evaluacion (TODO: usar las Secuencias)">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="evaluacioncandidato.in_nombreevaluacion" name="in_nombreevaluacion" #in_nombreevaluacion="ngModel" placeholder="Nombre Evaluacion">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="evaluacioncandidato.in_nombreevaluacion" name="in_nombreevaluacion" #in_nombreevaluacion="ngModel" placeholder="Nombre Evaluacion">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="evaluacioncandidato.in_nombreevaluacion" name="in_nombreevaluacion" #in_nombreevaluacion="ngModel" placeholder="Nombre Evaluacion">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="evaluacioncandidato.in_estadoevaluacion" name="in_estadoevaluacion" #in_estadoevaluacion="ngModel" placeholder="Estado Evaluacion">
+        </md-form-field>
+      </td>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="evaluacioncandidato.in_descripcionevaluacion" name="in_descripcionevaluacion" #in_descripcionevaluacion="ngModel" placeholder="Estado Evaluacion">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="evaluacioncandidato.in_descripcionevaluacion" name="in_descripcionevaluacion" #in_descripcionevaluacion="ngModel" placeholder="Estado Evaluacion">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="evaluacioncandidato.in_puntuacionrequerida" name="in_puntuacionrequerida" #in_puntuacionrequerida="ngModel" placeholder="Puntuacion Requerida">
+        </md-form-field>
+      </td>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="evaluacioncandidato.in_puntuacionmaxima" name="in_puntuacionmaxima" #in_puntuacionmaxima="ngModel" placeholder="Puntuacion Maxima">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <button md-button (click)="crearEvaluacionCandidato(evaluacioncandidato)"> <md-icon>save</md-icon>Guardar</button>
+      </td>
+      <td>
+        <button md-button (click)="limpiarEvaluacionCandidato()" ><md-icon>clear</md-icon>Borrar</button>
+      </td>
+    </tr>
+  </table>
+</form>

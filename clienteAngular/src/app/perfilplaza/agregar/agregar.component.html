@@ -1,3 +1,42 @@
-<p>
-  agregar works!
-</p>
+<form class="form">
+  <md-form-field class="full-width">
+    <input mdInput placeholder="" disabled value="Nuevo Registro Perfil Plaza">
+  </md-form-field>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="perfilplaza.in_codperfilplaza" name="in_codperfilplaza" #in_codperfilplaza="ngModel" placeholder="Codigo Perfil Plaza (TODO: usar las Secuencias)">
+        </md-form-field>
+      </td>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="perfilplaza.in_NombrePlaza" name="in_NombrePlaza" #in_NombrePlaza="ngModel" placeholder="Nombre Plaza">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="perfilplaza.in_DescripcionPlaza" name="in_DescripcionPlaza" #in_DescripcionPlaza="ngModel" placeholder="Descripcion Plaza">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <button md-button (click)="crearPerfilPlaza(perfilplaza)"> <md-icon>save</md-icon>Guardar</button>
+      </td>
+      <td>
+        <button md-button (click)="limpiarPerfilPlaza()" ><md-icon>clear</md-icon>Borrar</button>
+      </td>
+    </tr>
+  </table>
+</form>
