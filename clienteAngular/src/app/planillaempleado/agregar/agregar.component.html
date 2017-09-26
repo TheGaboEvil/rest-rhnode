@@ -1,3 +1,62 @@
-<p>
-  agregar works!
-</p>
+<form class="form">
+  <md-form-field class="full-width">
+    <input mdInput placeholder="" disabled value="Nuevo Registro Planilla Empleado">
+  </md-form-field>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="planillaempleado.in_codempleado" name="in_codempleado" #in_codempleado="ngModel" placeholder="Codigo empleado (TODO: usar las Secuencias)">
+        </md-form-field>
+      </td>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="planillaempleado.in_codcatplanilla" name="in_codcatplanilla" #in_codcatplanilla="ngModel" placeholder="Codido Catalogo Planilla">
+        </md-form-field>
+      </td>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="planillaempleado.in_codplanilla" name="in_codplanilla" #in_codplanilla="ngModel" placeholder="Codigo Planilla">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="planillaempleado.in_cddepartamento" name="in_cddepartamento" #in_cddepartamento="ngModel" placeholder="cddepartamento">
+        </md-form-field>
+      </td>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput required [(ngModel)]="planillaempleado.in_monto" name="in_monto" #in_monto="ngModel" placeholder="Monto">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+
+    <table class="full-width" cellspacing="0">
+      <tr>
+        <td>
+          <md-form-field class="full-width">
+            <input mdInput required [(ngModel)]="planillaempleado.in_observacion" name="in_observacion" #in_observacion="ngModel" placeholder="Observacion">
+          </md-form-field>
+        </td>
+      </tr>
+    </table>
+
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <button md-button (click)="crearPlanillaEmpleado(planillaempleado)"> <md-icon>save</md-icon>Guardar</button>
+      </td>
+      <td>
+        <button md-button (click)="limpiarPlanillaEmpleado()" ><md-icon>clear</md-icon>Borrar</button>
+      </td>
+    </tr>
+  </table>
+</form>
