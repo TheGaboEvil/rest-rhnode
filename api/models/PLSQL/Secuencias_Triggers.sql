@@ -16,10 +16,12 @@ create table prueba(
 select * from prueba;*/
 /* Secuencia para cï¿½digo de sucursal */
 create sequence sec_codSuc
-start with 1001
+start with 101
 increment by 1
-maxvalue 9999
+maxvalue 999
 minvalue 1;
+
+drop sequence sec_codSuc;
 
 /* Secuencia para cï¿½digo de departamento */
 create sequence sec_codDepto
@@ -44,13 +46,36 @@ BEGIN
     END IF;
 END p_agregar_depto;
 /*
-EXECUTE P_AGREGAR_DEPTO ('S103','ADMINISTRADO',5);
+EXECUTE P_AGREGAR_DEPTO ('S104','SISTEMAS',10);
 
 delete from departamento;
 SELECT * FROM DEPARTAMENTO;
 
 INSERT INTO DEPARTAMENTO VALUES ('D1001','S101','ADMINISTRADOR',1);
 */
+
+--CONSULTAR DESCUENTOS EMPLEADO--
+SET SERVEROUTPUT ON
+CREATE OR REPLACE PROCEDURE p_consDescEmpl (pcodEmpleado VARCHAR2)
+IS
+    v_codEmpleado varchar2(10);
+    v_sueldoBase number(9,2);
+    v_montoAdelanto number(9,2);
+    v_cuotaPrestamo number(9,2);
+    v_tiempoPago varchar2(25);
+BEGIN
+    SELECT empl.codEmpleado , empl.sueldoBase, aEmpl.montoAdelanto, descAuto.cuotaPrestamo, empl.tiempoPago
+    INTO v_codEmpleado, v_sueldoBase, v_montoAdelanto, v_cuotaPrestamo, v_tiempoPago
+    FROM EMPLEADOS empl
+    INNER JOIN ADELANTOSEMPLEADO aEmpl ON aEmpl.codEmpleado = empl.codEmpleado
+    INNER JOIN DESCUENTOSAUTOMATICOS descAuto ON descAuto.codEmpleado = empl.codEmpleado
+    WHERE empl.codEmpleado = pcodEmpleado;
+    
+    DBMS_OUTPUT.PUT_LINE('codEmpleado: ' || v_codEmpleado ||', sueldo base: '|| v_sueldoBase ||', monto adelanto: '|| v_montoAdelanto ||', cuota préstamo: '|| v_cuotaPrestamo ||', tiempo de pago: '|| v_tiempoPago);
+END p_consDescEmpl;
+
+EXECUTE p_consDescEmpl('E100026');
+
 /* Secuencia para cï¿½digo de planilla */
 create sequence sec_codPlan
 start with 10001
@@ -165,5 +190,5 @@ BEGIN
     END IF;
     EXCEPTION
         WHEN OTHERS THEN
-            raise_application_error(-20000,'OCURRIï¿½ UN ERROR, POR FAVOR CONTACTE AL ADMINISTRADOR');
+            raise_application_error(-20000,'OCURRIO UN ERROR, POR FAVOR CONTACTE AL ADMINISTRADOR');
 END tr_depto;
