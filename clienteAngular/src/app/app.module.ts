@@ -1,6 +1,8 @@
 import { RequerimientosplazaModule } from './requerimientosplaza/requerimientosplaza.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
+
 
 import { AppComponent } from './app.component';
 
@@ -147,6 +149,9 @@ import { BuscarComponent as UsuariosBuscar } from './usuarios/buscar/buscar.comp
 import { ModificarComponent as UsuariosModificar } from './usuarios/modificar/modificar.component';
 import { EliminarComponent as UsuariosEliminar } from './usuarios/eliminar/eliminar.component';
 
+/* Lista de servicios para cada modulo*/
+import { SucursalService } from './sucursales/sucursal.service';
+
 /* rutas para el menu */
 const appRouters: Routes = [
   { path: 'agendaempleado/agregar' , component: AgendaempleadoAgregar },
@@ -236,6 +241,7 @@ const appRouters: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     // material.io
     BrowserAnimationsModule,
     MaterialModule,
@@ -262,7 +268,7 @@ const appRouters: Routes = [
     // agregamos rutas de navegacion
     RouterModule.forRoot(appRouters)
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [SucursalService],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

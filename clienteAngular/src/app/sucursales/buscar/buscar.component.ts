@@ -26,7 +26,8 @@ export class BuscarComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.sucursalService.getSucursales().then(sucursal => this.sucursales = sucursal);
+    this.sucursalService.getSucursales().then(sucursales => this.sucursales = sucursales);
+    console.log(this.sucursalService.getSucursales());
   }
 
 }
