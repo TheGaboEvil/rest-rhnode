@@ -49,6 +49,8 @@ var routes_sucursales = require('./api/routes/sucursales');
 routes_sucursales(app);
 var routes_usuarios = require('./api/routes/usuarios');
 routes_usuarios(app);
+var routes_vistaboletapago = require('./api/routes/vistaboletapago');
+routes_vistaboletapago(app);
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'clienteAngular/dist/index.html'));
