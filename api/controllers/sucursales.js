@@ -29,6 +29,7 @@ exports.crear_registro = function(req,res){
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
+        console.log(req.body);
         res.writeHead(500,{'Content-Type':'aplication/json'});
         res.end(JSON.stringify({
           status:500,
@@ -37,7 +38,10 @@ exports.crear_registro = function(req,res){
       }else{
         console.log("Sucursal respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
-        res.end(JSON.stringify(result.rowsAffected));
+        res.end(JSON.stringify({
+          status:200,
+          data:result.rowsAffected
+        }));
       }
     });
   }); //fin del ora.then()
@@ -55,7 +59,7 @@ exports.obtener_registro = function(req,res){
       }else{
         console.log("Sucursal respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
-        res.end(JSON.stringify(result.rows));
+        res.end(JSON.stringify({"Sucursal" : result.rows}));
       }
     });
   }); //fin del ora.then()

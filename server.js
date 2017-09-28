@@ -5,6 +5,13 @@ var express = require('express'),
   port      = process.env.PORT || 8030;
 
 
+  /* Esta configuracion de header permite */
+  app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static('clienteAngular/dist/'));

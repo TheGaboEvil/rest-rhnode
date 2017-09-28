@@ -17,7 +17,9 @@ exports.boletasempleado1 = function(req,res){
         }else{
           console.log("Boleta de pago respondio :" + result.rows);
           res.writeHead(200,{'Content-Type':'application/json'});
-          res.end(JSON.stringify(result.rows));
+          res.end(JSON.stringify({
+            status:200,
+            data:result.rows}));
         }
       });
     }); //fin del ora.then()

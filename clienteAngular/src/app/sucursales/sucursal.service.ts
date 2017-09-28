@@ -6,7 +6,7 @@ import { Sucursal } from './sucursal';
 @Injectable()
 export class SucursalService {
   constructor(private http: Http) {}
-  private headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+  private headers = new Headers({ 'Content-Type': 'application/json' });
   private URL = 'http://localhost:8030/sucursales';
 
   getSucursales(): Promise<Sucursal[]> {
@@ -17,7 +17,7 @@ export class SucursalService {
       .catch(this.handleError);
   }
 
-  createSucursal(sucursal: Sucursal): Promise<Sucursal> {
+  crearSucursal(sucursal: Sucursal): Promise<Sucursal> {
     return this.http
       .post(this.URL, JSON.stringify(sucursal), { headers: this.headers })
       .toPromise()
