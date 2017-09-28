@@ -24,8 +24,8 @@ exports.enlistar_todo = function(req,res){
 
 exports.crear_registro = function(req,res){
   ora.then(function(con){
-    con.execute("INSERT INTO sucursal VALUES(:in_codsucursal,:in_direccion,:in_ciudad,:in_departamento,:in_pais,:in_codigopostal,:in_telefono,:in_coordenadas)",
-    [req.body.in_codsucursal,req.body.in_direccion,req.body.in_ciudad,req.body.in_departamento,req.body.in_pais,req.body.in_codigopostal,req.body.in_telefono,req.body.in_coordenadas],
+    con.execute("INSERT INTO sucursal VALUES(:codsucursal,:direccion,:ciudad,:departamento,:pais,:codigopostal,:telefono,:coordenadas)",
+    [req.body.codsucursal,req.body.direccion,req.body.ciudad,req.body.departamento,req.body.pais,req.body.codigopostal,req.body.telefono,req.body.coordenadas],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
@@ -66,8 +66,8 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE sucursal SET direccion=:in_direccion,ciudad=:in_ciudad,departamento=:in_departamento,pais=:in_pais,codigoPostal=:in_codigopostal,telefono=:in_telefono,coordenadas=:in_coordenadas WHERE codSucursal=:id",
-    [req.body.in_direccion,req.body.in_ciudad,req.body.in_departamento,req.body.in_pais,req.body.in_codigopostal,req.body.in_coordenadas,req.params.id],
+    con.execute("UPDATE sucursal SET direccion=:direccion,ciudad=:ciudad,departamento=:departamento,pais=:pais,codigoPostal=:codigopostal,telefono=:telefono,coordenadas=:coordenadas WHERE codSucursal=:id",
+    [req.body.direccion,req.body.ciudad,req.body.departamento,req.body.pais,req.body.codigopostal,req.body.coordenadas,req.params.id],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);

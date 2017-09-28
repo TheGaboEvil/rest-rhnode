@@ -26,8 +26,8 @@ exports.enlistar_todo = function(req,res){
 exports.crear_registro = function(req,res){
   ora.then(function(con){
     console.log(req.body);
-    con.execute('INSERT INTO "GRUPO1UGB"."PERFILPLAZA" (CODPERFILPLAZA, NOMBREPLAZA, DESCRIPCIONPLAZA) VALUES(:in_codperfilplaza,:in_nombreplaza,:in_descripcionplaza)',
-    [req.body.in_codperfilplaza,req.body.in_nombreplaza,req.body.in_descripcionplaza],
+    con.execute('INSERT INTO "GRUPO1UGB"."PERFILPLAZA" (CODPERFILPLAZA, NOMBREPLAZA, DESCRIPCIONPLAZA) VALUES(:codperfilplaza,:nombreplaza,:descripcionplaza)',
+    [req.body.codperfilplaza,req.body.nombreplaza,req.body.descripcionplaza],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
@@ -64,8 +64,8 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE perfilplaza SET nombrePlaza=:in_nombreplaza, descripcionPlaza=:in_descripcionplaza WHERE codPerfilPlaza=:id",
-    [req.body.in_nombre_plaza,req.body.in_descripcion_plaza,req.params.id],
+    con.execute("UPDATE perfilplaza SET nombrePlaza=:nombreplaza, descripcionPlaza=:descripcionplaza WHERE codPerfilPlaza=:id",
+    [req.body.nombre_plaza,req.body.descripcion_plaza,req.params.id],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);

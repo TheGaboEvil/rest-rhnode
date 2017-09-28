@@ -24,8 +24,8 @@ exports.enlistar_todo = function(req,res){
 
 exports.crear_registro = function(req,res){
   ora.then(function(con){
-    con.execute("INSERT INTO agendaempleado VALUES(:in_codempleado,:in_tiporegistro,TO_DATE(:in_fechahoraentrada,'YYYY/MM/DD'),TO_DATE(:in_fechahorasalida,'YYYY/MM/DD'),:in_observacion)",
-    [req.body.in_codempleado,req.body.in_tiporegistro,req.body.in_fechahoraentrada,req.body.in_fechahorasalida,req.body.in_observacion],
+    con.execute("INSERT INTO agendaempleado VALUES(:codempleado,:tiporegistro,TO_DATE(:fechahoraentrada,'YYYY/MM/DD'),TO_DATE(:fechahorasalida,'YYYY/MM/DD'),:observacion)",
+    [req.body.codempleado,req.body.tiporegistro,req.body.fechahoraentrada,req.body.fechahorasalida,req.body.observacion],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
@@ -63,8 +63,8 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE agendaempleado SET tipoRegistro:in_tiporegistro,fechaHoraEntrada=TO_DATE(:in_fechahoraentrada,'YYYY/MM/DD'),fechaHoraSalida=TO_DATE(:in_fechahorasalida,'YYYY/MM/DD'),:in_observacion WHERE codEmpleado=:id1 AND fechaHoraEntrada=:id2 AND fechaHoraSalida=:id3",
-    [req.body.in_tiporegistro,req.body.in_fechahoraentrada,req.body.in_fechahorasalida,req.body.in_observacion,req.params.id1,req.params.id2,req.params.id3],
+    con.execute("UPDATE agendaempleado SET tipoRegistro:tiporegistro,fechaHoraEntrada=TO_DATE(:fechahoraentrada,'YYYY/MM/DD'),fechaHoraSalida=TO_DATE(:fechahorasalida,'YYYY/MM/DD'),:observacion WHERE codEmpleado=:id1 AND fechaHoraEntrada=:id2 AND fechaHoraSalida=:id3",
+    [req.body.tiporegistro,req.body.fechahoraentrada,req.body.fechahorasalida,req.body.observacion,req.params.id1,req.params.id2,req.params.id3],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);

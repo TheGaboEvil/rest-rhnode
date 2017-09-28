@@ -24,8 +24,8 @@ exports.enlistar_todo = function(req,res){
 
 exports.crear_registro = function(req,res){
   ora.then(function(con){
-    con.execute("INSERT INTO candidatosevaluaciones VALUES(:in_codcandidato,:in_codevaluacion,TO_DATE(:in_fechaevaluacion,'YYYY/MM/DD'),:in_puntajeevaluacion,:in_observaciones,:in_documentoevaluacion)",
-    [req.body.in_codcandidato,req.body.in_codevaluacion,req.body.in_fechaevaluacion,req.body.in_puntajevaluacion,req.body.in_observaciones,req.body.in_documentoevaluacion],
+    con.execute("INSERT INTO candidatosevaluaciones VALUES(:codcandidato,:codevaluacion,TO_DATE(:fechaevaluacion,'YYYY/MM/DD'),:puntajeevaluacion,:observaciones,:documentoevaluacion)",
+    [req.body.codcandidato,req.body.codevaluacion,req.body.fechaevaluacion,req.body.puntajevaluacion,req.body.observaciones,req.body.documentoevaluacion],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
@@ -63,8 +63,8 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE candidatosevaluaciones SET fechaEvaluacion=:in_fechaevaluacion,puntajeevaluacion=:in_puntajeevaluacion,observaciones=:in_observaciones,documentoEvaluacion=in_documentoevaluacion WHERE codcandidato=:id1 and codEvaluacion=:id2",
-    [req.body.in_fechaevaluacion,req.body.in_puntajeevaluacion,req.body.in_observaciones,req.body.in_documentoevaluacion,req.params.id1,req.params.id2],
+    con.execute("UPDATE candidatosevaluaciones SET fechaEvaluacion=:fechaevaluacion,puntajeevaluacion=:puntajeevaluacion,observaciones=:observaciones,documentoEvaluacion=documentoevaluacion WHERE codcandidato=:id1 and codEvaluacion=:id2",
+    [req.body.fechaevaluacion,req.body.puntajeevaluacion,req.body.observaciones,req.body.documentoevaluacion,req.params.id1,req.params.id2],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);

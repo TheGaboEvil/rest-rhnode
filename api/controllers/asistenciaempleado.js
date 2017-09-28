@@ -24,8 +24,8 @@ exports.enlistar_todo = function(req,res){
 
 exports.crear_registro = function(req,res){
   ora.then(function(con){
-    con.execute("INSERT INTO asistenciaempleado VALUES (:in_codempleado,TO_DATE(:in_fechahorareg,'YYYY/MM/DD'),:in_tiporegistro,:in_observacion)",
-    [req.body.in_codempleado,req.body.in_fechahorareg,req.body.in_tiporegistro,req.body.in_observacion],
+    con.execute("INSERT INTO asistenciaempleado VALUES (:codempleado,TO_DATE(:fechahorareg,'YYYY/MM/DD'),:tiporegistro,:observacion)",
+    [req.body.codempleado,req.body.fechahorareg,req.body.tiporegistro,req.body.observacion],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
@@ -63,8 +63,8 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE asistenciaempleado SET fechaHoraReg=TO_DATE(:in_fechahorareg,'YYYY/MM/DD'),tipoRegistro=:in_tiporegistro,observacion=:in_observacion WHERE codempleado=:id1 AND fechaHoraReg=:id2",
-    [req.body.in_fechahorareg,req.body.in_tiporegistro,req.body.in_observacion,req.params.id1,req.params.id2],
+    con.execute("UPDATE asistenciaempleado SET fechaHoraReg=TO_DATE(:fechahorareg,'YYYY/MM/DD'),tipoRegistro=:tiporegistro,observacion=:observacion WHERE codempleado=:id1 AND fechaHoraReg=:id2",
+    [req.body.fechahorareg,req.body.tiporegistro,req.body.observacion,req.params.id1,req.params.id2],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);

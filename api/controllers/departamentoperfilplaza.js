@@ -24,8 +24,8 @@ exports.enlistar_todo = function(req,res){
 
 exports.crear_registro = function(req,res){
   ora.then(function(con){
-    con.execute("INSERT INTO departamentoperfilplaza VALUES(:in_codperfilplaza,:in_coddepartamento,:in_codsucursal,:in_cantidadplazas,:in_plazasactivas,observaciones)",
-    [req.body.in_codperfilplaza,req.body.in_coddepartamento,req.body.in_codsucursal,req.body.in_cantidadplazas,req.body.in_plazasactivas,req.body.observaciones],
+    con.execute("INSERT INTO departamentoperfilplaza VALUES(:codperfilplaza,:coddepartamento,:codsucursal,:cantidadplazas,:plazasactivas,observaciones)",
+    [req.body.codperfilplaza,req.body.coddepartamento,req.body.codsucursal,req.body.cantidadplazas,req.body.plazasactivas,req.body.observaciones],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
@@ -63,8 +63,8 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE departamentoperfilplaza SET cantidadplazas=:in_cantidadplazas,plazasactivas=:in_plazasactivas,observaciones=:in_observaciones WHERE codperfilplaza=:id1 AND coddepartamento=:id2 AND codsucursal=:id3",
-    [req.body.in_cantidadplazas,req.body.in_plazasactivas,req.body.in_observaciones,req.params.id1,req.params.id2,req.params.id3],
+    con.execute("UPDATE departamentoperfilplaza SET cantidadplazas=:cantidadplazas,plazasactivas=:plazasactivas,observaciones=:observaciones WHERE codperfilplaza=:id1 AND coddepartamento=:id2 AND codsucursal=:id3",
+    [req.body.cantidadplazas,req.body.plazasactivas,req.body.observaciones,req.params.id1,req.params.id2,req.params.id3],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);

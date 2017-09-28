@@ -4,8 +4,8 @@ var ora = require('../models/ora');
 
 exports.crear_registro = function(req,res){
   ora.then(function(con){
-    con.execute('select * from usuarios where NICK= :in_nick AND PASS = : in_pass',
-    [req.body.in_nick,req.body.in_pass],
+    con.execute('select * from usuarios where NICK= :nick AND PASS = : pass',
+    [req.body.nick,req.body.pass],
     function(err,result){
         if(err){
           console.log("Error  "+err.message);

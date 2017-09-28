@@ -24,8 +24,8 @@ exports.enlistar_todo = function(req,res){
 
 exports.crear_registro = function(req,res){
   ora.then(function(con){
-    con.execute("INSERT INTO adelantosempleado VALUES(:in_codadelanto,:in_codempleado,TO_DATE(:in_fechaadelanto,'YYYY/MM/DD'),:in_montoadelanto,:in_estadoadelanto)",
-    [req.body.in_codadelanto,req.body.in_codempleado,req.body.in_fechaadelanto,req.body.in_montoadelanto,req.body.in_estadoadelanto],
+    con.execute("INSERT INTO adelantosempleado VALUES(:codadelanto,:codempleado,TO_DATE(:fechaadelanto,'YYYY/MM/DD'),:montoadelanto,:estadoadelanto)",
+    [req.body.codadelanto,req.body.codempleado,req.body.fechaadelanto,req.body.montoadelanto,req.body.estadoadelanto],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
@@ -63,8 +63,8 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE adelantosempleado SET fechaAdelanto=TO_DATE(:in_fechaadelanto,'YYYY/MM/DD'),montoAdelanto=:in_montoadelanto,estadoAdelanto=:in_estadoAdelanto WHERE codAdelanto=:id1 AND codEmpleado=:id2",
-    [req.body.in_fechaadelanto,req.body.in_montoadelanto,req.body.in_estadoadelanto,req.params.id1,req.params.id2],
+    con.execute("UPDATE adelantosempleado SET fechaAdelanto=TO_DATE(:fechaadelanto,'YYYY/MM/DD'),montoAdelanto=:montoadelanto,estadoAdelanto=:estadoAdelanto WHERE codAdelanto=:id1 AND codEmpleado=:id2",
+    [req.body.fechaadelanto,req.body.montoadelanto,req.body.estadoadelanto,req.params.id1,req.params.id2],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);

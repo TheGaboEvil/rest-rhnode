@@ -24,8 +24,8 @@ exports.enlistar_todo = function(req,res){
 
 exports.crear_registro = function(req,res){
   ora.then(function(con){
-    con.execute("INSERT INTO confrenta VALUES(:in_codrenta,:in_montodesde,:in_montohasta,:in_porcentaplicar,:in_sobreexcedentede,:in_mascuotafijade,:in_tipoperiodo)",
-    [req.body.in_codrenta,req.body.in_montodesde,req.body.in_montohasta,req.body.in_porcentaplicar,req.body.in_sobreexcedentede,req.body.in_mascuotafijade,req.body.in_tipoperiodo],
+    con.execute("INSERT INTO confrenta VALUES(:codrenta,:montodesde,:montohasta,:porcentaplicar,:sobreexcedentede,:mascuotafijade,:tipoperiodo)",
+    [req.body.codrenta,req.body.montodesde,req.body.montohasta,req.body.porcentaplicar,req.body.sobreexcedentede,req.body.mascuotafijade,req.body.tipoperiodo],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
@@ -62,8 +62,8 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE confrenta SET montoDesde=:in_montodesde,montoHasta=:in_montohasta,porcentaplicar=:in_porcentaplicar,sobreExcedenteDe=:in_sobreexcedentede,masCuotaFijaDe=:in_mascuotafijada,tipoPeriodo=:in_tipoperiodo WHERE codRenta=:id",
-    [req.body.in_montodesde,req.body.in_montohasta,req.body.in_porcentaplicar,req.body.in_sobreexcedentede,req.body.in_mascuotafijade,req.body.in_tipoperiodo,req.params.id],
+    con.execute("UPDATE confrenta SET montoDesde=:montodesde,montoHasta=:montohasta,porcentaplicar=:porcentaplicar,sobreExcedenteDe=:sobreexcedentede,masCuotaFijaDe=:mascuotafijada,tipoPeriodo=:tipoperiodo WHERE codRenta=:id",
+    [req.body.montodesde,req.body.montohasta,req.body.porcentaplicar,req.body.sobreexcedentede,req.body.mascuotafijade,req.body.tipoperiodo,req.params.id],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);

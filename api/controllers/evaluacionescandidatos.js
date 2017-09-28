@@ -24,8 +24,8 @@ exports.enlistar_todo = function(req,res){
 
 exports.crear_registro = function(req,res){
   ora.then(function(con){
-    con.execute("INSERT INTO evaluacionescandidatos VALUES(:in_codevaluacion,:in_nombreevaluacion,:in_estadoevaluacion,:in_descripcionevaluacion,:in_puntuacionrequerida,:in_puntuacionmaxima)",
-    [req.body.in_codevaluacion,req.body.in_nombreevaluacion,req.body.in_estadoevaluacion,req.body.in_descripcionevaluacion,req.body.in_puntuacionrequerida,req.body.in_puntuacionmaxima],
+    con.execute("INSERT INTO evaluacionescandidatos VALUES(:codevaluacion,:nombreevaluacion,:estadoevaluacion,:descripcionevaluacion,:puntuacionrequerida,:puntuacionmaxima)",
+    [req.body.codevaluacion,req.body.nombreevaluacion,req.body.estadoevaluacion,req.body.descripcionevaluacion,req.body.puntuacionrequerida,req.body.puntuacionmaxima],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
@@ -62,8 +62,8 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE evaluacionescandidatos SET nombreevalacion=:in_nombreevaluacion,estadoEvaluacion=:in_estadoevaluacion,descripcionevaliacion=:in_descripcionevaluacion,puntuacionrequerida=:in_puntuacionrequerida,puntuacionMaxima=:in_puin_puntuacionmaxima WHERE codevaluacion=:id",
-    [req.body.in_nombreevaluacion,req.body.in_estadoevaluacion,req.body.in_estadoevaluacion,req.body.inin_descripcionevaluacion,req.body.in_puntuacionrequerida,req.body.in_puntuacionmaxima,req.params.id],
+    con.execute("UPDATE evaluacionescandidatos SET nombreevalacion=:nombreevaluacion,estadoEvaluacion=:estadoevaluacion,descripcionevaliacion=:descripcionevaluacion,puntuacionrequerida=:puntuacionrequerida,puntuacionMaxima=:pupuntuacionmaxima WHERE codevaluacion=:id",
+    [req.body.nombreevaluacion,req.body.estadoevaluacion,req.body.estadoevaluacion,req.body.indescripcionevaluacion,req.body.puntuacionrequerida,req.body.puntuacionmaxima,req.params.id],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);

@@ -24,8 +24,8 @@ exports.enlistar_todo = function(req,res){
 
 exports.crear_registro = function(req,res){
   ora.then(function(con){
-    con.execute("INSERT INTO planilla VALUES(:in_codplanilla,:in_coddepartamento,:in_codsucursal,TO_DATE(:in_fechaini,'YYYY/MM/DD'),TO_DATE(:in_fechafin,'YYYY/MM/DD'),:in_tipoplanilla)",
-    [req.body.in_codplanilla,req.body.in_coddepartamento,req.body.in_codsucursal,req.body.in_fechaini,req.body.in_fechafin,req.body.in_tipoplanilla],
+    con.execute("INSERT INTO planilla VALUES(:codplanilla,:coddepartamento,:codsucursal,TO_DATE(:fechaini,'YYYY/MM/DD'),TO_DATE(:fechafin,'YYYY/MM/DD'),:tipoplanilla)",
+    [req.body.codplanilla,req.body.coddepartamento,req.body.codsucursal,req.body.fechaini,req.body.fechafin,req.body.tipoplanilla],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
@@ -62,8 +62,8 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE planilla SET coddepartamento=:in_coddepartamento,codsucursal=:in_codsucursal,fechaini= TO_DATE(:in_fechaini,'YYYY/MM/DD'),fechafin=TO_DATE(:in_fechafin,'YYYY/MM/DD'),tipoplanilla=:in_tipoplanilla WHERE codplanilla=:id",
-    [req.body.in_nombre,req.body.in_apellido,req.body.in_fechanacimiento,req.body.in_salario,req.params.id],
+    con.execute("UPDATE planilla SET coddepartamento=:coddepartamento,codsucursal=:codsucursal,fechaini= TO_DATE(:fechaini,'YYYY/MM/DD'),fechafin=TO_DATE(:fechafin,'YYYY/MM/DD'),tipoplanilla=:tipoplanilla WHERE codplanilla=:id",
+    [req.body.nombre,req.body.apellido,req.body.fechanacimiento,req.body.salario,req.params.id],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
