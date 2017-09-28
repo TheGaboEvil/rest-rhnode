@@ -24,8 +24,8 @@ exports.enlistar_todo = function(req,res){
 
 exports.crear_registro = function(req,res){
   ora.then(function(con){
-    con.execute("INSERT INTO departamento VALUES(:in_coddepartamento,:in_codsucursal,:in_nombredepartamento,:in_numplazas)",
-    [req.body.in_coddepartamento,req.body.in_codsucursal,req.body.in_nombredepartamento,req.body.in_numplazas],
+    con.execute("INSERT INTO departamento VALUES(:coddepartamento,:codsucursal,:nombredepartamento,:numplazas)",
+    [req.body.coddepartamento,req.body.codsucursal,req.body.nombredepartamento,req.body.numplazas],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
@@ -63,8 +63,8 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE departamento SET nombreDepartamento=:in_nombredepartamento,numPlazas=:in_numplazas WHERE codDepartamento=:id1 AND codSucursal=:id2",
-    [req.body.in_nombredepartamento,req.body.in_numplazas,req.params.id1,req.params.id2],
+    con.execute("UPDATE departamento SET nombreDepartamento=:nombredepartamento,numPlazas=:numplazas WHERE codDepartamento=:id1 AND codSucursal=:id2",
+    [req.body.nombredepartamento,req.body.numplazas,req.params.id1,req.params.id2],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);

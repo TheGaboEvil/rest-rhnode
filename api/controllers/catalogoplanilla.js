@@ -24,8 +24,8 @@ exports.enlistar_todo = function(req,res){
 
 exports.crear_registro = function(req,res){
   ora.then(function(con){
-    con.execute("INSERT INTO catalogoplanilla VALUES(:in_codcatplanilla,:in_nomcatplanilla,:in_tipocatplanilla,:in_dtllecatplanilla)",
-    [req.body.in_codcatplanilla,req.body.in_nomcatplanilla,req.body.in_tipocatplanilla,req.body.in_dtllecatplanilla],
+    con.execute("INSERT INTO catalogoplanilla VALUES(:codcatplanilla,:nomcatplanilla,:tipocatplanilla,:dtllecatplanilla)",
+    [req.body.codcatplanilla,req.body.nomcatplanilla,req.body.tipocatplanilla,req.body.dtllecatplanilla],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
@@ -62,8 +62,8 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE catalogoplanilla SET nomCatPlanilla=:in_nomcatplanilla,tipoCatPlanilla=:in_tipocatplanilla,dtlleCatPlanilla=:in_dtllecatplanilla WHERE codcatplanilla,=:id",
-    [req.body.in_nomcatplanilla,req.body.in_tipocatplanilla,req.body.in_dtllecatplanilla,req.params.id],
+    con.execute("UPDATE catalogoplanilla SET nomCatPlanilla=:nomcatplanilla,tipoCatPlanilla=:tipocatplanilla,dtlleCatPlanilla=:dtllecatplanilla WHERE codcatplanilla,=:id",
+    [req.body.nomcatplanilla,req.body.tipocatplanilla,req.body.dtllecatplanilla,req.params.id],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);

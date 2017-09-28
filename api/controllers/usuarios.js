@@ -24,8 +24,8 @@ exports.enlistar_todo = function(req,res){
 
 exports.crear_registro = function(req,res){
   ora.then(function(con){
-    con.execute("INSERT INTO usuarios VALUES(:in_codusuario,:in_nick,:in_pass,:in_estado,:in_nivel_acceso)",
-    [req.body.in_codusuario, req.body.in_nick,req.body.in_pass,req.body.in_estado,req.body.in_nivel_acceso],
+    con.execute("INSERT INTO usuarios VALUES(:codusuario,:nick,:pass,:estado,:nivel_acceso)",
+    [req.body.codusuario, req.body.nick,req.body.pass,req.body.estado,req.body.nivel_acceso],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
@@ -62,8 +62,8 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE usuarios SET nick=:in_nick, pass=:in_pass, estado=:in_estado, nivelacceso=:in_nivel_acceso WHERE codusuario=:id",
-    [req.body.in_nick,req.body.in_pass,req.body.in_estado,req.body.in_nivel_acceso,req.params.id],
+    con.execute("UPDATE usuarios SET nick=:nick, pass=:pass, estado=:estado, nivelacceso=:nivel_acceso WHERE codusuario=:id",
+    [req.body.nick,req.body.pass,req.body.estado,req.body.nivel_acceso,req.params.id],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);

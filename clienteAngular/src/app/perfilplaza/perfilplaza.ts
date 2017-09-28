@@ -1,7 +1,7 @@
 export class Perfilplaza {
   constructor(
-    public in_codperfilplaza,
-    public in_nombreplaza,
-    public in_descripcionplaza
+    public codperfilplaza,
+    public nombreplaza,
+    public descripcionplaza
   ) { }
 }

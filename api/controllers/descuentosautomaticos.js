@@ -25,8 +25,8 @@ exports.enlistar_todo = function(req,res){
 exports.crear_registro = function(req,res){
   ora.then(function(con){
     
-    con.execute("INSERT INTO descuentosautomaticos VALUES(:in_numprestamo,:in_codempleado,:in_tipoprestamo,:in_entidadprestamo,:in_numcuenta,:in_montoprestamo,:in_cuotaprestamo,:in_fechapago,:in_mododescuento,:in_estadoprestamo)",
-    [req.body.in_numprestamo,req.body.in_codempleado,req.body.in_tipoprestamo,req.body.in_entidadprestamo,req.body.in_numcuenta,req.body.in_montoprestamo,req.body.in_cuotaprestamo,req.body.in_fechapago,req.body.in_mododescuento,req.body.in_estadoprestamo],
+    con.execute("INSERT INTO descuentosautomaticos VALUES(:numprestamo,:codempleado,:tipoprestamo,:entidadprestamo,:numcuenta,:montoprestamo,:cuotaprestamo,:fechapago,:mododescuento,:estadoprestamo)",
+    [req.body.numprestamo,req.body.codempleado,req.body.tipoprestamo,req.body.entidadprestamo,req.body.numcuenta,req.body.montoprestamo,req.body.cuotaprestamo,req.body.fechapago,req.body.mododescuento,req.body.estadoprestamo],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
@@ -45,7 +45,7 @@ exports.crear_registro = function(req,res){
 };
 exports.obtener_registro = function(req,res){
   ora.then(function(con){
-    con.execute('SELECT * FROM descuentosautomaticos WHERE in_numprestamo=:id1',
+    con.execute('SELECT * FROM descuentosautomaticos WHERE numprestamo=:id1',
     [req.params.id1],function(err,result){
       if(err){
         console.log("Error  "+err.message);
@@ -64,8 +64,8 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE descuentosautomaticos SET cuotaprestamo=:in_cuotaprestamo,fechapago=:in_fechapago,mododescuento=:in_mododescuento,estadoprestamo=:in_estadoprestamo WHERE numprestamo=:id1",
-    [req.body.in_cuotaprestamo,req.body.in_fechapago,req.body.in_mododescuento,req.body.in_estadoprestamo,req.params.id1],
+    con.execute("UPDATE descuentosautomaticos SET cuotaprestamo=:cuotaprestamo,fechapago=:fechapago,mododescuento=:mododescuento,estadoprestamo=:estadoprestamo WHERE numprestamo=:id1",
+    [req.body.cuotaprestamo,req.body.fechapago,req.body.mododescuento,req.body.estadoprestamo,req.params.id1],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
@@ -84,7 +84,7 @@ exports.actualizar_registro = function(req,res){
 };
 exports.borrar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("DELETE FROM descuentosautomaticos WHERE in_numprestamo=:id1",
+    con.execute("DELETE FROM descuentosautomaticos WHERE numprestamo=:id1",
     [req.params.id1],
     function(err,result){
       if(err){

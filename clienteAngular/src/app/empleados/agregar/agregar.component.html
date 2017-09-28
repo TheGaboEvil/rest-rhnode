@@ -7,12 +7,12 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="empleado.in_codempleado" name="in_codempleado" #in_codempleado="ngModel" placeholder="Codigo empleado (TODO: usar las Secuencias)">
+          <input mdInput required [(ngModel)]="empleado.codempleado" name="codempleado" #codempleado="ngModel" placeholder="Codigo empleado (TODO: usar las Secuencias)">
         </md-form-field>
       </td>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="empleado.in_codjefe" name="in_codjefe" #in_codjefe="ngModel" placeholder="Codigo Jefe (TODO: usar las Secuencias)">
+          <input mdInput required [(ngModel)]="empleado.codjefe" name="codjefe" #codjefe="ngModel" placeholder="Codigo Jefe (TODO: usar las Secuencias)">
         </md-form-field>
       </td>
     </tr>
@@ -22,13 +22,13 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="empleado.in_coddepartamento" name="in_coddepartamento" #in_coddepartamento="ngModel"
+          <input mdInput required [(ngModel)]="empleado.coddepartamento" name="coddepartamento" #coddepartamento="ngModel"
             placeholder="Codigo departamento">
         </md-form-field>
       </td>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="empleado.in_codsucursal" name="in_codsucursal" #in_codsucursal="ngModel" placeholder="Codigo sucursal">
+          <input mdInput required [(ngModel)]="empleado.codsucursal" name="codsucursal" #codsucursal="ngModel" placeholder="Codigo sucursal">
         </md-form-field>
       </td>
     </tr>
@@ -38,27 +38,27 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="empleado.in_tituloempleado" name="in_tituloempleado" #in_tituloempleado="ngModel" placeholder="Titulo de empleado">
+          <input mdInput required [(ngModel)]="empleado.tituloempleado" name="tituloempleado" #tituloempleado="ngModel" placeholder="Titulo de empleado">
         </md-form-field>
       </td>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="empleado.in_nombre1" name="in_nombre1" #in_nombre1="ngModel" placeholder="Primer Nombre">
+          <input mdInput required [(ngModel)]="empleado.nombre1" name="nombre1" #nombre1="ngModel" placeholder="Primer Nombre">
         </md-form-field>
       </td>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="empleado.in_nombre2" name="in_nombre2" #in_nombre2="ngModel" placeholder="Segundo Nombre">
+          <input mdInput required [(ngModel)]="empleado.nombre2" name="nombre2" #nombre2="ngModel" placeholder="Segundo Nombre">
         </md-form-field>
       </td>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="empleado.in_apellido1" name="in_apellido1" #in_apellido1="ngModel" placeholder="Primer Apellido">
+          <input mdInput required [(ngModel)]="empleado.apellido1" name="apellido1" #apellido1="ngModel" placeholder="Primer Apellido">
         </md-form-field>
       </td>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="empleado.in_apellido2" name="in_apellido2" #in_apellido2="ngModel" placeholder="Segundo Apellido">
+          <input mdInput required [(ngModel)]="empleado.apellido2" name="apellido2" #apellido2="ngModel" placeholder="Segundo Apellido">
         </md-form-field>
       </td>
     </tr>
@@ -68,19 +68,19 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="empleado.in_tipodocumentoident" name="in_tipodocumentoident" #in_tipodocumentoident="ngModel"
+          <input mdInput required [(ngModel)]="empleado.tipodocumentoident" name="tipodocumentoident" #tipodocumentoident="ngModel"
             placeholder="tipodocumentoident">
         </md-form-field>
       </td>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="empleado.in_documentoidentidad" name="in_documentoidentidad" #in_documentoidentidad="ngModel"
+          <input mdInput required [(ngModel)]="empleado.documentoidentidad" name="documentoidentidad" #documentoidentidad="ngModel"
             placeholder="Documeto Identidad">
         </md-form-field>
       </td>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="empleado.in_nitempleado" name="in_nitempleado" #in_nitempleado="ngModel" placeholder="NIT empleado">
+          <input mdInput required [(ngModel)]="empleado.nitempleado" name="nitempleado" #nitempleado="ngModel" placeholder="NIT empleado">
         </md-form-field>
       </td>
     </tr>
@@ -90,31 +90,17 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="empleado.in_isssempleado" name="in_isssempleado" #in_isssempleado="ngModel" placeholder="ISSS">
+          <input mdInput required [(ngModel)]="empleado.isssempleado" name="isssempleado" #isssempleado="ngModel" placeholder="ISSS">
         </md-form-field>
       </td>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="empleado.in_nupempleado" name="in_nupempleado" #in_nupempleado="ngModel" placeholder="NUP">
+          <input mdInput required [(ngModel)]="empleado.nupempleado" name="nupempleado" #nupempleado="ngModel" placeholder="NUP">
         </md-form-field>
       </td>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="empleado.in_nombreafp" name="in_nombreafp" #in_nombreafp="ngModel" placeholder="Nombre AFP">
-        </md-form-field>
-      </td>
-    </tr>
-  </table>
-  <table class="full-width" cellspacing="0">
-    <tr>
-      <td>
-        <md-form-field class="full-width">
-          <input mdInput [(ngModel)]="empleado.in_numerocuentabanco" name="in_numerocuentabanco" #in_numerocuentabanco="ngModel" placeholder="N de cuenta banco">
-        </md-form-field>
-      </td>
-      <td>
-        <md-form-field class="full-width">
-          <input mdInput [(ngModel)]="empleado.in_nombrebanco" name="in_nombrebanco" #in_nombrebanco="ngModel" placeholder="Nombre de Banco">
+          <input mdInput required [(ngModel)]="empleado.nombreafp" name="nombreafp" #nombreafp="ngModel" placeholder="Nombre AFP">
         </md-form-field>
       </td>
     </tr>
@@ -123,22 +109,36 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput [(ngModel)]="empleado.in_puesto" name="in_puesto" #in_puesto="ngModel" placeholder="Puesto">
+          <input mdInput [(ngModel)]="empleado.numerocuentabanco" name="numerocuentabanco" #numerocuentabanco="ngModel" placeholder="N de cuenta banco">
         </md-form-field>
       </td>
       <td>
         <md-form-field class="full-width">
-          <input mdInput [(ngModel)]="empleado.in_tiempotrabajo" name="in_tiempotrabajo" #in_tiempotrabajo="ngModel" placeholder="Tiempo de trabajo">
+          <input mdInput [(ngModel)]="empleado.nombrebanco" name="nombrebanco" #nombrebanco="ngModel" placeholder="Nombre de Banco">
+        </md-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput [(ngModel)]="empleado.puesto" name="puesto" #puesto="ngModel" placeholder="Puesto">
         </md-form-field>
       </td>
       <td>
         <md-form-field class="full-width">
-          <input mdInput [(ngModel)]="empleado.in_sueldobase" name="in_sueldobase" #in_sueldobase="ngModel" placeholder="Tiempo de trabajo">
+          <input mdInput [(ngModel)]="empleado.tiempotrabajo" name="tiempotrabajo" #tiempotrabajo="ngModel" placeholder="Tiempo de trabajo">
         </md-form-field>
       </td>
       <td>
         <md-form-field class="full-width">
-          <input mdInput [(ngModel)]="empleado.in_tiempopago" name="in_tiempopago" #in_tiempopago="ngModel" placeholder="Tiempo de trabajo">
+          <input mdInput [(ngModel)]="empleado.sueldobase" name="sueldobase" #sueldobase="ngModel" placeholder="Tiempo de trabajo">
+        </md-form-field>
+      </td>
+      <td>
+        <md-form-field class="full-width">
+          <input mdInput [(ngModel)]="empleado.tiempopago" name="tiempopago" #tiempopago="ngModel" placeholder="Tiempo de trabajo">
         </md-form-field>
       </td>
     </tr>

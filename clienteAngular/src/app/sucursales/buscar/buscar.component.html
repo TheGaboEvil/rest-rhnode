@@ -1,11 +1,11 @@
 <div *ngFor="let sucursal of sucursales">
   <md-card style='width: 30%'>
     <md-card-header>
-      <md-card-title>{{sucursal.in_codsucursal}} </md-card-title>
+      <md-card-title>{{sucursal.codsucursal}} </md-card-title>
     </md-card-header>
     <md-card-content>
-        <div><label>Direccion: </label>{{sucursal.in_direccion}}, {{sucursal.in_ciudad}}, {{sucursal.in_departamento}}, {{sucursal.in_pais}} </div>
-        <div><label>Telefono: </label>{{sucursal.in_telefono}}</div>
+        <div><label>Direccion: </label>{{sucursal.direccion}}, {{sucursal.ciudad}}, {{sucursal.departamento}}, {{sucursal.pais}} </div>
+        <div><label>Telefono: </label>{{sucursal.telefono}}</div>
       </md-card-content>
   </md-card>
 </div>

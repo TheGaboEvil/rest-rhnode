@@ -5,7 +5,7 @@ var ora = require('../models/ora');
 exports.boletasempleado1 = function(req,res){
   
     ora.then(function(con){
-      con.execute('select * from BOLETA_PAGO where codEmpleado = :in_codempleado',
+      con.execute('select * from BOLETA_PAGO where codEmpleado = :codempleado',
       [req.params.id1],function(err,result){
         if(err){
           console.log("Error  "+err.message);
@@ -28,7 +28,7 @@ exports.boletasempleado1 = function(req,res){
 exports.boletasempleado2 = function(req,res){
 
   ora.then(function(con){
-    con.execute('select * from BOLETA_PAGO where codEmpleado = :in_codempleado and OBSERVACION = :in_observacion',
+    con.execute('select * from BOLETA_PAGO where codEmpleado = :codempleado and OBSERVACION = :observacion',
     [req.params.id1,req.params.id2],function(err,result){
       if(err){
         console.log("Error  "+err.message);

@@ -24,8 +24,8 @@ exports.enlistar_todo = function(req,res){
 
 exports.crear_registro = function(req,res){
   ora.then(function(con){
-    con.execute("INSERT INTO planillaempleado VALUES(:in_codempledo,:in_codcatplanilla,:in_codplanilla,:in_cddepartamento,:in_monto,:in_observacion)",
-    [req.body.in_codempleado,req.body.in_codcatplanilla,req.body.in_codplanilla,req.body.in_coddepartamento,req.body.in_monto,req.body.in_observacion],
+    con.execute("INSERT INTO planillaempleado VALUES(:codempledo,:codcatplanilla,:codplanilla,:cddepartamento,:monto,:observacion)",
+    [req.body.codempleado,req.body.codcatplanilla,req.body.codplanilla,req.body.coddepartamento,req.body.monto,req.body.observacion],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
@@ -63,8 +63,8 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE planillaempleado SET coddcatplanilla = :in_codcatplanilla,codplanilla= :in_codplanilla,coddepartamento= :in_coddepartamento,monto= :in_monto,:in_observacion WHERE codempledo=:id",
-    [req.body.in_codcatplanilla,req.body.coddepartanebto,req.body.in_monto,req.body.in_observacion, req.params.id],
+    con.execute("UPDATE planillaempleado SET coddcatplanilla = :codcatplanilla,codplanilla= :codplanilla,coddepartamento= :coddepartamento,monto= :monto,:observacion WHERE codempledo=:id",
+    [req.body.codcatplanilla,req.body.coddepartanebto,req.body.monto,req.body.observacion, req.params.id],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);

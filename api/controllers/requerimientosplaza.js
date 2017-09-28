@@ -24,8 +24,8 @@ exports.enlistar_todo = function(req,res){
 
 exports.crear_registro = function(req,res){
   ora.then(function(con){
-    con.execute("INSERT INTO requerimientosplaza VALUES(:in_codrequerimientoplaza,:in_codperfilplaza,:in_nombrerequerimiento,:in_descripcionrequerimiento)",
-    [req.body.in_codrequerimientoplaza,req.body.in_codperfilplaza,req.body.in_nombrerequerimiento,req.body.in_descripcionrequerimiento],
+    con.execute("INSERT INTO requerimientosplaza VALUES(:codrequerimientoplaza,:codperfilplaza,:nombrerequerimiento,:descripcionrequerimiento)",
+    [req.body.codrequerimientoplaza,req.body.codperfilplaza,req.body.nombrerequerimiento,req.body.descripcionrequerimiento],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
@@ -63,8 +63,8 @@ exports.obtener_registro = function(req,res){
 };
 exports.actualizar_registro = function(req,res){
   ora.then(function(con){
-    con.execute("UPDATE requerimientosplaza SET nombrerequerimiento=:in_nombrerequerimiento,descripcionRequerimiento=:in_descripcionrequerimiento WHERE codRequerimientoPlaza=:id1 AND codperfilplaza=:id2",
-    [req.body.in_nombrerequerimiento,req.body.in_descripcionrequerimiento,req.params.id1,req.params.id2],
+    con.execute("UPDATE requerimientosplaza SET nombrerequerimiento=:nombrerequerimiento,descripcionRequerimiento=:descripcionrequerimiento WHERE codRequerimientoPlaza=:id1 AND codperfilplaza=:id2",
+    [req.body.nombrerequerimiento,req.body.descripcionrequerimiento,req.params.id1,req.params.id2],
     function(err,result){
       if(err){
         console.log("Error  "+err.message);
