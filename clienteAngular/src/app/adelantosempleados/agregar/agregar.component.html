@@ -7,7 +7,7 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="adelantoempleado.in_codadelanto" name="in_codadelanto" #in_codadelanto="ngModel" placeholder="Codigo adelanto (TODO: usar las Secuencias)">
+          <input mdInput required [(ngModel)]="adelantoEmpleado.in_codadelanto" name="in_codadelanto" #in_codadelanto="ngModel" placeholder="Codigo adelanto (TODO: usar las Secuencias)">
         </md-form-field>
       </td>
     </tr>
@@ -17,7 +17,7 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="adelantoempleado.in_fechaadelanto" name="in_fechaadelanto" #in_fechaadelanto="ngModel" placeholder="fecha adelanto">
+          <input mdInput required [(ngModel)]="adelantoEmpleado.in_fechaadelanto" name="in_fechaadelanto" #in_fechaadelanto="ngModel" placeholder="fecha adelanto">
         </md-form-field>
       </td>
     </tr>
@@ -27,7 +27,7 @@
       <tr>
         <td>
           <md-form-field class="full-width">
-            <input mdInput [(ngModel)]="adelantoempleado.in_montoadelanto" name="in_montoadelanto" #in_montoadelanto="ngModel" placeholder="Monto adelanto">
+            <input mdInput [(ngModel)]="adelantoEmpleado.in_montoadelanto" name="in_montoadelanto" #in_montoadelanto="ngModel" placeholder="Monto adelanto">
           </md-form-field>
         </td>
       </tr>
@@ -36,7 +36,7 @@
         <tr>
           <td>
             <md-form-field class="full-width">
-              <input mdInput [(ngModel)]="adelantoempleado.in_estadoadelanto" name="in_estadoadelanto" #in_estadoadelanto="ngModel" placeholder="Estado adelanto">
+              <input mdInput [(ngModel)]="adelantoEmpleado.in_estadoadelanto" name="in_estadoadelanto" #in_estadoadelanto="ngModel" placeholder="Estado adelanto">
             </md-form-field>
           </td>
         </tr>
@@ -45,7 +45,7 @@
   <table class="full-width" cellspacing="0">
     <tr>
       <td>
-        <button md-button (click)="crearAdelantoEmpleado(adelantoempleado)"> <md-icon>save</md-icon>Guardar</button>
+        <button md-button (click)="crearAdelantoEmpleado(adelantoEmpleado)"> <md-icon>save</md-icon>Guardar</button>
       </td>
       <td>
         <button md-button (click)="limpiarAdelantoEmpleado()" ><md-icon>clear</md-icon>Borrar</button>
