@@ -1,9 +1,9 @@
 export class Requerimientosplaza {
   constructor(
-    public codrequerimientoplaza,
-    public codperfilplaza,
-    public nombrerequerimiento,
-    public descripcionrequerimiento
+    public CODREQUERIMIENTOPLAZA,
+    public CODPERFILPLAZA,
+    public NOMBREREQUERIMIENTO,
+    public DESCRIPCIONREQUERIMIENTO
   ) { }
 }
 

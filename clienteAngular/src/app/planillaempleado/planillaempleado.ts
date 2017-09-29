@@ -1,10 +1,10 @@
 export class Planillaempleado {
   constructor(
-    public codempleado,
-    public codcatplanilla,
-    public codplanilla,
-    public coddepartamento,
-    public monto,
-    public observacion
+    public CODEMPLEADO,
+    public CODCATPLANILLA,
+    public CODPLANILLA,
+    public CODDEPARTAMENTO,
+    public MONTO,
+    public OBSERVACION
   ) { }
 }

@@ -7,7 +7,7 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="confrenta.codrenta" name="codrenta" #codrenta="ngModel" placeholder="Código conf renta (TODO: usar las Secuencias)">
+          <input mdInput required [(ngModel)]="confRenta.CODRENTA" name="codrenta" #codrenta="ngModel" placeholder="Código conf renta (TODO: usar las Secuencias)">
         </md-form-field>
       </td>
     </tr>
@@ -15,7 +15,7 @@
 
   <p>
     <md-form-field class="full-width">
-      <input mdInput required [(ngModel)]="confrenta.montodesde" name="montodesde" #montodesde="ngModel" placeholder="Desde"/>
+      <input mdInput required [(ngModel)]="confRenta.MONTODESDE" name="montodesde" #montodesde="ngModel" placeholder="Desde"/>
     </md-form-field>
   </p>
 
@@ -23,7 +23,7 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="confrenta.montohasta" name="montohasta" #montohasta="ngModel" placeholder="Hasta">
+          <input mdInput required [(ngModel)]="confRenta.MONTOHASTA" name="montohasta" #montohasta="ngModel" placeholder="Hasta">
         </md-form-field>
       </td>
     </tr>
@@ -33,7 +33,7 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="confrenta.porcentajeaplicar" name="porcenteaplicar" #porcentajeaplicar="ngModel" placeholder="Porcentaje a aplicar">
+          <input mdInput required [(ngModel)]="confRenta.PORCENTAJEAPLICAR" name="porcenteaplicar" #porcentajeaplicar="ngModel" placeholder="Porcentaje a aplicar">
         </md-form-field>
       </td>
     </tr>
@@ -43,7 +43,7 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="confrenta.sobreexcendetede" name="sobreexcedentede" #sobreexcedentede="ngModel" placeholder="Sobre excendete de">
+          <input mdInput required [(ngModel)]="confRenta.SOBREEXCENDETEDE" name="sobreexcedentede" #sobreexcedentede="ngModel" placeholder="Sobre excendete de">
         </md-form-field>
       </td>
     </tr>
@@ -53,7 +53,7 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="confrenta.mascuotafijade" name="mascuotafijade" #mascuotafijade="ngModel" placeholder="Más cuota fija de">
+          <input mdInput required [(ngModel)]="confRenta.MASCUOTAFIJADE" name="mascuotafijade" #mascuotafijade="ngModel" placeholder="Más cuota fija de">
         </md-form-field>
       </td>
     </tr>
@@ -63,7 +63,7 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="confrenta.tipoperiodo" name="tipoperiodo" #montohasta="ngModel" placeholder="Tipo de periodo">
+          <input mdInput required [(ngModel)]="confRenta.TIPOPERIODO" name="tipoperiodo" #montohasta="ngModel" placeholder="Tipo de periodo">
         </md-form-field>
       </td>
     </tr>
@@ -72,10 +72,10 @@
   <table class="full-width" cellspacing="0">
     <tr>
       <td>
-        <button md-button (click)="crearconfRenta(confrenta)"> <md-icon>save</md-icon>Guardar</button>
+        <button md-button (click)="crearConfRenta(confRenta)"> <md-icon>save</md-icon>Guardar</button>
       </td>
       <td>
-        <button md-button (click)="limpiarconfRenta()" ><md-icon>clear</md-icon>Borrar</button>
+        <button md-button (click)="limpiarConfRenta()" ><md-icon>clear</md-icon>Borrar</button>
       </td>
     </tr>
   </table>

@@ -7,7 +7,7 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="requerimientosplaza.codrequerimientoplaza" name="codrequerimientoplaza" #codrequerimientoplaza="ngModel" placeholder="Código requerimiento plaza (TODO: usar las Secuencias)">
+          <input mdInput required [(ngModel)]="requerimientosPlaza.CODREQUERIMIENTOPLAZA" name="codrequerimientoplaza" #codrequerimientoplaza="ngModel" placeholder="Código requerimiento plaza (TODO: usar las Secuencias)">
         </md-form-field>
       </td>
     </tr>
@@ -15,7 +15,7 @@
 
   <p>
     <md-form-field class="full-width">
-      <input mdInput required [(ngModel)]="requerimientosplaza.codperfilplaza" name="codperfilplaza" #codperfilplaza="ngModel" placeholder="Código perfil plaza"/>
+      <input mdInput required [(ngModel)]="requerimientosPlaza.CODPERFILPLAZA" name="codperfilplaza" #codperfilplaza="ngModel" placeholder="Código perfil plaza"/>
     </md-form-field>
   </p>
 
@@ -23,7 +23,7 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="requerimientosplaza.nombrerequerimiento" name="nombrerequerimiento" #nombrerequerimiento="ngModel" placeholder="Nombre requerimiento">
+          <input mdInput required [(ngModel)]="requerimientosPlaza.NOMBREREQUERIMIENTO" name="nombrerequerimiento" #nombrerequerimiento="ngModel" placeholder="Nombre requerimiento">
         </md-form-field>
       </td>
     </tr>
@@ -33,7 +33,7 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput [(ngModel)]="requerimientosplaza.descripcionrequerimiento" name="descripcionrequerimiento" #descripcionrequerimiento="ngModel" placeholder="Descripción requerimiento">
+          <input mdInput [(ngModel)]="requerimientosPlaza.DESCRIPCIONREQUERIMIENTO" name="descripcionrequerimiento" #descripcionrequerimiento="ngModel" placeholder="Descripción requerimiento">
         </md-form-field>
       </td>
     </tr>
@@ -42,10 +42,10 @@
   <table class="full-width" cellspacing="0">
     <tr>
       <td>
-        <button md-button (click)="crearrequerimientoplaza(requerimientosplaza)"> <md-icon>save</md-icon>Guardar</button>
+        <button md-button (click)="crearRequerimientoPlaza(requerimientosPlaza)"> <md-icon>save</md-icon>Guardar</button>
       </td>
       <td>
-        <button md-button (click)="limpiarrequerimientoplaza()" ><md-icon>clear</md-icon>Borrar</button>
+        <button md-button (click)="limpiarRequerimientoPlaza()" ><md-icon>clear</md-icon>Borrar</button>
       </td>
     </tr>
   </table>
