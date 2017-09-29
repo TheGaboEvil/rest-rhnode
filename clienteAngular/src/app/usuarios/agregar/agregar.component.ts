@@ -10,9 +10,15 @@ import { UsuarioService } from '../usuario.service';
 })
 export class AgregarComponent implements OnInit {
 
-  constructor() { }
+  public usuario: Usuario;
+  constructor(private usuarioService: UsuarioService) {
+    this.usuario = new Usuario(' ', ' ', ' ', ' ', ' ');
+   }
 
   ngOnInit() {
   }
 
+  crearUsuario(usuario: Usuario): void {
+    this.usuarioService.crearUsuario(usuario);
+  }
 }
