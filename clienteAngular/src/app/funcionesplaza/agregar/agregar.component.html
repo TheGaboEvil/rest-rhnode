@@ -7,7 +7,7 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="funcionesplaza.codfuncionesplaza" name="codperfilplaza" #codperfilplaza="ngModel" placeholder="Código funciones plaza (TODO: usar las Secuencias)">
+          <input mdInput required [(ngModel)]="funcionesPlaza.CODFUNCIONESPLAZA" name="codperfilplaza" #codperfilplaza="ngModel" placeholder="Código funciones plaza (TODO: usar las Secuencias)">
         </md-form-field>
       </td>
     </tr>
@@ -15,7 +15,7 @@
 
   <p>
     <md-form-field class="full-width">
-      <input mdInput required [(ngModel)]="funcionesplaza.codperfilplaza" name="codperfilplaza" #codperfilplaza="ngModel" placeholder="Código perfil plaza"/>
+      <input mdInput required [(ngModel)]="funcionesPlaza.CODPERFILPLAZA" name="codperfilplaza" #codperfilplaza="ngModel" placeholder="Código perfil plaza"/>
     </md-form-field>
   </p>
 
@@ -23,7 +23,7 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="funcionesplaza.nombrefunciones" name="nombrefunciones" #nombrefunciones="ngModel" placeholder="Nombre función">
+          <input mdInput required [(ngModel)]="funcionesPlaza.NOMBREFUNCIONES" name="nombrefunciones" #nombrefunciones="ngModel" placeholder="Nombre función">
         </md-form-field>
       </td>
     </tr>
@@ -33,7 +33,7 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput [(ngModel)]="funcionesplaza.descripcionfunciones" name="descripcionfunciones" #descripcionfunciones="ngModel" placeholder="Descripción función">
+          <input mdInput [(ngModel)]="funcionesPlaza.DESCRIPCIONFUNCIONES" name="descripcionfunciones" #descripcionfunciones="ngModel" placeholder="Descripción función">
         </md-form-field>
       </td>
     </tr>
@@ -42,10 +42,10 @@
   <table class="full-width" cellspacing="0">
     <tr>
       <td>
-        <button md-button (click)="crearfuncionesplaza(funcionesplaza)"> <md-icon>save</md-icon>Guardar</button>
+        <button md-button (click)="crearFuncionesPlaza(funcionesPlaza)"> <md-icon>save</md-icon>Guardar</button>
       </td>
       <td>
-        <button md-button (click)="limpiarfuncionesplaza()" ><md-icon>clear</md-icon>Borrar</button>
+        <button md-button (click)="limpiarFuncionesPlaza()" ><md-icon>clear</md-icon>Borrar</button>
       </td>
     </tr>
   </table>

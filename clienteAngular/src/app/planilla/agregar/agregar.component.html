@@ -7,7 +7,7 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="planilla.codplanilla" name="codplanilla" #codplanilla="ngModel" placeholder="Código planilla (TODO: usar las Secuencias)">
+          <input mdInput required [(ngModel)]="planilla.CODPLANILLA" name="codplanilla" #codplanilla="ngModel" placeholder="Código planilla (TODO: usar las Secuencias)">
         </md-form-field>
       </td>
     </tr>
@@ -15,7 +15,7 @@
 
   <p>
     <md-form-field class="full-width">
-      <input mdInput required [(ngModel)]="planilla.coddepartamento" name="coddepartamento" #coddepartamento="ngModel" placeholder="Código departamento"/>
+      <input mdInput required [(ngModel)]="planilla.CODDEPARTAMENTO" name="coddepartamento" #coddepartamento="ngModel" placeholder="Código departamento"/>
     </md-form-field>
   </p>
 
@@ -23,7 +23,7 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="planilla.codsucursal" name="codsucursal" #codsucursal="ngModel" placeholder="Código sucursal">
+          <input mdInput required [(ngModel)]="planilla.CODSUCURSAL" name="codsucursal" #codsucursal="ngModel" placeholder="Código sucursal">
         </md-form-field>
       </td>
     </tr>
@@ -33,7 +33,7 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="planilla.fechaini" name="fechaini" #fechaini="ngModel" placeholder="Fecha inicio">
+          <input mdInput required [(ngModel)]="planilla.FECHAINI" name="fechaini" #fechaini="ngModel" placeholder="Fecha inicio">
         </md-form-field>
       </td>
     </tr>
@@ -43,7 +43,7 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="planilla.fechafin" name="fechafin" #fechafin="ngModel" placeholder="Fecha fin">
+          <input mdInput required [(ngModel)]="planilla.FECHAFIN" name="fechafin" #fechafin="ngModel" placeholder="Fecha fin">
         </md-form-field>
       </td>
     </tr>
@@ -53,7 +53,7 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="planilla.tipoplanilla" name="tipoplanilla" #tipoplanilla="ngModel" placeholder="Tipo planilla">
+          <input mdInput required [(ngModel)]="planilla.TIPOPLANILLA" name="tipoplanilla" #tipoplanilla="ngModel" placeholder="Tipo planilla">
         </md-form-field>
       </td>
     </tr>
@@ -62,10 +62,10 @@
   <table class="full-width" cellspacing="0">
     <tr>
       <td>
-        <button md-button (click)="crearplanilla(planilla)"> <md-icon>save</md-icon>Guardar</button>
+        <button md-button (click)="crearPlanilla(planilla)"> <md-icon>save</md-icon>Guardar</button>
       </td>
       <td>
-        <button md-button (click)="limpiarplanilla()" ><md-icon>clear</md-icon>Borrar</button>
+        <button md-button (click)="limpiarPlanilla()" ><md-icon>clear</md-icon>Borrar</button>
       </td>
     </tr>
   </table>

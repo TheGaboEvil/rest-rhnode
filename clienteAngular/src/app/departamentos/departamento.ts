@@ -1,9 +1,9 @@
 export class Departamento {
   constructor(
-    public coddepartamento,
-    public codsucursal,
-    public nombredepartamento,
-    public numplazas
+    public CODDEPARTAMENTO,
+    public CODSUCURSAL,
+    public NOMBREDEPARTAMENTO,
+    public NUMPLAZAS
   ) { }
 }
 

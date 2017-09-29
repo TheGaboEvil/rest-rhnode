@@ -1,12 +1,12 @@
 export class Confrenta {
   constructor(
-    public codrenta,
-    public montodesde,
-    public montohasta,
-    public porcentaplicar,
-    public sobreexcedentede,
-    public mascuotafijade,
-    public tipoperiodo
+    public CODRENTA,
+    public MONTODESDE,
+    public MONTOHASTA,
+    public PORCENTAPLICAR,
+    public SOBREEXCEDENTEDE,
+    public MASCUOTAFIJADE,
+    public TIPOPERIODO
   ) { }
 }
 

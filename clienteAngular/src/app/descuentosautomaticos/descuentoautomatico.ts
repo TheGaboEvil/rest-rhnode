@@ -1,15 +1,15 @@
 export class DescuentoAutomatico {
   constructor(
-    public numprestamo,
-    public codempleado,
-    public tipoprestamo,
-    public entidadprestamo,
-    public numcuenta,
-    public montoprestamo,
-    public cuotaprestamo,
-    public fechapago,
-    public mododescuento,
-    public estadoprestamo
+    public NUMPRESTAMO,
+    public CODEMPLEADO,
+    public TIPOPRESTAMO,
+    public ENTIDADPRESTAMO,
+    public NUMCUENTA,
+    public MONTOPRESTAMO,
+    public CUOTAPRESTAMO,
+    public FECHAPAGO,
+    public MODODESCUENTO,
+    public ESTADOPRESTAMO
   ) { }
 }
 

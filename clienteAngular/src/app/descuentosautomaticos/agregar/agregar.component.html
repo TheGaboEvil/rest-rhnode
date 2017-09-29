@@ -7,12 +7,12 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="descuentoautomatico.numprestamo" name="numprestamo" #numprestamo="ngModel" placeholder="Numero de prestamo">
+          <input mdInput required [(ngModel)]="descuentoAutomatico.NUMPRESTAMO" name="numprestamo" #numprestamo="ngModel" placeholder="Numero de prestamo">
         </md-form-field>
       </td>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="descuentoautomatico.codempleado" name="codempleado" #codempleado="ngModel" placeholder="Codigo empleado">
+          <input mdInput required [(ngModel)]="descuentoAutomatico.CODEMPLEADO" name="codempleado" #codempleado="ngModel" placeholder="Codigo empleado">
         </md-form-field>
       </td>
     </tr>
@@ -22,12 +22,12 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="descuentoautomatico.tipoprestamo" name="tipoprestamo" #tipoprestamo="ngModel" placeholder="Nombre Catalogo Planilla">
+          <input mdInput required [(ngModel)]="descuentoAutomatico.TIPOPRESTAMO" name="tipoprestamo" #tipoprestamo="ngModel" placeholder="Nombre Catalogo Planilla">
         </md-form-field>
       </td>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="descuentoautomatico.numcuenta" name="numcuenta" #numcuenta="ngModel" placeholder="Nombre Catalogo Planilla">
+          <input mdInput required [(ngModel)]="descuentoAutomatico.NUMCUENTA" name="numcuenta" #numcuenta="ngModel" placeholder="Nombre Catalogo Planilla">
         </md-form-field>
       </td>
     </tr>
@@ -37,7 +37,7 @@
       <tr>
         <td>
           <md-form-field class="full-width">
-            <input mdInput [(ngModel)]="descuentoautomatico.montoprestamo" name="montoprestamo" #montoprestamo="ngModel" placeholder="Monto de prestamo">
+            <input mdInput [(ngModel)]="descuentoAutomatico.MONTOPRESTAMO" name="montoprestamo" #montoprestamo="ngModel" placeholder="Monto de prestamo">
           </md-form-field>
         </td>
       </tr>
@@ -46,12 +46,12 @@
         <tr>
           <td>
             <md-form-field class="full-width">
-              <input mdInput [(ngModel)]="descuentoautomatico.cuotaprestamo" name="cuotaprestamo" #cuotaprestamo="ngModel" placeholder="Cuota de prestamo">
+              <input mdInput [(ngModel)]="descuentoAutomatico.CUOTAPRESTAMO" name="cuotaprestamo" #cuotaprestamo="ngModel" placeholder="Cuota de prestamo">
             </md-form-field>
           </td>
           <td>
             <md-form-field class="full-width">
-              <input mdInput [(ngModel)]="descuentoautomatico.fechapago" name="fechapago" #fechapago="ngModel" placeholder="Cuota de prestamo">
+              <input mdInput [(ngModel)]="descuentoAutomatico.FECHAPAGO" name="fechapago" #fechapago="ngModel" placeholder="Cuota de prestamo">
             </md-form-field>
           </td>
         </tr>
@@ -60,7 +60,7 @@
           <tr>
             <td>
               <md-form-field class="full-width">
-                <input mdInput [(ngModel)]="descuentoautomatico.montoprestamo" name="montoprestamo" #montoprestamo="ngModel" placeholder="Monto de prestamo">
+                <input mdInput [(ngModel)]="descuentoAutomatico.MONTOPRESTAMO" name="montoprestamo" #montoprestamo="ngModel" placeholder="Monto de prestamo">
               </md-form-field>
             </td>
           </tr>
@@ -69,12 +69,12 @@
             <tr>
               <td>
                 <md-form-field class="full-width">
-                  <input mdInput [(ngModel)]="descuentoautomatico.cuotaprestamo" name="cuotaprestamo" #cuotaprestamo="ngModel" placeholder="Cuota de prestamo">
+                  <input mdInput [(ngModel)]="descuentoAutomatico.CUOTAPRESTAMO" name="cuotaprestamo" #cuotaprestamo="ngModel" placeholder="Cuota de prestamo">
                 </md-form-field>
               </td>
               <td>
                 <md-form-field class="full-width">
-                  <input mdInput [(ngModel)]="descuentoautomatico.mododescuento" name="mododescuento" #mododescuento="ngModel" placeholder="Cuota de prestamo">
+                  <input mdInput [(ngModel)]="descuentoAutomatico.MODODESCUENTO" name="mododescuento" #mododescuento="ngModel" placeholder="Cuota de prestamo">
                 </md-form-field>
               </td>
             </tr>
@@ -83,7 +83,7 @@
         <tr>
           <td>
             <md-form-field class="full-width">
-              <input mdInput [(ngModel)]="descuentoautomatico.estadoprestamo" name="estadoprestamo" #estadoprestamo="ngModel" placeholder="Detalle planilla">
+              <input mdInput [(ngModel)]="descuentoAutomatico.ESTADOPRESTAMO" name="estadoprestamo" #estadoprestamo="ngModel" placeholder="Detalle planilla">
             </md-form-field>
           </td>
         </tr>
@@ -92,7 +92,7 @@
   <table class="full-width" cellspacing="0">
     <tr>
       <td>
-        <button md-button (click)="crearDescuentoAutomatico(descuentoautomatico)"> <md-icon>save</md-icon>Guardar</button>
+        <button md-button (click)="crearDescuentoAutomatico(descuentoAutomatico)"> <md-icon>save</md-icon>Guardar</button>
       </td>
       <td>
         <button md-button (click)="limpiarDescuentoAutomatico()" ><md-icon>clear</md-icon>Borrar</button>

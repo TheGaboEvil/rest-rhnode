@@ -1,11 +1,11 @@
 export class Planilla {
   constructor(
-    public codplanilla,
-    public coddepartamento,
-    public codsucursal,
-    public fechaini,
-    public fechafin,
-    public tipoplanilla
+    public CODPLANILLA,
+    public CODDEPARTAMENTO,
+    public CODSUCURSAL,
+    public FECHAINI,
+    public FECHAFIN,
+    public TIPOPLANILLA
   ) { }
 }
 

@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 
 /* librerias para estructura y themplate en base a material.io */
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MaterialModule } from '@angular/material';
 
 import {
   MdAutocompleteModule,
@@ -17,7 +16,6 @@ import {
   MdCardModule,
   MdCheckboxModule,
   MdChipsModule,
-  MdCoreModule,
   MdDatepickerModule,
   MdDialogModule,
   MdExpansionModule,
@@ -244,7 +242,6 @@ const appRouters: Routes = [
     HttpModule,
     // material.io
     BrowserAnimationsModule,
-    MaterialModule,
     // nuestros modulos
     AdelantosempleadosModule,
     AgendaempleadoModule,

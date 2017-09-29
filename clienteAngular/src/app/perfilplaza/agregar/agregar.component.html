@@ -7,12 +7,12 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="perfilplaza.codperfilplaza" name="codperfilplaza" #codperfilplaza="ngModel" placeholder="Codigo Perfil Plaza (TODO: usar las Secuencias)">
+          <input mdInput required [(ngModel)]="perfilPlaza.CODPERFILPLAZA" name="codperfilplaza" #codperfilplaza="ngModel" placeholder="Codigo Perfil Plaza (TODO: usar las Secuencias)">
         </md-form-field>
       </td>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="perfilplaza.NombrePlaza" name="NombrePlaza" #NombrePlaza="ngModel" placeholder="Nombre Plaza">
+          <input mdInput required [(ngModel)]="perfilPlaza.NOMBREPLAZA" name="NombrePlaza" #NombrePlaza="ngModel" placeholder="Nombre Plaza">
         </md-form-field>
       </td>
     </tr>
@@ -22,7 +22,7 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="perfilplaza.DescripcionPlaza" name="DescripcionPlaza" #DescripcionPlaza="ngModel" placeholder="Descripcion Plaza">
+          <input mdInput required [(ngModel)]="perfilPlaza.DESCRIPCIONPLAZA" name="DescripcionPlaza" #DescripcionPlaza="ngModel" placeholder="Descripcion Plaza">
         </md-form-field>
       </td>
     </tr>
@@ -32,7 +32,7 @@
   <table class="full-width" cellspacing="0">
     <tr>
       <td>
-        <button md-button (click)="crearPerfilPlaza(perfilplaza)"> <md-icon>save</md-icon>Guardar</button>
+        <button md-button (click)="crearPerfilPlaza(perfilPlaza)"> <md-icon>save</md-icon>Guardar</button>
       </td>
       <td>
         <button md-button (click)="limpiarPerfilPlaza()" ><md-icon>clear</md-icon>Borrar</button>

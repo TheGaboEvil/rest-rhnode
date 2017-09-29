@@ -1,10 +1,10 @@
 export class Usuario {
   constructor(
-    public codusuario,
-    public nick,
-    public pass,
-    public estado,
-    public nivel_acceso
+    public CODUSUARIO,
+    public NICK,
+    public PASS,
+    public ESTADO,
+    public NIVEL_ACCESO
   ) { }
 }
 
