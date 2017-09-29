@@ -7,12 +7,12 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="agendaempleado.codempleado" name="codempleado" #codempleado="ngModel" placeholder="Codigo empleado (TODO: usar las Secuencias)">
+          <input mdInput required [(ngModel)]="agendaEmpleado.codempleado" name="codempleado" #codempleado="ngModel" placeholder="Codigo empleado (TODO: usar las Secuencias)">
         </md-form-field>
       </td>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="agendaempleado.tiporegistro" name="tiporegistro" #tiporegistro="ngModel" placeholder="Tipo de Registro">
+          <input mdInput required [(ngModel)]="agendaEmpleado.tiporegistro" name="tiporegistro" #tiporegistro="ngModel" placeholder="Tipo de Registro">
         </md-form-field>
       </td>
     </tr>
@@ -22,17 +22,17 @@
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="agendaempleado.fechahoraentrada" name="fechahoraentrada" #fechahoraentrada="ngModel" placeholder="fecha hora entrada">
+          <input mdInput required [(ngModel)]="agendaEmpleado.fechahoraentrada" name="fechahoraentrada" #fechahoraentrada="ngModel" placeholder="fecha hora entrada">
         </md-form-field>
       </td>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="agendaempleado.fechahorasalida" name="fechahorasalida" #fechahorasalida="ngModel" placeholder="fecha hora salida">
+          <input mdInput required [(ngModel)]="agendaEmpleado.fechahorasalida" name="fechahorasalida" #fechahorasalida="ngModel" placeholder="fecha hora salida">
         </md-form-field>
       </td>
       <td>
         <md-form-field class="full-width">
-          <input mdInput  [(ngModel)]="agendaempleado.observaciones" name="observaciones" #observaciones="ngModel" placeholder="observaciones">
+          <input mdInput  [(ngModel)]="agendaEmpleado.observaciones" name="observaciones" #observaciones="ngModel" placeholder="observaciones">
         </md-form-field>
       </td>
 
@@ -43,7 +43,7 @@
   <table class="full-width" cellspacing="0">
     <tr>
       <td>
-        <button md-button (click)="crearAgendaEmpleado(agendaempleado)"> <md-icon>save</md-icon>Guardar</button>
+        <button md-button (click)="crearAgendaEmpleado(agendaEmpleado)"> <md-icon>save</md-icon>Guardar</button>
       </td>
       <td>
         <button md-button (click)="limpiarAgendaEmpleado()" ><md-icon>clear</md-icon>Borrar</button>
