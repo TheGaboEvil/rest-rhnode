@@ -18,7 +18,7 @@ export class AdelantoempleadoService {
       .then(res => res.json().data as Adelantoempleado)
       .catch(this.handleError);
   }
-  
+
   private handleError(error: any): Promise<any> {
     console.error('Ha ocurrido un error en Adelantoempleado ', error);
     return Promise.reject(error.message || error);
