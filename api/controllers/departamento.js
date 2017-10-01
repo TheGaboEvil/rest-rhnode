@@ -16,7 +16,7 @@ exports.enlistar_todo = function(req,res){
       }else{
         console.log("Departamento respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
-        res.end(JSON.stringify(result.rows));
+        res.end(JSON.stringify({"Departamentos" : result.rows}));
       }
     });
   }); //fin del ora.then()
@@ -37,7 +37,10 @@ exports.crear_registro = function(req,res){
       }else{
         console.log("Departamento respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
-        res.end(JSON.stringify(result.rowsAffected));
+        res.end(JSON.stringify({
+          status:200,
+          data:result.rowsAffected
+        }));
       }
     });
   }); //fin del ora.then()
@@ -56,7 +59,7 @@ exports.obtener_registro = function(req,res){
       }else{
         console.log("Departamento respondio :" + result.rows);
         res.writeHead(200,{'Content-Type':'application/json'});
-        res.end(JSON.stringify(result.rows));
+        res.end(JSON.stringify({"Departamento" : result.rows}));
       }
     });
   }); //fin del ora.then()

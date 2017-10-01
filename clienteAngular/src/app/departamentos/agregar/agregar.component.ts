@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+
+import {MatSelectModule} from '@angular/material';
+
 import { Departamento } from '../departamento';
 import { DepartamentoService } from '../departamento.service';
-
 
 
 
@@ -19,7 +21,8 @@ export class AgregarComponent implements OnInit {
   public sucursales: Sucursal[];
 
   constructor(
-    private sucursalService: SucursalService
+    private sucursalService: SucursalService,
+    private departamentoService: DepartamentoService
   ) {
     this.departamento = new Departamento(' ', ' ', ' ', '');
    }
@@ -28,8 +31,8 @@ export class AgregarComponent implements OnInit {
     this.sucursalService.getSucursales().then(sucursales => this.sucursales = sucursales);
   }
 
-  crearDepartamento() {
-    // todo
+  crearDepartamento(departamento: Departamento) {
+    this.departamentoService.crearDepartamento(departamento);
   }
 
   limpiarDepartamento() {

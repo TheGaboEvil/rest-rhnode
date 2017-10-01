@@ -14,18 +14,26 @@
   </table>
 
   <p>
-    <md-form-field class="full-width">
-      <input mdInput required [(ngModel)]="departamento.CODSUCURSAL" name="codsucursal" #codsucursal="ngModel" placeholder="Direccion"/>
-    </md-form-field>
+    <md-select placeholder="Sucursal ">
+      <md-option *ngFor="let sucursal of sucursales" [value]="sucursal.CODSUCURSAL">
+        {{sucursal.CODSUCURSAL}} || {{sucursal.DIRECCION}}, {{sucursal.CIUDAD}}, {{sucursal.DEPARTAMENTO}}, {{sucursal.PAIS}}
+      </md-option>
+    </md-select>
+
   </p>
 
   <table class="full-width" cellspacing="0">
     <tr>
       <td>
         <md-form-field class="full-width">
-          <input mdInput required [(ngModel)]="departamento.NOMBREDEPARTAMENTO" name="nombredepartamento" #nombredepartamento="ngModel" placeholder="Ciudad">
+          <input mdInput required [(ngModel)]="departamento.NOMBREDEPARTAMENTO" name="nombredepartamento" #nombredepartamento="ngModel" placeholder="Nombre del Departamento">
         </md-form-field>
       </td>
+      <td>
+          <md-form-field class="full-width">
+            <input mdInput required [(ngModel)]="departamento.NUMPLAZAS" name="numeroplaza" #numeroplaza="ngModel" placeholder="Cantidad de Plazas">
+          </md-form-field>
+        </td>
     </tr>
   </table>
 
