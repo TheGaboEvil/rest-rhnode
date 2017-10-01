@@ -19,7 +19,7 @@ exports.crear_registro = function(req,res){
           res.writeHead(200,{'Content-Type':'application/json'});
           res.end(JSON.stringify({
             status:200,
-            data: result.rows[0]
+            data: result.rows
           }));
         }
       });
