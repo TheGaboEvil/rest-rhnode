@@ -1,3 +1,27 @@
-<p>
-  buscar works!
-</p>
+<div *ngFor="let departamento of departamento">
+  <md-card style='width: 30%'>
+    <md-card-header>
+      <md-card-title>{{departamento.CODDEPARTAMENTO}} </md-card-title>
+    </md-card-header>
+    <md-card-content>
+    <table>
+    	<thead>
+    		<th>Cod departamento</th>
+    		<th>Cod Sucursal</th>
+    		<th>Cod Nombre departamento</th>
+    		<th>Cod Numero plazas</th>
+    	</thead>
+    	<tbody>
+    		<tr>
+    			<td>{{departamento.CODDEPARTAMENTO}}</td>
+    			<td>{{departamento.CODSUCURSAL}}</td>
+    			<td>{{departamento.NOMBREDEPARTAMENTO}}</td>
+    			<td>{{departamento.NUMPLAZAS}}</td>
+    		</tr>
+
+    	</tbody>
+    </table>
+        <div><label>Direccion: </label>{{departamento.CODDEPARTAMENTO}}, {{departamento.CODSUCURSAL}}, {{departamento.NOMBREDEPARTAMENTO}}, {{departamento.NUMPLAZAS}} </div>
+      </md-card-contentdepartamento  </md-card>
+</div>
+
