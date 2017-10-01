@@ -13,7 +13,7 @@ export class SucursalService {
   // copiar desde aqui
   constructor(private http: Http) {}
   private headers = new Headers({ 'Content-Type': 'application/json' });
-  private URL = 'http://localhost:8030/sucursales';
+  private URL = 'http://rhnode.tk/sucursales';
 
   // Eliminar esta funcion
   getSucursales(): Promise<Sucursal[]> {

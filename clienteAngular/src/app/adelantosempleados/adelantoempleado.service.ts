@@ -9,7 +9,7 @@ export class AdelantoempleadoService {
 
   constructor(private http: Http) {}
   private headers = new Headers({ 'Content-Type': 'application/json' });
-  private URL = 'http://localhost:8030/adelantosempleado';
+  private URL = 'http://rhnode.tk/adelantosempleado';
 
   crearSucursal(adelantoEmpleado: Adelantoempleado): Promise<Adelantoempleado> {
     return this.http

@@ -8,7 +8,7 @@ export class UsuarioService {
 
   constructor(private http: Http) {}
   private headers = new Headers({ 'Content-Type': 'application/json' });
-  private URL = 'http://localhost:8030/usuarios';
+  private URL = 'http://rhnode.tk/usuarios';
 
   crearUsuario(usaurio: Usuario): Promise<Usuario> {
     return this.http

@@ -9,7 +9,7 @@ export class RequerimientoplazaService {
 
   constructor(private http: Http) { }
   private headers = new Headers({ 'Content-Type': 'application/json' });
-  private URL = 'http://localhost:8030/requerimientosplaza';
+  private URL = 'http://rhnode.tk/requerimientosplaza';
 
   crearRequerimientoPlaza(requerimientosPlaza: Requerimientosplaza): Promise<Requerimientosplaza> {
     return this.http

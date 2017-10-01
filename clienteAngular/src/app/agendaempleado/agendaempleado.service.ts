@@ -9,7 +9,7 @@ export class AgendaempleadoService {
 
   constructor(private http: Http) {}
   private headers = new Headers({ 'Content-Type': 'application/json' });
-  private URL = 'http://localhost:8030/agendaempleado';
+  private URL = 'http://rhnode.tk/agendaempleado';
 
 
   crearAgendaEmpleado(agendaEmpleado: Agendaempleado): Promise<Agendaempleado> {
