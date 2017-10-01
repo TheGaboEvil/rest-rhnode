@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Departamento } from '../departamento';
+import { DepartamentoService } from '../departamento.service';
+
+
+
+
+import { SucursalService } from '../../sucursales/sucursal.service';
+import { Sucursal } from '../../sucursales/sucursal';
 
 @Component({
   selector: 'app-agregar',
@@ -7,12 +14,18 @@ import { Departamento } from '../departamento';
   styleUrls: ['./agregar.component.css']
 })
 export class AgregarComponent implements OnInit {
+
   public departamento: Departamento;
-  constructor() {
+  public sucursales: Sucursal[];
+
+  constructor(
+    private sucursalService: SucursalService
+  ) {
     this.departamento = new Departamento(' ', ' ', ' ', '');
    }
 
   ngOnInit() {
+    this.sucursalService.getSucursales().then(sucursales => this.sucursales = sucursales);
   }
 
   crearDepartamento() {

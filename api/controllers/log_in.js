@@ -18,7 +18,8 @@ exports.crear_registro = function(req,res){
           console.log("usuario respondio :" + result.rows);
           res.writeHead(200,{'Content-Type':'application/json'});
           res.end(JSON.stringify({
-            usuario: result.rows[0]
+            status:200,
+            data: result.rows[0]
           }));
         }
       });
